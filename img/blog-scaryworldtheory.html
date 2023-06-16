@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist, blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: white;
+}
+
+
+body {
+   background-color: #181318;
+   font-family: Euripides;
+   color: white;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+   color: #d0c054;
+}
+
+p1 a:hover {
+   color: #181318;
+   background-color: #d0c054;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+.container {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background: white;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+
+post-heading {
+    padding-bottom: 30px;
+}
+
+post-meta {
+   vertical-align: baseline;
+}
+
+foot-note {
+}
+
+
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: -30px;
+   float: right;
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 60%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 30%;
+}
+
+.columns.content {
+   padding-bottom: 30px;
+   margin-right: 40px;
+   display: inline-block;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+p {
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid black;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align:left;
+   text-align: left;
+}
+
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+
+}
+
+@media only screen and (min-width:640px) {
+
+p {
+   line-height: 18px;
+   font-size: 18px;
+   font-family: Rasa-Regular;
+}
+
+.hamburger {
+   display: none;
+}
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+  border-bottom: 2px solid black;
+  border-color: #d0c054;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+section {
+
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+
+}
+
+h3 {
+   line-height: 0.8vw;
+   font-weight: 900;
+   font-size: 1.2em;
+}
+
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <script src="js/accordion.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="website-homepage.html"><img src="img/ila-colley-logo-white.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a class="active" href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+
+
+<div class="post-heading">
+   <h2>Scary World Theory</h2>
+      <div class="post-meta">
+         <p1>May 2021, originally on <a href="https://poetrybusiness.co.uk/2021/05/04/may-digital-poet-in-residence-ila-colley/">The Poetry Business</a></p1>
+      </div>
+</div>
+
+<div class="section-container">
+   <div class="columns content">
+<p>Hey you, isn’t it time you went to therapy or are you still holding out for when you have a career, or a mortgage, a couple of dependants? Congratulations, you are still coming to all the wrong conclusions, all biases, all baseless. Here, have a drink, open up a little. Your habitus is rubbing me up the wrong way and we don’t have time to go into all the little details.</p>
+
+<p>Yeah that terrestrial stuff sounds great, all that discovery, sign me up. This thought-trip has been out-of-this-world, up there, and all about exits, then it’s been coming down, unearthing, engendering, building worlds as critique, or building potentials. But what about when the sharing passion isn’t shared? Can this speculative operation transgress the confines of poetry? Can we engender while we’re still within structures of production? Can our engendering overtake them, or do we uproot them? Can we give ourselves to amongness, can we cooperate, even when we don’t get anything back?</p>
+
+<p>I like this <a href="https://www.datableedzine.com/rebecca-close-issue-8">poem by Rebecca Close</a>, which seems to critique structures of observation, gendered oppression and labour<br>exploitation, without using those words, instead taking us on an expedition between hyper-specific cultural identifiers that feel a bit hostile and arbitrary, a world of discord. This is in itself a kind of Scary World Theory, held together through the fierce narrative voice which begins in the first-person singular:</p>
+
+<p><em>please dip for taste<br>are you kidding me I kick the stirrups<br>gallop through the rococo style restaurant<br>giving diners the finger</em></p>
+
+<p>Passionately reactionary, oppositional, here the landscape of objects is used to fuel rebellion. So close to hand, and treated with such rapidity, it seems clear the importance of these pop objects is ironic. At first, we bask in their superfluousness. When Close writes <em>your furniture will fund our movement / (we had wigs on, which enabled us to ascend to positions of great power)</em>, the poem has slipped into the first-person plural, finding the unity that the title suggests, but united against an adversary from whom to appropriate capital, and whose power structures to infiltrate. When the poem switches back to the individual voice,<em> I don’t know a worm from a turd / but I know what money is and what the weather feels like</em>, there are admissions and desires, learning and searching for an emergent you, seen down the barrel of the struggle, at the other end of the workday: a feeling of closeness, of being seen and known.</p>
+
+<p>If amongness is resistance to a certain cultural hegemony, what of alliances? From the <em>we</em> to the you in this revolutionary journey, I got wondering about what happens at the point of overlap in our terrestrial mappings, where the possibility of joining forces emerges from mutual need. Hey you, I’m not really sure about this, what about you? Plural you or only you. Are you talking back to me? Would you consider me an ally? Would our allegiance disrupt the level playing field? Or is that just a vicious concept that puts us in competition with each other and maintains the grip of productivity? This morning I finished the book I’d been reading and re-read its epigraph, from Amin Maalouf’s Les Identités Meurtrières: <em>They live in a sort of frontier zone criss-crossed by ethnic, religious and other fault lines… they have a special role to play in forging links, eliminatingmisunderstandings… if they themselves cannot sustain their multiple allegiances, if they are continually pressed to take sides… then all of us have reason to be uneasy about the way the world is going.</em></p>
+
+<p>What I want to remember, then, is that each terrestrial has their own cartography of diverse concerns. Each terrestrial does not stand for, or need one single thing. No single use terrestrials. That those who were a faithful ally in some pursuits might prove a troublesome antagonists in others. Latour, of his mapping, writes <em>At issue are three utopias, in the etymological sense of the word, places with no topos, without earth and without land: the Local, the Global, and the Out-of-This-World</em>. <em>But these adversaries are also the only potential allies.</em> Whichever utopia they’re travelling from, <em>we are all in migration toward territories yet to be rediscovered and reoccupied.</em> And now I’m thinking about words from Taylor Johnson again, this time from their poem <a href="https://poets.org/poem/menace" data-type="URL" data-id="https://poets.org/poem/menace"><em>Menace to</em></a>, which expresses an amongness that isn’t homogenous, and how being among and standing for something at the same time might include contradiction and compromise.</p>
+
+<p><em>… My enemy everywhere<br>and in my home as wifi is</em></p>
+
+<p><em>a money for me to reach my comrades<br>and kills my house plants. My enemy</em></p>
+
+<p><em>is distance growing dark, distance growing<br>politely in my pocket as connection.</em></p>
+
+<p><em>… when I buy something<br>such as a new computer with which to sing against my enemies,<br>there is my enemy, silent and personal.</em></p>
+
+<p>When Johnson writes,<em> I must become something my enemies can’t eat, don’t have / a word for yet</em>, they echo the perspective of Audre Lorde’s influential essay <em>The Master’s Tools Will Never Dismantle the Master’s House</em>, that we must critically examine our sources of authority and cultivate new, transcendent agencies. I get the impression that Johnson’s use of the word <em>enemy</em> is tongue-in-cheek, given that the poem explores the difficulty of being entirely consistent in our actions and beliefs. Sometimes we’re forced to do as our enemies do, or the enemy is in us, which is not down to lack of integrity, but about available resource and strategy. I can’t really reconcile this, but I can imagine that actually revolutionary tools aren’t individual, but something like engendering, something that takes place among. A kind of dialogue that is open, reactive, critical but not defensive, a process of mutual unearthing. Would that be the anti-product?</p>
+
+<p>In her poem <em><a href="https://www.poetryfoundation.org/poems/51872/human-cylinders">Human Cylinders</a></em>, Mina Loy asks <em>which of us / Would not / … / Destroy the Universe / With a solution</em>, berating the craving to carve certainty into the flux of life. If we try and visualise a different kind of agency for the task of the terrestrial, maybe returning to Disco Elysium could be helpful. This task is not so narrow as a murder mystery, but there is something about the way the stage is set in this game; let’s forget about the cop and focus on the detective part. With severe memory issues, he’s not a coloniser landing in terra incognita, but a confused actor finding themselves in the middle of a scene they must urgently reacquaint themselves with. After a fateful night of heavy drinking and drugs, the detective has lost his grip on reality, is full of self-loathing and doubt, and his ability to crack the case is entirely reliant on open communication with all the others on this terrain.</p>
+
+<p>While <a href="https://www.poetryfoundation.org/poems/90805/there-it-is">re</a><a href="https://alastairhadden.medium.com/a-storm-is-blowing-from-paradise-disco-elysium-on-the-past-and-present-e2fff5d629be" data-type="URL" data-id="https://alastairhadden.medium.com/a-storm-is-blowing-from-paradise-disco-elysium-on-the-past-and-present-e2fff5d629be">ading</a> around the game, I came across a quote about Walter Benjamin: <em>For Benjamin, history is radically fragmented; the task of the angel of history is to establish a redemptive relation to the fragments.</em> The author of the blog post suggests: <em>There is redemption in detective work, too. </em>While the labour of assessing which input is misleading and which is meaningful must be undertaken independently, it’s only possible if the detective manages to overcome political biases, hear each character out, and consider all the fragments. As <a href="https://www.poetryfoundation.org/poems/90805/there-it-is" data-type="URL" data-id="https://www.poetryfoundation.org/poems/90805/there-it-is">Jayne Cortez wrote</a>, <em>they don’t care / if you’re an individualist / a leftist a rightist / a shithead or a snake</em>. They’ll try to make this relational potential impossible until you</p>
+
+<p><em>… disappear into your own rage<br>into your own insanity<br>into your own poverty<br>into a word a phrase a slogan a cartoon<br>and then ashes</em></p>
+
+<p>Hey, you should really work out what you need, and tell me about it. I’m demanding this with the urgency of solving a murder. There’s a lot at stake, let’s talk things through. And while we do, let’s keep in mind that we may need to be individually vulnerable in order to be courageously among, as <a href="https://www.poetryfoundation.org/poetrymagazine/poems/146705/a-year-dot">dg nanouk okpik writes</a>:</p>
+
+<p><em>To learn you must be open, diligent, and willing to be an individual.<br>11,000 murres with webbed feet land also without any fear of predators.</em></p>
+
+<p>Hey you, I’m signing off for now. In Scary World Theory, scary is the labour of consideration, of looking head-on. If you<br>discover that this theory is not part of what you need, then here are some words you can forget about. I hope that’s reassuring. </p>
+
+<p><strong><span style="text-decoration: underline">Mentioned and recommended:</span></strong><br>– <a href="https://blackspringpressgroup.com/products/valid-virtual-vegetable-reality-by-rebecca-close" data-type="URL" data-id="https://blackspringpressgroup.com/products/valid-virtual-vegetable-reality-by-rebecca-close">valid virtual vegetable reality</a> by Rebecca Close (poetry collection) <br>– Amin Maalouf quote from <a href="https://www.penguin.co.uk/books/300/300186/afropean/9780141987286.html" data-type="URL" data-id="https://www.penguin.co.uk/books/300/300186/afropean/9780141987286.html">Afropean: Notes from a Black Europe</a> by Johny Pitts (non-fiction)<br>– <a href="https://www.alicejamesbooks.org/bookstore/inheritance" data-type="URL" data-id="https://www.alicejamesbooks.org/bookstore/inheritance">Inheritance by Taylor Johnson</a>mina  (poetry collection)<br>– poetry of <a href="https://www.poetryfoundation.org/poets/mina-loy" data-type="URL" data-id="https://www.poetryfoundation.org/poets/mina-loy">Mina Loy</a><br>– poetry of <a href="https://www.poetryfoundation.org/poets/jayne-cortez" data-type="URL" data-id="https://www.poetryfoundation.org/poets/jayne-cortez">Jayne Cortez</a><br>– <a href="https://uapress.arizona.edu/book/corpse-whale" data-type="URL" data-id="https://uapress.arizona.edu/book/corpse-whale">Corpse Whale by dg nanouk okpik</a> (poetry collection)</p>
+<br><br>
+   </div>
+</div>
+
+
+  </section>
+</div>
+
+</body>
+</html>
