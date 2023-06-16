@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist, blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: white;
+}
+
+
+body {
+   background-color: #181318;
+   font-family: Euripides;
+   color: white;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+   color: #d0c054;
+}
+
+p1 a:hover {
+   color: #181318;
+   background-color: #d0c054;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+.container {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background: white;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+
+post-heading {
+    padding-bottom: 30px;
+}
+
+post-meta {
+   vertical-align: baseline;
+}
+
+foot-note {
+}
+
+
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: -30px;
+   float: right;
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 60%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 30%;
+}
+
+.columns.content {
+   padding-bottom: 30px;
+   margin-right: 40px;
+   display: inline-block;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+p {
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid black;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align:left;
+   text-align: left;
+}
+
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+
+}
+
+@media only screen and (min-width:640px) {
+
+p {
+   line-height: 18px;
+   font-size: 18px;
+   font-family: Rasa-Regular;
+}
+
+.hamburger {
+   display: none;
+}
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+  border-bottom: 2px solid black;
+  border-color: #d0c054;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+section {
+
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+
+}
+
+h3 {
+   line-height: 0.8vw;
+   font-weight: 900;
+   font-size: 1.2em;
+}
+
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <script src="js/accordion.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="index.html"><img src="img/ila-colley-logo-white.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a class="active" href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+
+
+<div class="post-heading">
+   <h2>Alter</h2>
+      <div class="post-meta">
+         <p1>April 2022, originally for <a href="https://www.fromlocaltoglobal.co.uk/ila-colley">Scarborough Museums</a></p1>
+      </div>
+</div>
+
+<div class="section-container">
+   <div class="columns content">
+<p><b>/ matter</b><br>
+I am untangling and rearranging necklaces in the counter cabinet at the shop. Last night I read that you can purchase jewellery made of ‘ethical gold’ mined from specific sites in the DRC, a revealing admission that much of the region’s gold is procured unethically. When I get home I open my notebook: shapes and colours start to have an overwhelming amount of ethical dimensions. We apply a hierarchy in order to cope. But when we are no longer dealing with hypothetical contact, when we actually show up in the space of the gallery, we are intercepted by matter that has the power to challenge the existing calibration of these hierarchies and the way in which we supply them with energy.
+<br><br>
+How audiences invest their time and money could be a good place for critical introspection regarding the Harrison collection and the objects of colonial and neocolonial activity. The site of the exhibition, still rich with domestic indicators, emulates a landscape of household tools, embellishments, tokens, offering associations to be made with personal collections at home, and the past-times and patronage they represent.
+<br><br>
+It’s disruptive to bring not only the finished object (the pruned and dusted taxidermy or the supported folio spine), but the dirt of the work-in-progress into this well-kept house for artefact. It frees us from the prescriptive posturing of Harrison’s Brandesburton Hall, towards considering matter without a fixed end goal or ambition. Matter that has been left deliberately unattended, out of place. Gives the matter relief from over-interference, and, being (somewhat) mess, considers the burden of those usually responsible for cleaning it up.
+<br><br>
+<i>The other is assigned that place outside as foreign material, but this displacement is procured in order to fortify that which is the same, through regimes of slavery, indentured labour, a silent infrastructure of exhausted, racialised bodies cleaning, ever cleaning, forever cleaning.
+</i>- Hélène Frichot, Dirty Theory: Troubling Architecture (p143)
+<br><br>
+I’m thinking now about the work of artist Otobong Nkanga as she cuts through the buzzy mesh of information and processes of production by using actions that expose us to the transformative power of natural resources (Whitehead 2018). She has a way of letting us get to the heart of the matter without being led step-by-step, a way of demonstrating distance and causality between material things without relying on category and cartography, rather a sensory mode of scrutiny.
+In all this I realise I’ve forgotten the land itself, or made it subordinate to degrees of human suffering. I’m suddenly taken by a deficit of intimacy with the materials that are giving weight to these sketches. So I pay more attention to the matter I am working with, the grain, the way it bends or cracks, how it sounds against skin or the surface of an instrument. From here it feels a history of matter that is not yet necessary; I can nosy and digest history once these elemental meanings have taken their first suggestive steps.
+<br><br>
+This elemental responsiveness reminds me to loosen assertions of neo-colonial perpetrators vs allies vs victims. Accusations of causality, complicity and sponsorship do not need to be written into matter whose experience has been embodied. In the world that Kimmerer says swells around us when we listen, I’m hearing an agency of things – matter alive or dead does what it does with and without us – what we hear are these motivations. For a while, the world of ideas is quiet.
+And then I am back at the shop, counting 2 pence pieces out for the morning float, dull copper grinding across the counter. Most of the day it’s keep the change, put it in the pot, in it drops. Many a pressed metal pocket detox.
+<br><br>
+I’m thinking about charity and what we know about where that money goes, the degree of uncertainty we accept. About how much those who should know, know. How this is about trust. About the amount of mistrust we often harbour in other areas of life that is suddenly absent when charity presents itself as convenient or congratulated.
+<br><br>
+I’m also thinking about measures of preciousness, how it used to be fixed in properties, then processes, in things we could – or shouldn’t – touch. These pennies ringing against the glass are vestiges of a bygone standard. Now value ventures into an algorithmic ether, complicated and contingent on forces that are harder to visualise than materials being put to use. But there is still something in money, cash money, that viscerally connects in our mind to the body toiling. Some dense token of our energy fit for exchange. A transaction made by the passing of cash is an act that evidences status and intention touched by several parties in real time.
+<br><br>
+<b>/ body matters</b><br>
+There is a psychological hurdle from one end of this work to the other – one side dealing in understandings of material and corporeal forms of exploitation in abstract, on a huge scale – the other with handling and crafting something from these influences in a room populated by one body.
+It is difficult to unknow my art objects as money. I put my hands across, I put my hands into the work and in it I am making value. I am making money. I am making money in the matter and I am making money from the matter. Still, I am trying to know that the matter is not some neutral resource for my investment. It relates, through kinship or origin, to frontiers of segregation between the bodies that toil and the bodies that architect the frontiers between toil and rest. It is not the point of the art to communicate that I know this, or worse, accept it. I hope the art won’t be about knowing but about questioning what we can bear to accept.
+<br><br>
+<i>“White Geology continues to propagate imaginaries that organize Blackness as a stratum or seismic barrier to the costs of extraction, across the coal face, the alluvial planes, and the sugarcane fields, and on the slave block, into the black communities that buffer the petrochemical industries and hurricanes to the indigenous reservations that soak up the waste of industrialization and the sociosexual effects of extraction cultures.”
+</i>- Kathryn Yusoff, A Billion Black Anthropocenes or None (p8)
+<br><br>
+While I’m making, I hold some dynamics of enclosure in mind, they are: control, possess, bestow. The control of land and people, possession of resources and pretence of guardianship that underpins colonial projects. Harrison as he directs and controls the movements of his prey during the hunt, lays out traps for them while he rests. Harrison as he organises their dismemberment and preservation, their mounting above a fireplace as prized possessions. Harrison and his idea of charity, gift-giving in exchange for extracting photographs, ‘civilising’ the BaMbuti people during their stay, exhibiting others’ culture.
+<br><br>
+As I’m using my own body to form new objects, I’m considering these dynamics of control, possess, bestow within myself. Thinking of the gold jewellery again, the unfree labour that frees it from the earth, the excess wealth that possesses it once again. The body that toils and the body that craves love, comfort and beauty are the same. But between coloniser and post-colonial subjects, between genders, class, health and ability, bodies are unequally engaged in labour and consumption. Bodies have different understandings of what they can need or desire based on experiences of previous access. Depending on what we can access to eat or lace our necks with, leaves us with different traces on our skin, different degrees of nourishment or poison beneath it.
+<br><br>
+I read an article today in which a famous radio DJ describes the results of a DNA test that would advise her on what to avoid in order to prolong her life. First I think, what a ridiculous form of health-anxiety capitalism that really is a luxury for the few able to make such controlled decisions about lifestyle. But the point of anxiety is interesting in its vector of care, what could make us expand this urgent caring vigilance to bodies that we don’t immediately relate to, but are related to us through systems of production and communication that we engage in at some point? A responsibility felt, exerted like care, rather than a principle.
+<br><br>
+Davis writes of Nkanga’s In Pursuit of Bling project, “there is a refusal to simply condemn these acts [of possession], and instead the work figures desire as central. The seduction of colour, of shine, of bling, of telecommunications technologies all operate as fundamental to these images of devastation” (2019).  It maybe follows that especially those of us who have felt victim to low social status would subconsciously strive to build a status-related self-esteem, engaging both desire to possess and desire to be seen as generous. Maybe recognising this helps us to accept that these desires are being controlled from outside our own bodies.
+<br><br>
+<b>/ matter of fact</b><br>
+October 2015 _ Sirius Minerals is given permission to develop a polyhalite mine under the North York Moors National Park. In 2021 the mine employed over 1000 people, jobs that are mostly taken up by local people. The creation of jobs was a key point of persuasion in the planning permission process.<br>
+March 2020 _ Suffering delays in construction, Sirius Minerals and the mine project is cheaply acquired by Anglo American.<br>
+February 2021 _ After a UN human rights expert advises the closure of the Cerrejón mine in Colombia over environmental and human rights concerns, Anglo American file to sue the Colombian government for limiting its expansion. This is one of many examples of fossil fuel corporations suing governments around the world for actions that will affect their profits through the investor-state dispute settlement (ISDS) system, otherwise known as corporate courts, an instrument of international law that has been criticised for its notable functional failures, threatening democracy and preventing real action against fossil fuel industries.
+<br>
+Ongoing _ Sirius Minerals and subsequently Anglo American sponsor various environmental, leisure and culture projects in the local area in order to combat the adverse affect of the Woodsmith mine on local tourism. This sponsorship helps to justify and cement their operations in the area.<br>
+May 2021 _ Protestors from various groups occupy the tracks leading into the Cerrejón mine. One protestor makes this statement:
+<br><br>
+“This coal is drenched in blood. We have lost everything. We invite people in Europe to look towards Colombia, and to see that there is a community suffering to meet their basic needs because of corporations from your countries like BHP, Glencore and Anglo” - Samuel Arrogoces, Ancestral Black Community Council of Tabaco (ISDS Files 2022).
+<br><br>
+April 2022 _ It is reported that Anglo American will seek to automate a large amount of key operations at the Woodsmith mine in Yorkshire. It is unclear how many jobs will be affected.<br>
+Spring 2022 _ After decades of campaigning from environmental groups, the National Portrait Gallery ends its British Petroleum sponsorship after 30 years of The BP Portrait Award, one of the most prestigious prizes in contemporary art.
+<br><br>
+<b>/ moving matters</b><br>
+It’s summer and we go to the beach. Next to the pier is a plastic roll-a-coin donation box for the RNLI. I remember enjoying these as a kid, the way the penny fit perfectly in the slot and, when released, spun unaided into the helter-skelter vortex below. As an introduction to charity, maybe I came to expect some form of entertainment in return, I could put my hands against the perspex and watch the trick. And now it reminds me of another function of enclosure, which is to make theatrical, to close off and area is to observe it from afar, to create an audience and a spectacle.
+In projects I’ve done before I used to make final drawings that ended up having this effect. They would compile lots of aspects of the investigation into one composition in order to illustrate the connections I had found between them. These mapping drawings kinda became spectacle, complicated and resolute, having enclosed the information as untouchable, divorcing the author and audience through layers of information. This wasn’t the intention, just how I come to look at it right now.
+<br><br>
+The sculptural work I’ve been doing for this is a deviation. Though I’ve been reading a lot about specific injustices or points of collective energy, I have felt making them that I have less to point out specifically in the ideas around them, and more I want to evoke generally, in an open-ended way.
+<br><br>
+However it’s aesthetically managed, the mode of mapping now has imperial associations in my mind. Davis writes of the cycle of mineral extraction, its combination to produce technological devices, and then the utilisation of these by multinational corporations to map and quantify land for more military, surveillance and further extractive purposes, “Cobalt, in other words, produces the means to extract more cobalt” (2019).
+<br><br>
+An admission: I buy pigment to use in my casting. I read the label, it has been mined in Bulgaria. Later somebody reminds me that a similar pigment is mined and sold in a town not far away. I am periodically reminded to balance theory with praxis, that the most direct route to what I must know is efficient but blinkered. That exchanges of words, things, touches often hold more meaningful and transformative ways to knowledge than anything I can anticipate finding in a literature search.
+<br><br>
+An affirmation: the image of getting up from the dust, sweeping, beating, mopping, wiping. That I can put away the project when it becomes a burden. That this is a privilege but to accept this, exercise it and attend to my own health. To sit on the doorstep watching the colours of summer develop as I wipe the grey dust from my trainers until I can no longer see where it goes. That I do not have to see it constantly to know it’s there.
+<br><br>
+What I like about the blocks I have been carving into is precisely what I disliked about them initially. Their brittleness, igneous, almost aerated like pumice, the way they were coming apart in unintended ways.
+<br><br>
+<i> In chasing dirt, in papering, decorating, tidying we are not governed by anxiety to escape disease, but are positively re-ordering our environment, making it conform to an idea.
+</i>- Mary Douglas, Purity and Danger: An Analysis of Concepts of Pollution and Taboo (p2)
+<br><br>
+Though I’ve emptied my ten square metres of the dirt of making, I feel assured that my blocks, temporarily stowed away under a table, endure in their dirt-making potential, in their non-conformance.
+<br><br>
+I’m grateful to have begun learning and unlearning many things over the course of this project, to be broadening my view of colonial legacies and the complex task of reckoning with their persistence, as well as recalibrating my own practice. Thanks to Dorcas, Gifty, Yasmin, Jim, John and Martha for kindly sharing your interest and knowledge.
+<br><br>
+I think about what’s next for the work. Unpacking the blocks from under the table, wrapping them and placing them in cardboard boxes. I consider the possibility that I will be taking the perilous car journey over Sutton Bank towards Scarborough that I recalled at the start of these blogs, this time with a cargo of masonry-units-cum-artwork. And it seems comical. To have added load to the gravitational force that I feared so much. How in the past I had sought trust in matter-of-fact physics, the friction of tyres on the road, the power of the engine – how I might now try something more like faith –  a state in which we take the risk of reconsideration without always a fear of falling.
+<br><br>
+
+<strong>Bibliography<br></strong>Ashcroft, Jamie. 2022. ‘Anglo-American Eyes Automated Future at Ex-Sirius Minerals Mine in Yorkshire’. 2022. <em>Proactiveinvestors UK</em> online. 12th April 2022. Accessed 17th July 2022. <a href="https://www.proactiveinvestors.co.uk/companies/news/979533/anglo-american-eyes-automated-future-at-ex-sirius-minerals-mine-in-yorkshire-979533.html">https://www.proactiveinvestors.co.uk/companies/news/979533/anglo-american-eyes-automated-future-at-ex-sirius-minerals-mine-in-yorkshire-979533.html</a>.
+<br><br>
+Davis, Heather. 2019. ‘Blue, Bling: On Extractivism.’<em>Afterall Journal 48</em> online. 1st July 2019. Accessed 17 July 2022. <a href="https://www.afterall.org/article/blue-bling-on-extractivism">https://www.afterall.org/article/blue-bling-on-extractivism</a>.
+<br><br>
+Douglas, Mary. 1966. <em>Purity and danger; an analysis of concepts of pollution and taboo</em>. New York: Praeger
+Florence Arts Centre. <a href="https://www.florenceartscentre.com/">https://www.florenceartscentre.com/</a>
+<br><br>
+ISDS Files. 2022. “Investigating the impact of corporate courts on the ground: ANGLOAMERICAN v COLOMBIA; GLENCORE v COLOMBIA.” War on Want online, <a href="https://waronwant.org/resources/isds-files-angloamerican-vs-colombia-glencore-vs-colombia">https://waronwant.org/resources/isds-files-angloamerican-vs-colombia-glencore-vs-colombia</a>
+<br><br>
+Macdonald, Corinne. 2021. ‘Anglo American’s Woodsmith Mine Has Created Thousands of Jobs, and Most Have Been Filled by Locals.’ <em>The Scarborough News</em> online, 8th July 2021. Accessed 17 July 2022. <a href="https://www.thescarboroughnews.co.uk/business/woodsmith-mine-creates-hundreds-of-jobs-for-local-residents-3300787">https://www.thescarboroughnews.co.uk/business/woodsmith-mine-crea
+tes-hundreds-of-jobs-for-local-residents-3300787</a>
+<br><br>
+Minting, Stuart. 2022. ‘Former Whitby Mine Boss Looks to Open Leading Eco Attraction in Ryedale’ <em>The Scarborough News </em>online, 25th January 2022. Accessed 17 July 2022. <a href="https://www.thescarboroughnews.co.uk/news/politics/council/entrepreneur-unveils-plans-for-leading-eco-attraction-distillery-in-ryedale-3540487">https://www.thescarboroughnews.co.uk/news/politics/council/entrepreneur-unveils-plans-for-leading-eco-attraction-distillery-in-ryedale-3540487</a>.
+<br><br>
+Minting, Stuart. 2022. ‘York Moors National Park benefiting from mine firm funding.’ <em>The Northern Echo</em> online, 22nd June 2022. Accessed 17 July 2022. <a href="https://www.thenorthernecho.co.uk/news/20225269.york-moors-national-park-benefiting-mine-firm-funding/">https://www.thenorthernecho.co.uk/news/20225269.york-moors-national-park-benefiting-mine-firm-funding/</a>
+<br><br>
+Unknown. 2022. ‘National Portrait Gallery and BP Jointly End Awards Partnership.’ <em>Museums + Heritage Advisor</em> online. 22 February 2022. Accessed 17th July 2022. <a href="https://advisor.museumsandheritage.com/news/national-portrait-gallery-bp-jointly-end-awards-partnership">https://advisor.museumsandheritage.com/news/national-portrait-gallery-bp-jointly-end-awards-partnership</a>
+<br><br>
+Unknown. 2021. ‘News from Cerrejón: Blockades and Lawsuits.’ <em>London Mining Network</em> online, 21st June 2021. <a href="https://londonminingnetwork.org/2021/06/news-cerrejon/">https://londonminingnetwork.org/2021/06/news-cerrejon/</a>.
+<br><br>
+Whitehead, Anna Martine. 2018 ‘Otobong Nkanga: To Dig a Hole That Collapses Again’ <em>Frieze</em> online. 26th March 2018. Accessed 18 April 2022. <a href="https://www.frieze.com/article/otobong-nkanga-dig-hole-collapses-again">https://www.frieze.com/article/otobong-nkanga-dig-hole-collapses-again</a>.
+<br><br>
+Yusoff, Kathryn. 2018. <em>A billion black Anthropocenes or none</em>. Minneapolis: University of Minnesota Press.
+</p>
+<br><br>
+   </div>
+</div>
+
+
+
+
+  </section>
+</div>
+
+</body>
+</html>

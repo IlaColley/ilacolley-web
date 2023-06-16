@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist, blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: white;
+}
+
+
+body {
+   background-color: #181318;
+   font-family: Euripides;
+   color: white;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+   color: #d0c054;
+}
+
+p1 a:hover {
+   color: #181318;
+   background-color: #d0c054;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+.container {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background: white;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+
+post-heading {
+    padding-bottom: 30px;
+}
+
+post-meta {
+   vertical-align: baseline;
+}
+
+foot-note {
+}
+
+
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: -30px;
+   float: right;
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 60%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 30%;
+}
+
+.columns.content {
+   padding-bottom: 30px;
+   margin-right: 40px;
+   display: inline-block;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+p {
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid black;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align:left;
+   text-align: left;
+}
+
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+
+}
+
+@media only screen and (min-width:640px) {
+
+p {
+   line-height: 18px;
+   font-size: 18px;
+   font-family: Rasa-Regular;
+}
+
+.hamburger {
+   display: none;
+}
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+  border-bottom: 2px solid black;
+  border-color: #d0c054;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+section {
+
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+
+}
+
+h3 {
+   line-height: 0.8vw;
+   font-weight: 900;
+   font-size: 1.2em;
+}
+
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <script src="js/accordion.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="index.html"><img src="img/ila-colley-logo-white.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a class="active" href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+
+<div class="post-heading">
+   <h2>World-building</h2>
+      <div class="post-meta">
+         <p1>May 2021, originally on <a href="https://poetrybusiness.co.uk/2021/05/04/may-digital-poet-in-residence-ila-colley/">The Poetry Business</a></p1>
+      </div>
+</div>
+
+<div class="section-container">
+   <div class="columns content">
+<p>Hey you, have you made a writing plan for your universe? Sorry, I mean our universe. Which words are you using? Have you invented new rules for how they mean each other? Is there something heavy and hungry at its centre? Is there something pink and blue at the edge? Does it fit on feint-ruled paper, or something less partisan? Does it have edges – or only folds? And how many folds below does it go? Does it look like anything I can hold in my head?</p>
+
+<p><em>magician, and oracle (everything is true<br>and is valid) and the “don’t move now,<br>hold your breath . . . now breathe: click!”</em></p>
+
+<p><em>You can make yourself a world with your own nitrogen<br>and a touch of oxygen. The trick is the flash, lightning.</em></p>
+
+<p>So goes the conjuring in Marigloria Palma’s poem <em><a href="http://smallaxe.net/sxsalon/poetry-prose/poems-marigloria-palma">Paradox</a></em>, translated from Puerto Rican Spanish by Carina del Valle Schorske. All the talk about out-of-this-world, out of this shared world, has got me wondering about the other ones. The kind built in the imaginary. The term ‘world-building’ was originally applied to theoretical physics but is now associated with the construction of fictional contexts for role-playing-games, comics and novels, that can include invented histories, ecologies, customs and languages that combine as a convincing realm.</p>
+
+<p>In poetry we can be simultaneously out-of-this-world and entirely terrestrial, because we become intimate. Intimacy is the language of both alienation and rootedness, an expression of the strangeness where self meets other. Speculation is linked to intimacy because it is revealing, revealing about how we perceive and project ahead. I like to think about world-building when I read poetry, whether it’s ‘confessional’ or ‘modernist’ or ‘martian’. The small communication of a poem contains a world made of speculation, engendering the bits it needs for us to navigate what it has to say.</p>
+
+<p>Latour’s engendering is Palma’s <em>flash, lightning</em>, the energy that makes those elements react. And that’s the trick[y] bit, the terrestrial unearthing its world, following soft strings to where the hardware lives, all that anatomy, <em>agents that have contradictory interests, and all of which possess other bodies of positive knowledge. </em>On the world-building of coming down-to-earth, Latour writes, <em>Targeting emancipation through weightlessness does not require the same virtues as targeting emancipation through a process of plowing, a way to dig in.</em></p>
+
+<p>But it can be a question of access rather than virtue. Sometimes it seems like we have little affect on this world, let alone the power to build one. Sometimes the earth is too hard to dig in, or too silty, the work is too long or too hard, or somebody has given us the wrong tools, or no tools at all. And what then, if the toiling can’t be tolerated? Emancipation through weightlessness, if that’s emancipation at all, might seem like the only option. From <em><a href="https://www.thewhitereview.org/poetry/three-poems-19/" data-type="URL" data-id="https://www.thewhitereview.org/poetry/three-poems-19/">Fuck / Sunflowers</a></em> by Inua Ellams:</p>
+
+<p><em>Tyrone had planted saplings of his spirit / among the fields of barley / and seeds of himself among the sunflowers / and these kept calling for him when they returned to the city of bricks / clawing for their kin / Though he filled his room with them / he couldn’t match life out in the fields / the sky’s unencumbered gaze over their choir of black faces / their petals like flattened crowns or ruf led haloes / So Tyrone walked out his fourth floor window to join them / and Tyrone never came home</em></p>
+
+<p>So there’s Tyrone, getting among the sunflowers, reacting with them, fostering a kind of kinhood that is incompatible with his daily world defined by frontiers, encumbered divisions and altitudes. In the world where he stands, a new world can’t root. The attraction of the out-of-this-world isn’t so surprising if we have a little sympathy. Sharing and reacquainting ourselves with the terrain includes questioning the doctrines of our homes, cities, infrastructures and services; challenging the conventions of the old maps is breaking ground for world-building.</p>
+
+   </div>
+</div>
+
+<div class="section-container">
+   <div class="columns content">
+<p>Latour emphasises that non-humans should have equal importance in our network of concerns. What of car keys, algae, seeds, and weather systems, and all the entities that are often considered part of the scenery? We can think of engendering as world-building, but also the poetic project of world-building as engendering, as a discourse between all the things with a stake in our field of view. It’s time for a scene change, and first to make their case are the fourth-wall-breakers, the entities that regulate behaviours and set the tone of assumption. The kind that transmit the pale and remind us of the cancellation of the future.<em> In this lukewarm world, ambient discontent hides in plain view, a hazy malaise given of by the refrigerators, television sets and other consumer durables,</em> Mark Fisher <a href="https://repeaterbooks.com/product/the-weird-and-the-eerie/">writes</a>. <em>The vividness and plausibility of this miserable world — with misery itself contributing to the world’s plausibility — somehow becomes all the more intense when its status is downgraded to that of a constructed simulation. </em>When these entities are inflected with intentionality they become political, proving the limits of our actions (use, consumption, submission) versus the depths of our responsibilities (CFCs, e-waste, sweatshops).</p>
+
+<p>These regulating props are defied in <a href="https://www.poetryfoundation.org/poems/49303/howl" data-type="URL" data-id="https://www.poetryfoundation.org/poems/49303/howl"><em>Howl</em></a>, Allen Ginsberg’s epic that railed against conformist culture. This poem-world is a chaotic collage of scenes inspired by the 1950s American underbelly, stories of migrant workers, counter-cultural freaks, addicts and psychiatric patients:</p>
+
+<p><em>who cooked rotten animals lung heart feet tail borsht &amp; tortillas dreaming of the pure vegetable kingdom,<br>who plunged themselves under meat trucks looking for an egg,<br>who threw their watches of the roof to cast their ballot for Eternity outside of Time, &amp; alarm clocks fell on their heads every day for the next decade</em></p>
+
+<p>Here is a network of objects and objectives whose banality is imbued with desperation and sanctity. A historical materialist world-building exercise in which the society and its critique is communicated through material relations of struggle and subversion. The more personal <em><a href="https://www.poetryfoundation.org/poems/49305/america-56d22b41f119f">America</a></em> <em>(it occurs to me that I am America</em>), uses asyndeton to casually question a state capitalist economy sustained by inequality:</p>
+
+<p><em>My national resources consist of two joints of marijuana millions of genitals an unpublishable private literature that jetplanes 1400 miles an hour and twentyfive-thousand mental institutions.<br>I say nothing about my prisons nor the millions of underprivileged who live in my flowerpots under the light of five hundred suns.</em></p>
+
+<p>But whereas Marx’s revolution was the proletariat seizing the means of production, Latour implies the revolutionary shift must now break down the precedence of production, transform the subsistive base into negotiative rather than productive forces. Which means re-building a world of what we each need, mapped out and compared. Ginsberg, or America, implicate themselves in this poem. Look inside <em>Disco Elysium</em>’s Thought Cabinet and you’ll find the ‘Rigorous Self Critique’ thought process that equips the cop protagonist with an ability to recognise and learn from his failings. Sure, we might have to endure -1 Authority for a while, but Latour demands we all reflect and re-evaluate whether what we need exists at the end of a global supply chain, whose abuses we have little control over. Rethinking air miles and the prison industrial complex, but also their concrete and aluminium ingredients, how they’re mined, mixed, repaired and disposed of, where and by who, and what alternative realities are being silenced through this specific materialisation. This investigative work is not of the earth right under us, but part of coming down-to-earth; it will be difficult and it will be defended.</p>
+
+<p>In the face of this, must we really be grounded in our world-building, or can we be cunning? Hey you, I came to the end of the plot and found I had been readily duped by the batty old woman, her ailments and astrological calculations. That snowy world built of dubious evidence: footprints, beetles, ghosts and animal bones. I should have known what she was up to with that title from Blake’s Proverbs of Hell: I<em>n seed time learn, in harvest teach, in winter enjoy. / Drive your cart and your plough over the bones of the dead.</em> Her insistence on astrological reasoning lays the parameters for her world, it’s of the extraterrestrially affective, but transmits affectivity – empathy and attribution both – down to human and non-human relations. I should have known how far she’d go. One evening we came across the prints of a strange creature scattered along the ridge. Oh well, they were the prints of a footballer. But still, said S, the prints of a strange creature. If we build our worlds with cunning we’re a step ahead of groundedness, having done the unearthing work and now laying new furrows. But with every step of cunning we’re a process away from the earth. We’ve processed it, we’re no longer listening.</p>
+
+<p><strong><span style="text-decoration: underline">Mentioned and recommended:</span></strong><br>– <a href="http://smallaxe.net/sxsalon/poetry-prose/poems-marigloria-palma">poetry by Marigloria Palma transl. Carina del Valle Schorske</a><br>–<a href="https://www.poetrybooks.co.uk/products/the-actual-inua-ellams"> The Actual by Inua Ellams</a> (poetry collection)<br>– <a href="https://freedompress.org.uk/product/the-weird-and-the-eerie-mark-fisher/">The Weird and the Eerie by Mark Fisher</a> (cult/ural theory)<br>–<a href="https://www.penguinrandomhouse.com/books/603656/drive-your-plow-over-the-bones-of-the-dead-by-olga-tokarczuk-translated-by-antonia-lloyd-jones/"> Drive Your Plow Over the Bones of the Dead</a> by Olga Tokarczuk (novel)</p>
+<br><br>
+   </div>
+
+   <div class="columns image">
+<img src="img/pb-blog-4.png" style="height: 300px">
+   </div>
+</div>
+
+
+
+
+  </section>
+</div>
+
+</body>
+</html>

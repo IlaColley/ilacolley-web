@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist, blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: white;
+}
+
+
+body {
+   background-color: #181318;
+   font-family: Euripides;
+   color: white;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+   color: #d0c054;
+}
+
+p1 a:hover {
+   color: #181318;
+   background-color: #d0c054;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+.container {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background: white;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+
+post-heading {
+    padding-bottom: 30px;
+}
+
+post-meta {
+   vertical-align: baseline;
+}
+
+foot-note {
+}
+
+
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: -30px;
+   float: right;
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 60%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 30%;
+}
+
+.columns.content {
+   padding-bottom: 30px;
+   margin-right: 40px;
+   display: inline-block;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+p {
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid black;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align:left;
+   text-align: left;
+}
+
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+
+}
+
+@media only screen and (min-width:640px) {
+
+p {
+   line-height: 18px;
+   font-size: 18px;
+   font-family: Rasa-Regular;
+}
+
+.hamburger {
+   display: none;
+}
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+  border-bottom: 2px solid black;
+  border-color: #d0c054;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+section {
+
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+
+}
+
+h3 {
+   line-height: 0.8vw;
+   font-weight: 900;
+   font-size: 1.2em;
+}
+
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <script src="js/accordion.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="index.html"><img src="img/ila-colley-logo-white.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a class="active" href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+
+
+
+<div class="post-heading">
+   <h2>Un-Earthing</h2>
+      <div class="post-meta">
+         <p1>May 2021, originally on <a href="https://poetrybusiness.co.uk/2021/05/04/may-digital-poet-in-residence-ila-colley/">The Poetry Business</a></p1>
+      </div>
+</div>
+
+
+<div class="section-container">
+   <div class="columns content">
+<p>Hey you, I’ve been out getting terrestrial. It’s harder than I imagined and where I’m dwelling doesn’t always make sense. I’m not sure what I need or how to recognise it. My map is becoming a big inky scribble. I made this map into a mission, and maybe that’s the issue, the inescapable logic of productivity. Latour thought about this already, he suggests something he calls</p>
+
+<p>[a]<em> system of engendering </em>[that]<em> brings into confrontation agents, actors, animate beings that all have distinct capacities for reacting. It does not proceed from the same conception of materiality as the system of production, it does not have the same epistemology, and it does not lead to the same form of politics. It is not interested in producing goods, for humans, on the basis of resources, but in engendering terrestrials – not just humans, but all terrestrials.</em></p>
+
+<p>Forming these new relations is how we come down-to-earth, <em>based on the idea of cultivating attachments, operations that are all the more difficult because animate beings are not limited by frontiers and are constantly overlapping, embedding themselves within one another.</em></p>
+
+<p>The dominion of production that humans impose on other terrestrials isn’t just a feeling, but I feel it in Blake’s <em><a href="https://en.wikipedia.org/wiki/The_Garden_of_Love_(poem)" data-type="URL" data-id="https://en.wikipedia.org/wiki/The_Garden_of_Love_(poem)">The Garden of Love</a></em>. The poem grieves exploration sans ulterior motive, grieves child-like unstructured interaction with the ground under us. Instead Blake describes the intrusion of organised religion, its strict moral codes, its artificial iconography making lines, forms, shadows, obscuring curiosity.</p>
+
+<p><em>I went to the Garden of Love,<br>And saw what I never had seen:<br>A Chapel was built in the midst,<br>Where I used to play on the green.</em></p>
+
+<p>Now I’m reading Blake and being reminded of the origins of capitalism, the enclosure of the commons, and the course that lands us here in the anthropocene. Unfreedom is rarely as obvious as Blake’s symbolism, especially when it is the by-product of something deemed necessary. <em>The fish survive all that radiation, whatever is a go-pass beyond poison, </em>Cynthia Arrieu-King writes in the first line of her poem <em><a href="https://bombmagazine.org/articles/cynthia-arrieu-king/">Something Beyond Interpretation</a></em>. She considers the fatigue of a scientist who spends long days telling fifth graders about the ‘new normal’ climate and the events that lead to the inhospitality of the Earth:</p>
+
+<p><em>He had given the tour and wanted something beyond interpretation.<br>What would it mean to imagine just the grass,<br>the mountains, and the scrolling jellyfish?<br>O my hatred of the organized.</em></p>
+
+<p>What do you imagine when you imagine something that is beyond interpretation? Something that just is? Without being received or evaluated? By any observer, or only those with a certain cunning? The scientist, imagining <em>just the grass</em>, seems to long for the survival of innocents, a dream that eases the guilt for those on the team of the culpable. To blame for first creating the truth, and then how it’s told.</p>
+
+<p>The truth I’m making is very small, I think, it hardly touches anyone. K is taking a course on carbon literacy, she had to do one of those ecological footprint calculations and didn’t tell me the outcome, just that it was bad. She took me to college once when I was eight and we did one together on an old CRT computer running XP, the kind that shed soft fuzzy static in your palm when you woke it up. 1.7 Earths or something, nothing <em>insane</em>.</p>
+
+<p>Now the apparatus of implication has grown huge, still espousing a top-down rhetoric that places the burden of responsible consumption on the individual consumer; the recent consensus shift toward corporate accountability follows decades of gaslighting. While the rest of us attempt to process climate catastrophe, categorised by the APA into the directly affected (PTSD, MDD, survivor’s guilt etc), the secondarily affected (infrastructure and financial stress), and those in anticipation (despair, hopelessness), <em>it is as though,</em> Latour writes, <em>a significant segment of the ruling classes… </em>[had]<em> decided that it was pointless to act as though history were going to continue to move toward a common horizon, toward a world in which all humans could prosper equally.</em></p>
+</div>
+</div>
+
+
+<div class="section-container">
+   <div class="columns content">
+<p>Nevertheless convinced to some extent of our own tyranny, how can we immerse ourselves in a terrestrial kinhood? As humans, how can we see eye-to-eye with the terrestrials we’ve mistreated? Maybe before we can get down in the mud, discovering, maybe there’s first a process of unburdening. Of unearthing the hierarchical forms of organisation that are the origin and vector of tyranny, that perpetuate estrangement by being below or above. <em>like a debt that will never be paid</em>, in the words of Daniel Borzutzky, the subjugation of specific groups, and the involvement of all in the reproduction of this oppression, is a productive project for the powerful. Borzutzky’s writing resists poetic redemption, avoids interpretation, instead he recounts and makes heard. In <a href="https://lithub.com/shithole-song-1106/"><em>Shithole Song #1106</em></a> he writes,<br><em>we sing and we sing and there are cannibalized families in the shithole</em></p>
+
+<p><em>and the authoritative bodies dig and they say thank the lord we do not live in this shithole where<br>the babies cry for their cages where the mothers have numerical codes stitched into their skin<br>where the hole is overwhelmed by the shit and the shit is overwhelmed by the hole where the<br>hired help helps the hiring hands to rehumanize the exiled bodies whom they shovel into the<br>shittiest shit of the shithole</em></p>
+
+<p>At first I think: some of us have the privilege of coming down-to-earth while others have more immediate concerns like getting out of the hole. Then I think: we’re all shit shovelling somewhere on this slope, so maybe the point isn’t down-to-earth but back-to-earth or on-earth, which may not involve landing but helping to get all feet back on dry land, back into a Critical Zone here nature-as-process levels out the network onto a plane of fair negotiation.</p>
+
+<p>Still this is troubling, easy to fragment and reduce to gesture. On a field-trip with my MA programme at the end of 2019 we visited Calais, where the former ‘Jungle’ refugee camp has been turned into a nature reserve, its re-greening presented as a solution to post-clearance ground toxicity. This narrative obscures the more nefarious operations of criminalising any further settlements and the implication that the site’s history of border violence achieves some kind of erasure through a return to nature. Of course they want us to forget, and it’s handy that nature’s forensics aren’t always obvious.</p>
+
+<p><em><a href="https://feralatlas.supdigital.org/poster/chernobyl-is-going-global" data-type="URL" data-id="https://feralatlas.supdigital.org/poster/chernobyl-is-going-global">Chernobyl is on your breakfast table</a></em>, about as big as a berry. In her field research, professor Kate Brown investigated the recently industrialised Ukrainian berry-picking boomtowns, whose Caesium-137 rich produce has a larger share of the EU market since the doubling of the permissible level of radioactivity in food products. Only when it approaches our bodies do we consider the mutations affecting other living carriers. Nature is never singular, and fetishising its sprawling, onwards force neglects to consider what pain exists in this process, what potencies, what poisons endure, and in whose veins, which living thing, how many inherit it.</p>
+
+<p>I recently read that the ‘green buffer’ surrounding the Guantanamo Bay detention camp has naturally rewilded and in recent years there’s been increased interest in transforming this area (occasionally as a call to decommission the entire camp) into a protected research zone. In <a href="https://youtu.be/IPt0Ai1u2qk" data-type="URL" data-id="https://youtu.be/IPt0Ai1u2qk"><em>When I Heard the Calling of Birds</em>,</a> David Morley writes a response to the words of Guantanamo inmate Towfiq Bihani, who has been held without charge for over 18 years,</p>
+
+<p><em>When the oriole bowed his orange cowl from the watchtower,<br>I remembered and feared that day.</em></p>
+
+<p><em>When stygian owls plied their sorrow-flutes in reeds beyond the kill-zone,<br>I remembered and wept that day.</em></p>
+
+<p><em>When a mourning dove swayed on her roost of razor-wire above Camp Echo,<br>I buried my heart that day.</em></p>
+
+<p><br><strong><span style="text-decoration: underline">Mentioned and recommended:</span></strong><br>– Daniel Borzutzky in <a href="https://www.haymarketbooks.org/books/1458-the-breakbeat-poets-vol-4">The BreakBeat Poets, Vol. 4: LatiNext</a> (poetry anthology)<br>– poetry of <a href="https://www.poetryfoundation.org/poets/cynthia-arrieu-king">Cynthia Arrieu-King</a><br>– <a href="https://www.carcanet.co.uk/cgi-bin/indexer?product=9781784109905">FURY by David Morley</a> (poetry collection)<br></p>
+<br><br>
+   </div>
+
+   <div class="columns image">
+<img src="img/pb-blog-2.png" style="height: 300px">
+   </div>
+
+</div>
+
+
+  </section>
+</div>
+
+</body>
+</html>
