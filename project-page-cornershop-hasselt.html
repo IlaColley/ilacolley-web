@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, scenography, z33, market, cakes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: black;
+}
+
+body {
+   background-color: white;
+   font-family: Euripides;
+   color: black;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+}
+
+p1 a:hover {
+   color: white;
+   background-color: black;
+}
+
+
+p3 {
+   font-weight: 200;
+   font-stretch: 100;
+   margin: 0px 0px 0px 0px;
+   font-size: 14px;
+   line-height: 16px;
+   font-family: Rasa-Regular;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+h3 {
+  display: block;
+  font-size: 40px;
+  margin: 0px 0px 20px 0px;
+  text-transform: uppercase;
+  display: block;
+}
+
+h4 {
+  display: block;
+  font-size: 1.5vw;
+  line-height: 1.6vw;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background-color: black;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 30px;
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 47%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 47%;
+}
+.columns.image {
+   height:400px;
+   margin-right: 40px;
+}
+.columns.content {
+   padding-bottom: 30px;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+.quote {
+  padding: 90px 15px 90px 15px;
+}
+
+
+#cslider {
+   margin: 0 auto;
+}
+#cslider input[type=radio] {
+   display: none;
+}
+#cslider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+
+#slide9:checked ~ .slides .inner {
+   margin-left: 0;
+}
+#slide10:checked ~ .slides .inner {
+   margin-left: -100%;
+}
+#slide11:checked ~ .slides .inner {
+   margin-left: -200%;
+}
+#slide12:checked ~ .slides .inner {
+   margin-left: -300%;
+}
+
+
+#bslider {
+   margin: 0 auto;
+}
+#bslider input[type=radio] {
+   display: none;
+}
+#bslider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+
+#slide5:checked ~ .slides .inner {
+   margin-left: 0;
+}
+#slide6:checked ~ .slides .inner {
+   margin-left: -100%;
+}
+#slide7:checked ~ .slides .inner {
+   margin-left: -200%;
+}
+#slide8:checked ~ .slides .inner {
+   margin-left: -300%;
+}
+
+
+#slider {
+   margin: 0 auto;
+}
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+.slides {
+
+   position: relative;
+   z-index: 1;
+}
+.overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ .slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ .slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ .slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ .slides .inner {
+   margin-left: -300%;
+}
+.slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 300px;
+}
+.slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 400px;
+   color: #fff;
+}
+.controls {
+   margin: -75px 0 0 0;
+   width: 100%;
+   height: 50px;
+   z-index: 3;
+   position: relative;
+}
+.controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   opacity: .4;
+}
+.controls label:hover {
+   opacity: 1;
+}
+
+.bullets {
+   margin: 0 10px 0;
+   position: absolute;
+   z-index: 2;
+   text-align: center;
+}
+.bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 5px;
+}
+#slide1:checked ~ .bullets label:nth-child(1),
+#slide2:checked ~ .bullets label:nth-child(2),
+#slide3:checked ~ .bullets label:nth-child(3),
+#slide4:checked ~ .bullets label:nth-child(4) {
+   background: #444;
+}
+
+#slide5:checked ~ .bullets label:nth-child(1),
+#slide6:checked ~ .bullets label:nth-child(2),
+#slide7:checked ~ .bullets label:nth-child(3),
+#slide8:checked ~ .bullets label:nth-child(4) {
+   background: #444;
+}
+
+
+#slide9:checked ~ .bullets label:nth-child(1),
+#slide10:checked ~ .bullets label:nth-child(2),
+#slide11:checked ~ .bullets label:nth-child(3),
+#slide12:checked ~ .bullets label:nth-child(4) {
+   background: #444;
+}
+
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ .controls label:nth-child(2),
+   #slide2:checked ~ .controls label:nth-child(3),
+   #slide3:checked ~ .controls label:nth-child(4),
+   #slide4:checked ~ .controls label:nth-child(1),
+   #slide1:checked ~ .controls label:nth-last-child(2),
+   #slide2:checked ~ .controls label:nth-last-child(3),
+   #slide3:checked ~ .controls label:nth-last-child(4),
+   #slide4:checked ~ .controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   .slides {
+      max-width: calc(100%);
+      margin: 0 auto;
+   }
+   #slide5:checked ~ .controls label:nth-child(2),
+   #slide6:checked ~ .controls label:nth-child(3),
+   #slide7:checked ~ .controls label:nth-child(4),
+   #slide8:checked ~ .controls label:nth-child(1),
+   #slide5:checked ~ .controls label:nth-last-child(2),
+   #slide6:checked ~ .controls label:nth-last-child(3),
+   #slide7:checked ~ .controls label:nth-last-child(4),
+   #slide8:checked ~ .controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   .slides {
+      max-width: calc(100%);
+      margin: 0 auto;
+   }
+
+   #slide9:checked ~ .controls label:nth-child(2),
+   #slide10:checked ~ .controls label:nth-child(3),
+   #slide11:checked ~ .controls label:nth-child(4),
+   #slide12:checked ~ .controls label:nth-child(1),
+   #slide9:checked ~ .controls label:nth-last-child(2),
+   #slide10:checked ~ .controls label:nth-last-child(3),
+   #slide11:checked ~ .controls label:nth-last-child(4),
+   #slide12:checked ~ .controls label:nth-last-child(1) {
+      margin: 0;
+   }
+
+.slides .slide {
+   display: flex;
+   height: 300px;
+}
+}
+
+.gall-container {
+  max-width: 100%;
+  margin: 0 40px 30px 10px;
+  float: left;
+  padding: 10px 0 0 30px;
+
+}
+
+.stacked {
+  display: grid;
+}
+
+.stacked > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.product-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 23.3%));
+}
+
+
+.product-grid-2x2 {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 48%));
+}
+
+.card {
+  border: 0;
+}
+
+.card__img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+@media only screen and (max-width:639px) {
+
+
+.gall-container {
+  max-width: 100%;
+  padding: 20px 35px;
+  margin: 0 0px 0px 0px;
+}
+
+
+.product-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, max(48%));
+}
+
+.product-grid-2x2 {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, max(100%));
+}
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+
+.container {
+   width: 100%;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align: left;
+   text-align: left;
+}
+
+p1 {
+   line-height: 12px;
+   font-size: 14px;
+}
+
+p2 {
+   line-height: 12px;
+   font-size: 14px;
+   text-decoration: underline;
+}
+
+h4 {
+  display: block;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.rhs-nav-title {
+   margin-top: 20px;
+   margin-right: 10px;
+   margin-bottom: 20px;
+   text-align:right;
+   font-size: 4vw;
+}
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+   width: 100%;
+   height: 300px;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+.quote {
+  padding: 50px 10px 10px 10px;
+}
+
+
+}
+
+@media only screen and (min-width:640px) {
+
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   color: black;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+   border-color: #d0c054;
+   border-top: 0px;
+   border-left: 0px;
+   border-right: 0px;
+}
+
+section {
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+}
+
+.rhs-nav-title {
+   position: absolute;
+   top: 5%;
+   left: 80%;
+   text-align:right;
+   font-size: 2vw;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+  <script src="js/slideshow.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="website-homepage.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a class="active" href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/corner-daydreams-cover.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <h3>cornershop of daydreams</h3>
+      <p1 style="font-style:italic">Z33 House for Contemporary Art, Hasselt</p1>
+      <br>
+      <p1>2023</p1>
+      <br>
+      <br>
+      <p1>
+         The Cornershop of Daydreams acts as an agency that sets the scene for moments of collective dreaming. 
+It is a contextual vehicle to explore how daydreaming can disrupt the reproduction of rigidity 
+in daily life, and increase fantastical and speculative agencies. Through this fake agency we position ourselves 
+as scenographers of cumulative deviance.
+<br><br>
+This exhibition consisted of three rooms that showcased work produced during a residency with DesignRegio Kortrijk 
+and the city community. One room of new work translated a pop-up event originally hosted in the Monday market into 
+interactive exhibits. The initial event was produced in collaboration with
+ <a href=”https://www.destuyverij.be/”> De Stuyverij</a>, a community centre that fosters creative alliances.
+      </p1>
+   </div>
+</div>
+</div>
+
+
+
+<div class="section-container" style="padding-bottom: 30px">
+<div class="columns content">
+      <div class="content-container">
+         <p1 style="font-size: 14px; font-family: euripides;">
+            One cold morning at the Monday market in Kortrijk, you come across a stand for the Cornershop of Daydreams. 
+As you drink tea and chat, you notice that the platters of cake are mirrors of city you thought you knew. Somebody from the 
+agency hands you a flyer, which you use to collect crumbs or dab the corners of your mouth while you gaze at cream and fondant 
+and decode familiar facades amongst overzealous draftsmanship. 
+<br><br>
+You are conferring on the lost speculative planning proposals 
+for Kortrijk. You use the words <i>vergeet, omverwerping, middag, bekentenis.</i> The agency are taking notes, they are asking you:
+ Which utopian proposals did you never get to realise in your life? Do they haunt or direct your daydreams still? What are its 
+ingredients? What tools? What recipe for its construction?
+<br><br></p1><p1>
+We position ourselves as mediators of cumulative deviance. If daydreaming could be understood as an energy resource, 
+something that we are all generating in isolation, what would happen if we could collectivise this resource, make it public 
+and give it agency in the world? Could this potentiality become a critical mass, transformative, could it transgress the
+ conditions of everyday life as they are?
+         </p1>
+      </div>
+   </div>
+
+   <div class="columns image" style="background-image: url('img/corner-daydreams-1.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+</section>
+<div class="gall-container">
+   <div class="product-grid">
+
+<div class="card stacked">
+    <a href="img/corner-daydreams-2.jpg">
+          <img src="img/corner-daydreams-2.jpg" alt="cake with architecture icing in drawer" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/corner-daydreams-8.jpg">
+          <img src="img/corner-daydreams-8.jpg" alt="two hands pointing at recipe paper" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/corner-daydreams-5.jpg">
+          <img src="img/corner-daydreams-5.jpg" alt="market stall with poetic banner" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/corner-daydreams-6.jpg">
+          <img src="img/corner-daydreams-6.jpg" alt="cakes with architecture icing on red tablecloth" class="card__img">
+    </a>
+</div>
+</div>
+</div>
+
+<section>
+
+
+
+
+<div class="section-container" style="clear:both; padding-top: 30px">
+
+<div class="columns image">
+<div id="bslider">
+   <input type="radio" name="bslider" id="slide5" checked>
+   <input type="radio" name="bslider" id="slide6">
+   <input type="radio" name="bslider" id="slide7">
+   <input type="radio" name="bslider" id="slide8">
+   <div class="slides">
+      <div class="overflow">
+         <div class="inner">
+            <div class="slide" style="background-image: url('img/corner-daydreams-15.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/corner-daydreams-16.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/corner-daydreams-18.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/corner-daydreams-29.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="controls">
+      <label for="slide5" onclick="resetSlider()"></label>
+      <label for="slide6" onclick="resetSlider()"></label>
+      <label for="slide7" onclick="resetSlider()"></label>
+      <label for="slide8" onclick="resetSlider()"></label>
+   </div>
+   <div class="bullets">
+      <label for="slide5" onclick="resetSlider()"></label>
+      <label for="slide6" onclick="resetSlider()"></label>
+      <label for="slide7" onclick="resetSlider()"></label>
+      <label for="slide8" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote">
+      <h4>
+         <i>Haunted places are the only ones people can live in- … [they] do not speak any more than they see ... Only hints of what is known but unrevealed are passed on “just between you and me.”
+</i><br></h4>
+<h4 style="text-align: right; font-size: 1.2vw">- Michel de Certeau, The Practice of Everyday Life
+      </h4>
+      </div>
+   </div>
+</div>
+
+</div>
+
+
+<div class="section-container" style="clear:both; padding-top: 0px">
+
+<div class="columns content">
+      <div class="content-container">
+         <p1 style="font-size: 14px; font-family: euripides;">
+            In this active installation, the cakes that were consumed at the market are crystallised, still iced with 
+unrealised architectures from the city’s planning archives. The doll-house convention stand, frozen in time, but glistening 
+with potential, suspends the audience in an uncanny reality. Daydream productions are ordered using bespoke carbon paper and 
+collected on spikes. Meanwhile at the desk, flyers advertise strange events and cooperatives, from protests to heritage railway 
+tours, that describe a social world fuelled by dreaming in alternatives.
+<br><br><br></p1><p1>
+Much like the daydreams that we deal in, we are both affected by and effective in the city. We find ourselves as the new 
+shopkeepers of this establishment, discovering what it means to keep the shop, keep the street, tend to it, as custodians
+ rather than a proprietors. The corner is a pivot that guides you on your way to a daily destination, a spot on the pavement
+ to check the time, have a piss or ask directions. But take a moment out of the transitory and step inside the Cornershop 
+and herein is a warmth of organisation, a nook where all is attended to, where there are still hand-written price stickers, 
+dusty ledges, impassioned greetings. 
+         </p1>
+      </div>
+   </div>
+
+   <div class="columns image" style="background-image: url('img/corner-daydreams-30.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+
+
+<div class="section-container" style="padding-bottom: 30px">
+<div class="columns image">
+<div id="slider">
+   <input type="radio" name="slider" id="slide1" checked>
+   <input type="radio" name="slider" id="slide2">
+   <input type="radio" name="slider" id="slide3">
+   <input type="radio" name="slider" id="slide4">
+   <div class="slides">
+      <div class="overflow">
+         <div class="inner">
+            <div class="slide" style="background-image: url('img/corner-daydreams-7.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/corner-daydreams-26.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/corner-daydreams-27.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/corner-daydreams-28.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="controls">
+      <label for="slide1" onclick="resetSlider()"></label>
+      <label for="slide2" onclick="resetSlider()"></label>
+      <label for="slide3" onclick="resetSlider()"></label>
+      <label for="slide4" onclick="resetSlider()"></label>
+   </div>
+   <div class="bullets">
+      <label for="slide1" onclick="resetSlider()"></label>
+      <label for="slide2" onclick="resetSlider()"></label>
+      <label for="slide3" onclick="resetSlider()"></label>
+      <label for="slide4" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+        Without anyone noticing, the Cornershop of Daydreams surfaced in the city of Kortrijk, slipped through the curtain 
+and onto the stage at the junction between Budastraat and Kapucijnenstraat. 
+<br><br>
+The Cornershop is an agency, an organisation 
+lending out our skills, an agency, the active sense, in pursuit of agency, of autonomous actions. We make a context for 
+the daydream to speak, using resources of memory and ongoing conversations. The Cornershop supplies the ingredients: a 
+scenography of space, objects and invited agents. 
+<br><br>
+This evocation of the daydream is intuitively rebellious, speculative and intimate, but also routine and disposable.
+ We consider the daydream also as a kind of cognitive reproductive labour that de-sediments a crowded mental space. A 
+design approach was conceived around a municipal image database as part of the conceptualisation of daydreaming as operating 
+in a fragmentary landscape between fantasy and memory, which produced strange scenographies programmed onto the town that 
+would herald emergent dreaming. We focused on pushing our concept of daydreaming beyond individualistic containers towards
+ its collectivisation by establishing links with various community actors, groups and NGOs. 
+      </p1>
+   </div>
+</div>
+</div>
+
+
+
+</section>
+<div class="gall-container">
+   <div class="product-grid-2x2">
+
+<div class="card stacked">
+    <a href="img/corner-daydreams-20.jpg">
+          <img src="img/corner-daydreams-20.jpg" alt="red painted leaflet daydream pilgrimmage" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/corner-daydreams-23.jpg">
+          <img src="img/corner-daydreams-23.jpg" alt="red painted leaflet saturnalia parade" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/corner-daydreams-24.jpg">
+          <img src="img/corner-daydreams-24.jpg" alt="red painted leaflet spectre resolution renovations" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/corner-daydreams-25.jpg">
+          <img src="img/corner-daydreams-25.jpg" alt="red painted leaflet interior spooks with flowers" class="card__img">
+    </a>
+</div>
+</div>
+</div>
+
+<section>
+
+
+<div class="section-container" style="clear:both; padding-top: 30px">
+
+<div class="columns image">
+<div id="cslider">
+   <input type="radio" name="cslider" id="slide9" checked>
+   <input type="radio" name="cslider" id="slide10">
+   <input type="radio" name="cslider" id="slide11">
+   <input type="radio" name="cslider" id="slide12">
+   <div class="slides">
+      <div class="overflow">
+         <div class="inner">
+            <div class="slide" style="background-image: url('img/corner-daydreams-10.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/corner-daydreams-11.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/corner-daydreams-13.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/corner-daydreams-14.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="controls">
+      <label for="slide9" onclick="resetSlider()"></label>
+      <label for="slide10" onclick="resetSlider()"></label>
+      <label for="slide11" onclick="resetSlider()"></label>
+      <label for="slide12" onclick="resetSlider()"></label>
+   </div>
+   <div class="bullets">
+      <label for="slide9" onclick="resetSlider()"></label>
+      <label for="slide10" onclick="resetSlider()"></label>
+      <label for="slide11" onclick="resetSlider()"></label>
+      <label for="slide12" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote">
+      <h4>
+         We act as other to the assumptions and forecasts of the city, we are scribbling in the margins metaphors discovered in a draft of Duvel. An important discovery is made: all can daydream. A person can daydream, so too a dog, a gaggle of geese, a housing estate, the weather.
+      </h4>
+      </div>
+   </div>
+</div>
+</div>
+
+</section>
+<div class="gall-container" style="padding-top: 30px">
+   <div class="product-grid">
+
+<div class="card stacked">
+    <a href="img/corner-daydreams-9.jpg">
+          <img src="img/corner-daydreams-9.jpg" alt="teenage bedroom scene in gallery space" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/corner-daydreams-19.jpg">
+          <img src="img/corner-daydreams-19.jpg" alt="banner with ceramic cakes on table beneath" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/corner-daydreams-17.jpg">
+          <img src="img/corner-daydreams-17.jpg" alt="sandbags in tiled bathroom under yellow light" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/corner-daydreams-12.jpg">
+          <img src="img/corner-daydreams-12.jpg" alt="banner with doorway below revealing yellow office" class="card__img">
+    </a>
+</div>
+
+    </div>
+</div>
+
+
+<div style="margin:0 0 40px 40px; clear:both; padding-top: 30px">
+      <p3>
+      Project in collaboration with Metincan Güzel and Yun-Chu Liang as the agency The Cornershop of Daydreams. For more info see 
+      <a href="https://cornershopofdaydreams.agency/"><p3>the main website</p3></a>.
+      <br> 
+      <br> 
+      Including photographs by Kobe Vanderzande.
+      </p3>
+</div>
+
+
+</div>
+
+</body>
+</html>

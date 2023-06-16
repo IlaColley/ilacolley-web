@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, art, kortrijk, stroate, mythical">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: black;
+}
+
+body {
+   background-color: white;
+   font-family: Euripides;
+   color: black;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+}
+
+p1 a:hover {
+   color: white;
+   background-color: black;
+}
+
+p3 {
+   font-weight: 200;
+   font-stretch: 100;
+   margin: 0px 0px 0px 0px;
+   font-size: 14px;
+   line-height: 16px;
+   font-family: Rasa-Regular;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+h3 {
+  display: block;
+  font-size: 40px;
+  margin: 0px 0px 20px 0px;
+  text-transform: uppercase;
+  display: block;
+}
+
+h4 {
+  display: block;
+  font-size: 1.5vw;
+  line-height: 1.6vw;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background-color: black;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 30px;
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 47%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 47%;
+}
+.columns.image {
+   height:400px;
+   margin-right: 40px;
+}
+.columns.content {
+   padding-bottom: 30px;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+.quote {
+  padding: 90px 15px 90px 15px;
+}
+
+
+
+#bslider {
+   margin: 0 auto;
+}
+#bslider input[type=radio] {
+   display: none;
+}
+#bslider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+
+#slide5:checked ~ .slides .inner {
+   margin-left: 0;
+}
+#slide6:checked ~ .slides .inner {
+   margin-left: -100%;
+}
+#slide7:checked ~ .slides .inner {
+   margin-left: -200%;
+}
+#slide8:checked ~ .slides .inner {
+   margin-left: -300%;
+}
+
+
+#slider {
+   margin: 0 auto;
+}
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+.slides {
+
+   position: relative;
+   z-index: 1;
+}
+.overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ .slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ .slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ .slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ .slides .inner {
+   margin-left: -300%;
+}
+.slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 300px;
+}
+.slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 400px;
+   color: #fff;
+}
+.controls {
+   margin: -75px 0 0 0;
+   width: 100%;
+   height: 50px;
+   z-index: 3;
+   position: relative;
+}
+.controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   opacity: .4;
+}
+.controls label:hover {
+   opacity: 1;
+}
+
+.bullets {
+   margin: 0 10px 0;
+   position: absolute;
+   z-index: 2;
+   text-align: center;
+}
+.bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 5px;
+}
+#slide1:checked ~ .bullets label:nth-child(1),
+#slide2:checked ~ .bullets label:nth-child(2),
+#slide3:checked ~ .bullets label:nth-child(3),
+#slide4:checked ~ .bullets label:nth-child(4) {
+   background: #444;
+}
+
+#slide5:checked ~ .bullets label:nth-child(1),
+#slide6:checked ~ .bullets label:nth-child(2),
+#slide7:checked ~ .bullets label:nth-child(3),
+#slide8:checked ~ .bullets label:nth-child(4) {
+   background: #444;
+}
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ .controls label:nth-child(2),
+   #slide2:checked ~ .controls label:nth-child(3),
+   #slide3:checked ~ .controls label:nth-child(4),
+   #slide4:checked ~ .controls label:nth-child(1),
+   #slide1:checked ~ .controls label:nth-last-child(2),
+   #slide2:checked ~ .controls label:nth-last-child(3),
+   #slide3:checked ~ .controls label:nth-last-child(4),
+   #slide4:checked ~ .controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   .slides {
+      max-width: calc(100%);
+      margin: 0 auto;
+   }
+   #slide5:checked ~ .controls label:nth-child(2),
+   #slide6:checked ~ .controls label:nth-child(3),
+   #slide7:checked ~ .controls label:nth-child(4),
+   #slide8:checked ~ .controls label:nth-child(1),
+   #slide5:checked ~ .controls label:nth-last-child(2),
+   #slide6:checked ~ .controls label:nth-last-child(3),
+   #slide7:checked ~ .controls label:nth-last-child(4),
+   #slide8:checked ~ .controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   .slides {
+      max-width: calc(100%);
+      margin: 0 auto;
+   }
+.slides .slide {
+   display: flex;
+   height: 300px;
+}
+}
+
+.gall-container {
+  max-width: 100%;
+  margin: 0 40px 30px 10px;
+  float: left;
+  padding: 10px 0 0 30px;
+
+}
+
+.stacked {
+  display: grid;
+}
+
+.stacked > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.product-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 23.3%));
+}
+
+.card {
+
+  border: 0;
+}
+
+.card__img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+@media only screen and (max-width:639px) {
+
+
+.gall-container {
+  max-width: 100%;
+  padding: 20px 35px;
+  margin: 0 0px 0px 0px;
+}
+
+
+.product-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, max(48%));
+}
+
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+.mob-hidden {
+   display: none;
+}
+
+.pdfview {
+   width: 100%;
+   height: 400px;
+}
+
+.container {
+   width: 100%;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align: left;
+   text-align: left;
+}
+
+p1 {
+   line-height: 12px;
+   font-size: 14px;
+}
+
+p2 {
+   line-height: 12px;
+   font-size: 14px;
+   text-decoration: underline;
+}
+
+h4 {
+  display: block;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.rhs-nav-title {
+   margin-top: 20px;
+   margin-right: 10px;
+   margin-bottom: 20px;
+   text-align:right;
+   font-size: 4vw;
+}
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+   width: 100%;
+   height: 300px;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+.quote {
+  padding: 50px 10px 10px 10px;
+}
+
+
+}
+
+@media only screen and (min-width:640px) {
+
+.pdfview {
+   width:92%;
+   height: 800px;
+   padding-left: 40px;
+   padding-top: 60px;
+}
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   color: black;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+   border-color: #d0c054;
+   border-top: 0px;
+   border-left: 0px;
+   border-right: 0px;
+}
+
+section {
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+}
+
+.rhs-nav-title {
+   position: absolute;
+   top: 5%;
+   left: 80%;
+   text-align:right;
+   font-size: 2vw;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+  <script src="js/slideshow.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="website-homepage.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a class="active" href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/anarchy-lace-cover.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <h3>anarchy and old lace</h3>
+      <p1 style="font-style:italic">The Royal Danish Academy</p1>
+      <br>
+      <p1>2020</p1>
+      <br>
+      <br>
+      <p1>
+         This project is a story, an urban survey, and a cognitive and political inquiry. Towards an architectural 
+re-tooling of its solidarity movement, it investigates the relation of industry and community in the French port city 
+of Calais, a strained checkpoint in the enclosure of Fortress Europe and the UK border regime. The project spans themes 
+of labour, migration, identification, mutuality and protest. It combines fieldwork with archival research, creative writing and visual art.
+<br>
+<br>
+	The second half of this research project was a speculative design work titled <a href="project-page-radicalraccommodeuse.html">The Radical Raccommodeuse</a>. 
+You can also view the work on the Royal Danish Academy
+      <a href="https://royaldanishacademy.com/project/radical-raccommodeuse">website</a>.
+      </p1>
+   </div>
+</div>
+</div>
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote">
+      <h4>
+The symbolic landscape [of lace] is simultaneously fuelled by elements of the physical one;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bullets found in the dunes could be emptied of lead and used
+to crimp the hook that is integral to the threadwork of the tullist. 
+      </h4>
+      </div>
+   </div>
+</div>
+
+
+<div class="columns image">
+<div id="slider">
+   <input type="radio" name="slider" id="slide1" checked>
+   <input type="radio" name="slider" id="slide2">
+   <input type="radio" name="slider" id="slide3">
+   <input type="radio" name="slider" id="slide4">
+   <div class="slides">
+      <div class="overflow">
+         <div class="inner">
+            <div class="slide" style="background-image: url('img/anarchy-lace-7.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/anarchy-lace-6.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/anarchy-lace-1.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/anarchy-lace-17.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="controls">
+      <label for="slide1" onclick="resetSlider()"></label>
+      <label for="slide2" onclick="resetSlider()"></label>
+      <label for="slide3" onclick="resetSlider()"></label>
+      <label for="slide4" onclick="resetSlider()"></label>
+   </div>
+   <div class="bullets">
+      <label for="slide1" onclick="resetSlider()"></label>
+      <label for="slide2" onclick="resetSlider()"></label>
+      <label for="slide3" onclick="resetSlider()"></label>
+      <label for="slide4" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+</div>
+
+<div class="section-container" style="padding-top: 30px; clear:both">
+   <div class="columns image" style="background-image: url('img/anarchy-lace-10.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+The topic is Calais lace, from its illegal import by English labour migrants in the early 19th century, 
+through its customary transmission, to its galvanising effect in the industrial-era workers’ struggle. 
+Its realisation raised this small port town to, ostensibly, lacemaking capital of the world by the 1950s, 
+and is thus variously memorialised and mythologised in their culture. This historical context is researched 
+and presented as a community precedent, consisting of an archive of ideologies, actions, concerns, relations and inhabitings.
+<br><br>
+For the first half of the 19th century, hundreds of skilled mechanics smuggled their looms to Calais and began to work 
+clandestinely, setting up workshops in marginal domestic spaces like stables, cellars, attics and kitchens which would
+ become workshops then factories.
+<br><br>
+In recent years, international media has covered Calais regarding its dense presence of displaced peoples heading to
+the UK. We have witnessed the extent that the UK border regime has subjected those displaced on French soil to a hostile 
+environment. Recent humanitarian crises in Calais coincide with the final stages of decline of its lace
+industry. When Queen Victoria wore tulle for her wedding in 1840, she began a long-lasting association
+between veiling in lace and a border that signified sacred modesty and a process of becoming, uniting. Now, in the
+hometown of this symbolic material, its tectonics are realised in 5m high steel fences, appropriated as tools of urban
+violence. 
+      </p1>
+   </div>
+</div>
+</div>
+
+
+<div class="section-container">
+
+<div class="columns content">
+      <div class="content-container">
+         <p1>
+When in 1843 machinery export became legal, the number of
+Leavers machines in Calais was already in the thousands, constituting a significant additional population that began to
+reorganise the town. For Calais, the machine became spectacle at the centre of the universe. Steam power led to larger structures for more machines, and
+by the 1870s the lace industry of Saint-Pierre was divided into thirty-eight grand factories, of which no trace remains. 
+The once sparse district of Saint-Pierre was drastically scaled-up, both concretely and in the abstract terms of an
+industrial capitalist exchange economy, where the notion of the gigantic is translated from pastoral sublime to a social
+world of production.
+<br><br>
+Its heyday in the 1860s saw community buildings, including a washhouse,
+church and new town hall, erected around Place Crèvecoeur, opening up new zones of
+conversation and relation for the working classes. The 1885 municipal merger of Calais
+and Saint-Pierre, owing to success of lace, led to further public projects e.g. the grand theatre.
+<br><br>
+The industry became so successful that by the mid 20th century Calais was ostensibly the lace capital of the world, 
+characterised in its community by a common language of space, tools, interactions, bodily movements and creative identity.
+         </p1>
+      </div>
+   </div>
+
+   <div class="columns image" style="background-image: url('img/anarchy-lace-8.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/anarchy-lace-4.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+Subject to waning trade protections, the lace city of Calais has become wise to its subordinate position 
+in a globalised world. Previously a communist stronghold, recent decades have seen Calaisiens side with the 
+patriots against the globalists, with a swing in opinion towards the far right. If you look closely at the net 
+curtains in the city, you will notice they are striped, comprising rows
+of Valencienne bands produced for lingerie. In this city of offcuts there is potential in re-using
+the existing built fabric. The challenge is to avoid glorifying lace heritage while recognising it as a
+language important to the existing community, and inspecting how it could be useful to a
+new solidarities movement.
+<br><br>
+In Calais, the boarded-up or re-beautified factories that remain amid the graveyards of
+others form an eerie landscape. Tim Edensor writes on the importance of industrial ruins
+as cognitive bridges for the beliefs and values of those who used to inhabit them. Behind
+the gutted perimeters of many Calais lace factories, apartment complexes have been
+contrived. When these ruins are renovated by developers their social memory is commodified,
+externalised for new middle class protagonists.  This approach of facadism flattens the multi-
+layered histories of factory life onto its enclosure. The disembowelling of these structures erases
+the real-life imprints of the bodies that once inhabited workstations, corridors, break-rooms,
+while retaining the emblem of the factory owner.
+      </p1>
+   </div>
+</div>
+</div>
+
+
+<div class="section-container">
+
+<div class="columns content">
+      <div class="content-container">
+      <div class="quote">
+      <h4>
+The cooperative expanded its operations from boulangerie, butcher and grocer
+to include a cinema, meeting room and a brewery;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; it now contains a gym called <i>Basic Fit</i>.
+         </h4>
+      </div>
+      </div>
+   </div>
+
+   <div class="columns image" style="background-image: url('img/anarchy-lace-11.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/anarchy-lace-9.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+Lace syndicalism is a close-to-hand precedent for Calaisien solidarity, partially catalysed by Owenite traditions 
+of co-op and a Luddite revolutionary fever of the English migrants. In the working class lace district of Saint-Pierre 
+there are few traces of its once plentiful Oddfellows societies, soup kitchens, workers cabarets, groups of twenty, and after 
+their 1884 legalisation, union co-ops. The ideology of anarcho-syndicalism inspired workers to rebel against the state, 
+politicians and bureaucrats, towards systems 
+of cooperative economics and forms of workers’ direct democracy, which culminated in the building of the <i>Bourse du Travail</i>, a centre 
+of working class culture via a union congress, co-operative, as well 
+as co-educational and performance space.
+<br><br>
+Chomsky describes anarchism as the dismantling of unnecessary power dynamics, the first step here being recognising what these 
+are. The Air Loom is a drawing by Napoleonic-era peace activist James Tilly Matthews, of what he believed was a “terrifying 
+machine whose mesmeric rays and mysterious gasses were brainwashing politicians and plunging Europe into revolution, terror, 
+and war.” In my drawing, I consider the Leavers lace machine as producing a liminal material that simultaneously obscures
+ the private and advertising what is in-common. It alludes to the 
+blurred lines of public and private in the lace-working story, the idea of the internal time of the tool and the exteriorising 
+effect of a common material or substance such as lace.      
+</p1>
+   </div>
+</div>
+</div>
+
+
+<div class="section-container">
+
+<div class="columns content">
+      <div class="content-container">
+      <div class="quote">
+      <h4>
+         In one of the windows of the Michel-Storme workshop a
+peacock fans its lacy tectrix, advertising compliance with the
+brand of <i>Dentelle de Calais</i>.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On the brick below this
+somebody has issued a writ in black spray paint: <i>NO BORDERS</i>.
+      </h4>
+      </div>
+      </div>
+   </div>
+
+   <div class="columns image" style="background-image: url('img/anarchy-lace-14-2.jpg')">
+      &nbsp;
+   </div>  
+
+</div>
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/anarchy-lace-16.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+Currently seen as a microcosm of Fortress Europe, <i>Calais cannot come to work today</i> formulates an autonomous city 
+that can refuse this role. The city on strike presents an imaginary state in which Calais, as a community of individuals
+ occupying the same terra, can set a precedent in rejecting the city as camp, and how those within inner layers can interact 
+and possibly counteract the forces of exclusion that leave some on the precarious margins.
+<br><br>
+In recent social and political theory, the concept of <i>noopolitics</i> supplements biopower as contemporary mode of state-subject 
+regulation. Noopolitics exits the domain of labour and factory to focus on modes of control over multiple brains by media - 
+rather than mesmeric rays. The transient confess onto the town, <i>20 mins and BORED</i>  says a signpost at the border, 
+<i>let us live</i> at the fence. 
+<br><br>
+These utterances 
+are tragic in their confinement; can we move them again from the façade, the enclosure, to the visceral and operative nooks of a 
+collective interior – from the beermat to the Bourse? Can we unlock the anarchic ambitions of earlier generations of workers to 
+undermine the influence of noopolitics?  Contesting the mythic unity of lace, a new community of shared experience and co-operation 
+between those that are not necessarily in-common becomes possible. 
+      </p1>
+   </div>
+</div>
+</div>
+
+
+<div class="section-container" style="clear:both; padding-top: 0px">
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+The future scenario of autonomous Calais is conceptualised through deconstructed Bourse functions (congress, education, celebration) 
+distributed throughout the city; these nested sites induce varied actor networks that potentialize a new self-governing capacity. 
+<br><br> The first 
+propositional approach considers a subversive re-framing of the autonomous city as future past, populated by an array of ruined monuments 
+whose [fabricated] heritage motivates restoration and re-activation. The ruins are re-adorned with signifiers of a more radically 
+co-operative history, i in fact constructing the 'lost icons' of the community it’s party to inventing. This seeks to capitalise 
+on the instinctive desire to restore or revert to a better time, a nostalgic and mythically unified state and use it as a forwards-moving force.
+<br><br>
+One idea for a co-educational scenario draws on film and performance in the history of the lace-workers' movement e.g. congregational 
+cabarets, cinemas, Bourse. Today going to the cinema involves an unusual investment of mutual time-space with unchosen others. 
+This now demolished factory site is tooled with fragments lifted from nearby remains, specifically elements that speak to interrupting 
+the skin. These are made mobile as the story of lace is rearranged according to the youths. The contingent cinema emerges first as 
+urban playground, then as congress of ideas, then as site of organised dissidence.
+      </p1>
+   </div>
+</div>
+
+
+<div class="columns image">
+<div id="bslider">
+   <input type="radio" name="bslider" id="slide5" checked>
+   <input type="radio" name="bslider" id="slide6">
+   <input type="radio" name="bslider" id="slide7">
+   <input type="radio" name="bslider" id="slide8">
+   <div class="slides">
+      <div class="overflow">
+         <div class="inner">
+            <div class="slide" style="background-image: url('img/anarchy-lace-15.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/anarchy-lace-13.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/anarchy-lace-2.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/anarchy-lace-12.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="controls">
+      <label for="slide5" onclick="resetSlider()"></label>
+      <label for="slide6" onclick="resetSlider()"></label>
+      <label for="slide7" onclick="resetSlider()"></label>
+      <label for="slide8" onclick="resetSlider()"></label>
+   </div>
+   <div class="bullets">
+      <label for="slide5" onclick="resetSlider()"></label>
+      <label for="slide6" onclick="resetSlider()"></label>
+      <label for="slide7" onclick="resetSlider()"></label>
+      <label for="slide8" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+</div>
+
+</section>
+</div>
+
+<div class="section-container" style="clear:both; margin-bottom: 0px; padding-top: 30px">
+   <div class="mob-hidden">
+   <img src="img/anarchy-lace-18.jpg" alt="long drawing with photographs and cartoons and Calais urban features" width=100% height=375px>
+   </div>
+</div>
+
+
+<div class="container">
+
+
+<div class="section-container" style="clear:both;">
+  <div class="pdfview">
+<object data="img/anarchy-lace-worlding-working-calais.pdf?#zoom=70&scrollbar=1" type="application/pdf" trusted="yes" width="100%" height="100%">
+   <p>Unable to display PDF file. <a href="img/anarchy-lace-worlding-working-calais.pdf">Download</a> instead.</p>
+</object>
+   </div>
+</div>
+
+
+
+    <div style="margin:40px 0 40px 40px">
+      <p3>
+      Archival photographs from 'Calais Avant Hier' blog and the book 'De la dentelle & des Hommes: the Lace-makers of Calais' by Delphine Loez.
+      </p3>
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>

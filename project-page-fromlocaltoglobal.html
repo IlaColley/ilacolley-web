@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist, sculpture, museum, decolonising">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: black;
+}
+
+body {
+   background-color: white;
+   font-family: Euripides;
+   color: black;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+}
+
+p1 a:hover {
+   color: white;
+   background-color: black;
+}
+
+p3 {
+   font-weight: 200;
+   font-stretch: 100;
+   margin: 0px 0px 0px 0px;
+   font-size: 14px;
+   line-height: 16px;
+   font-family: Rasa-Regular;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+h3 {
+  display: block;
+  font-size: 40px;
+  margin: 0px 0px 20px 0px;
+  text-transform: uppercase;
+  display: block;
+}
+
+h4 {
+  display: block;
+  font-size: 1.5vw;
+  line-height: 1.6vw;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background-color: black;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 30px;
+
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 47%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 47%;
+}
+.columns.image {
+   height:400px;
+   margin-right: 40px;
+}
+.columns.content {
+   padding-bottom: 30px;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+.quote {
+  padding: 90px 15px 90px 15px;
+}
+
+
+
+#slider {
+   margin: 0 auto;
+}
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+#slides {
+
+   position: relative;
+   z-index: 1;
+}
+#overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ #slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+   margin-left: -300%;
+}
+#slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 300px;
+}
+#slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 400px;
+   color: #fff;
+}
+#slides .slide_1 {
+   background: #00171F;
+}
+#slides .slide_2 {
+   background: #003459;
+}
+#slides .slide_3 {
+   background: #007EA7;
+}
+#slides .slide_4 {
+   background: #00A8E8;
+}
+#controls {
+   margin: -75px 0 0 0;
+   width: 100%;
+   height: 50px;
+   z-index: 3;
+   position: relative;
+}
+#controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   opacity: .4;
+}
+#controls label:hover {
+   opacity: 1;
+}
+
+#bullets {
+   margin: 0 10px 0;
+   position: absolute;
+   z-index: 2;
+   text-align: center;
+}
+#bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 5px;
+}
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+   background: #444;
+}
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ #controls label:nth-child(2),
+   #slide2:checked ~ #controls label:nth-child(3),
+   #slide3:checked ~ #controls label:nth-child(4),
+   #slide4:checked ~ #controls label:nth-child(1),
+   #slide1:checked ~ #controls label:nth-last-child(2),
+   #slide2:checked ~ #controls label:nth-last-child(3),
+   #slide3:checked ~ #controls label:nth-last-child(4),
+   #slide4:checked ~ #controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   #slides {
+      max-width: calc(100%);
+      margin: 0 auto;
+   }
+#slides .slide {
+   display: flex;
+   height: 300px;
+}
+}
+
+
+
+
+
+.gall-container {
+  max-width: 100%;
+  margin: 0 40px 30px 10px;
+  float: left;
+  padding: 10px 0 0 30px;
+}
+
+.stacked {
+  display: grid;
+}
+
+.stacked > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.product-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 23.3%));
+}
+
+.card {
+
+  border: 0;
+}
+
+.card__img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+@media only screen and (max-width:639px) {
+
+
+.gall-container {
+  max-width: 100%;
+  padding: 20px 35px;
+  margin: 0 0px 0px 0px;
+}
+
+
+.product-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, max(48%));
+}
+
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+
+.container {
+   width: 100%;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align: left;
+   text-align: left;
+}
+
+p1 {
+   line-height: 12px;
+   font-size: 14px;
+}
+
+p2 {
+   line-height: 12px;
+   font-size: 14px;
+   text-decoration: underline;
+}
+
+h4 {
+  display: block;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.rhs-nav-title {
+   margin-top: 20px;
+   margin-right: 10px;
+   margin-bottom: 20px;
+   text-align:right;
+   font-size: 4vw;
+}
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+   width: 100%;
+   height: 300px;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+.quote {
+  padding: 50px 10px 10px 10px;
+}
+
+
+}
+
+@media only screen and (min-width:640px) {
+
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   color: black;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+   border-color: #d0c054;
+   border-top: 0px;
+   border-left: 0px;
+   border-right: 0px;
+}
+
+section {
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+}
+
+.rhs-nav-title {
+   position: absolute;
+   top: 5%;
+   left: 80%;
+   text-align:right;
+   font-size: 2vw;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+  <script src="js/slideshow.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="website-homepage.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a class="active" href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/local-global-cover-0.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <h3>from local to global</h3>
+      <p1 style="font-style:italic">Scarborough Museums Trust</p1>
+      <br>
+      <p1>2022</p1>
+      <br>
+      <br>
+      <p1>
+         A research and reflection phase of a commission to respond to a collection as part of an ongoing decolonising appraisal project. 
+Looking at the Harrison collection and the broader colonial context of the Democratic Republic of Congo, a compilation of enclosure dynamics 
+occurs describing multitudinous modes of carving up existing ecologies.
+Three sculptures were produced as adjacent thought processes, see this part of the project <a href="project-page-tomakematterworse.html"> here</a>.
+<br><br>
+Three written responses, <i>ANCHOR, ACT and ALTER</i>, were published on the project <a href="https://www.fromlocaltoglobal.co.uk/ila-colley">website</a>.
+      </p1>
+   </div>
+</div>
+</div>
+
+
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote">
+      <h4>
+         How do we address the paradox that recognising and undoing the othering process relies on drawing attention to the othering processes documented 
+in the collection? And could I really diminish the false neutrality of my whiteness if my art dared to take a political position?
+      </h4>
+      </div>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/local-global-8.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/local-global-2.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+Working with the Harrison collection, I began to compile dynamics that could be read as enclosure, that is, divisions forced into an existing ecology of things. 
+This compilation became expansive: enclosure of common resources and means, enclosure of movement by state borders imposed by colonisers, of wealth by financial 
+entities and plutocratic policy-making, of wildlife by militarised parks, of culture by appropriation, of land by appropriation, of people by categorisation and 
+enslavement, materials by taxonomy, of language by morality. In these, enclosure is divorce and containment. Similarly, the objects in the museum store are divorced 
+from their context and, as I examined them, I sensed myself complicit in their containment. I became hyper-aware of the latex gloves that mediated my handling, their 
+cardboard cases, the drone of the climate control, the locks and seals that insulated the basement store from the rest of the building.
+<br><br>
+Sitting among the silent bones and hides, even with a disgust regarding the perpetrators of this history, I felt mainly sad, I felt that all of us in that room, 
+animate and inanimate, were sad and lonely. Displaced, disconnected, unable to communicate. That however skilfully the craftsperson had tried to reinsert a 
+ferocious glory into these taxidermies, they had simply managed to exaggerate a pitiful superficiality of killing for glory, that if the trophies were testament 
+to anything now it was this. And that, in an attempt to enclose life permanently as keepsake, what is now most palpable is its erasure.
+      </p1>
+   </div>
+</div>
+</div>
+
+
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+￹During the partition of Africa, Western European powers rushed to divide and invade the continent in order to exploit its resources using the pretence of guardianship
+ and development. The Congo Free State, as it was named during Harrison’s visits, was “designed as an extraction area and never as a political space” (Kabamba in
+ Dowling 2020, 7). I sense that enclosure cannot be estranged from violence, but also that this relation is not straightforward. Enclosure denotes a making of 
+unfreedom and of stasis, a task of capitalisation. On the flipside it does this protecting thing too; I can see the action of enclosure as it could attempt to defend 
+something progressive, for example a practice of freedom or nurture. But this scenario is precisely how exploitative enclosure has been falsely justified.
+      </p1>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/local-global-1.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/local-global-7.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+Regarding the treatment of wildlife in the region, much has changed since Harrison’s visits, though a familiar mode of violent control is enacted 
+through the DRC’s national parks, created in the name of combatting biodiversity loss. The highly militarised boundary enforcement and extreme 
+anti-poaching measures lead to the expulsion of indigenous groups and in some cases, the creation of de facto warzones. And though hunting is 
+prohibited within park boundaries, human shoot-on-sight policies are authorised and used by park rangers as per their training under Belgian 
+former paratroopers (Jones 2020, 34).
+<br><br>
+Enclosure of these parks can be seen as a means of accumulation by securitisation, lucrative to state elites 
+and private landholders, and supported by donations and tourism of misled consumers. Tracing the physical enclosure of the park, these practices 
+exemplify a moral boundary drawing in which established racial otherhoods, for example the conceptualisation of poachers as terrorist groups, are 
+exercised to enable the policy agendas of white conservationists. This continues to perpetuate the colonial falsehood that local actors are unfit for self-governance. 
+      </p1>
+   </div>
+</div>
+</div>
+
+
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+I’m swivelling nervously in my office chair as Jim clicks through the photos on his monitor. Among the hoards of Harrison’s trophy photos is an 
+angular silhouette of what looks like headgear at a pit edge. Later I am equipped with the entire hard drive and spend hours dragging jpegs into 
+thematic groups; one is titled ‘extractive industries’. The era of digitalisation has altered discourse around decolonising museums, with the 
+possibility to create whole collections of simulacra seeming to offer a neutral parallel to their plundered originals; evidence, but 
+not on a plinth, less appealing to venerate when rendered in pixels. 
+<br><br>
+But enclosures of hierarchy and exclusion continue to to be strategically 
+employed in digital realms. And the devices with which I zoom, scroll, and form my perspective are made up precisely of the stuff that DRC 
+mine workers labour to extract, and no amount of critical reflection can expunge me of this contradiction. I don’t find any more photos of 
+the mine. The brutal realities of the burgeoning extraction industry was of little concern to Harrison, as the plight of labouring bodies 
+often are to wealthy white men. Only recently are the victims of such supply chains able to fight for some genuine comeuppance; a 2019 lawsuit 
+launched by International Rights Advocates on behalf of 14 families from the DRC saw Apple, Google, Dell, and Tesla held to account for 
+knowingly sourcing lithium-ion batteries originating from mines where children had been injured and killed (Dowling 2020).
+      </p1>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/local-global-4.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/local-global-5.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote">
+      <h4>
+         I am trying to know that the matter is not some neutral resource for my investment.<br>It relates, through kinship or origin, to frontiers of segregation between the bodies that toil and the bodies that architect the frontiers between toil and rest.
+      </h4>
+      </div>
+   </div>
+</div>
+</div>
+
+
+
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+Moving from knowledge translation I begin sketching art that could be part of an act – or actions – of critically and collectively re-making the record. 
+I imagine a device to redraw the collection using layering and interference, and forming a record that would be bulky and continuous, needing to be unrolled 
+and reappraised by a large group. But focussing on a remade end product evokes a kind of static up-to-date perspective. 
+<br><br>
+I collect up my sketches, shapes and 
+objects, doorway, umbrella, blocks and instead consider the land, excavated, patrolled. In 2018 the International Trade Union Congress ranked the UK alongside 
+Russia and the Congo as a country where there are “regular violations of workers’ rights”. I’m thinking now about momentarily suspending chronology, and using 
+the association of enclosure to bring experiences of labour, commodity, and relation to land between the DRC and the UK into the same field of view. Perhaps 
+allowing protagonists agency from a strict historical schema and can encourage points of access between time and geography to be revealed?
+      </p1>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/local-global-6.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/local-global-9.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote">
+      <h4>
+         The severe material, corporeal and psychological equivalences of enclosure were not repercussions, but rather the core economy and modus operandi of the colonial project.
+      </h4>
+      </div>
+   </div>
+</div>
+</div>
+
+
+
+</section>
+
+
+
+
+    <div style="margin:0 0 40px 40px">
+      <p3>
+      Archival photographs courtesy Scarborough Museums.
+      </p3>
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>

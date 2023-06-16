@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, calais, lace, cabaret, raccommodeuse">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: black;
+}
+
+body {
+   background-color: white;
+   font-family: Euripides;
+   color: black;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+}
+
+p1 a:hover {
+   color: white;
+   background-color: black;
+}
+
+p3 {
+   font-weight: 200;
+   font-stretch: 100;
+   margin: 0px 0px 0px 0px;
+   font-size: 14px;
+   line-height: 16px;
+   font-family: Rasa-Regular;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+h3 {
+  display: block;
+  font-size: 40px;
+  margin: 0px 0px 20px 0px;
+  text-transform: uppercase;
+  display: block;
+}
+
+h4 {
+  display: block;
+  font-size: 1.5vw;
+  line-height: 1.6vw;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background-color: black;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 30px;
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 47%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 47%;
+}
+.columns.image {
+   height:400px;
+   margin-right: 40px;
+}
+.columns.content {
+   padding-bottom: 30px;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+.quote {
+  padding: 90px 15px 90px 15px;
+}
+
+#dslider {
+   margin: 0 auto;
+}
+#dslider input[type=radio] {
+   display: none;
+}
+#dslider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+
+#slide13:checked ~ .slides .inner {
+   margin-left: 0;
+}
+#slide14:checked ~ .slides .inner {
+   margin-left: -100%;
+}
+#slide15:checked ~ .slides .inner {
+   margin-left: -200%;
+}
+#slide16:checked ~ .slides .inner {
+   margin-left: -300%;
+}
+
+
+#cslider {
+   margin: 0 auto;
+}
+#cslider input[type=radio] {
+   display: none;
+}
+#cslider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+
+#slide9:checked ~ .slides .inner {
+   margin-left: 0;
+}
+#slide10:checked ~ .slides .inner {
+   margin-left: -100%;
+}
+#slide11:checked ~ .slides .inner {
+   margin-left: -200%;
+}
+#slide12:checked ~ .slides .inner {
+   margin-left: -300%;
+}
+
+
+#bslider {
+   margin: 0 auto;
+}
+#bslider input[type=radio] {
+   display: none;
+}
+#bslider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+
+#slide5:checked ~ .slides .inner {
+   margin-left: 0;
+}
+#slide6:checked ~ .slides .inner {
+   margin-left: -100%;
+}
+#slide7:checked ~ .slides .inner {
+   margin-left: -200%;
+}
+#slide8:checked ~ .slides .inner {
+   margin-left: -300%;
+}
+
+
+#slider {
+   margin: 0 auto;
+}
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+.slides {
+
+   position: relative;
+   z-index: 1;
+}
+.overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ .slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ .slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ .slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ .slides .inner {
+   margin-left: -300%;
+}
+.slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 300px;
+}
+.slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 400px;
+   color: #fff;
+}
+.controls {
+   margin: -75px 0 0 0;
+   width: 100%;
+   height: 50px;
+   z-index: 3;
+   position: relative;
+}
+.controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   opacity: .4;
+}
+.controls label:hover {
+   opacity: 1;
+}
+
+.bullets {
+   margin: 0 10px 0;
+   position: absolute;
+   z-index: 2;
+   text-align: center;
+}
+.bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 5px;
+}
+#slide1:checked ~ .bullets label:nth-child(1),
+#slide2:checked ~ .bullets label:nth-child(2),
+#slide3:checked ~ .bullets label:nth-child(3),
+#slide4:checked ~ .bullets label:nth-child(4) {
+   background: #444;
+}
+
+#slide5:checked ~ .bullets label:nth-child(1),
+#slide6:checked ~ .bullets label:nth-child(2),
+#slide7:checked ~ .bullets label:nth-child(3),
+#slide8:checked ~ .bullets label:nth-child(4) {
+   background: #444;
+}
+
+
+#slide9:checked ~ .bullets label:nth-child(1),
+#slide10:checked ~ .bullets label:nth-child(2),
+#slide11:checked ~ .bullets label:nth-child(3),
+#slide12:checked ~ .bullets label:nth-child(4) {
+   background: #444;
+}
+
+#slide13:checked ~ .bullets label:nth-child(1),
+#slide14:checked ~ .bullets label:nth-child(2),
+#slide15:checked ~ .bullets label:nth-child(3),
+#slide16:checked ~ .bullets label:nth-child(4) {
+   background: #444;
+}
+
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ .controls label:nth-child(2),
+   #slide2:checked ~ .controls label:nth-child(3),
+   #slide3:checked ~ .controls label:nth-child(4),
+   #slide4:checked ~ .controls label:nth-child(1),
+   #slide1:checked ~ .controls label:nth-last-child(2),
+   #slide2:checked ~ .controls label:nth-last-child(3),
+   #slide3:checked ~ .controls label:nth-last-child(4),
+   #slide4:checked ~ .controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   .slides {
+      max-width: calc(100%);
+      margin: 0 auto;
+   }
+   #slide5:checked ~ .controls label:nth-child(2),
+   #slide6:checked ~ .controls label:nth-child(3),
+   #slide7:checked ~ .controls label:nth-child(4),
+   #slide8:checked ~ .controls label:nth-child(1),
+   #slide5:checked ~ .controls label:nth-last-child(2),
+   #slide6:checked ~ .controls label:nth-last-child(3),
+   #slide7:checked ~ .controls label:nth-last-child(4),
+   #slide8:checked ~ .controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   .slides {
+      max-width: calc(100%);
+      margin: 0 auto;
+   }
+
+   #slide9:checked ~ .controls label:nth-child(2),
+   #slide10:checked ~ .controls label:nth-child(3),
+   #slide11:checked ~ .controls label:nth-child(4),
+   #slide12:checked ~ .controls label:nth-child(1),
+   #slide9:checked ~ .controls label:nth-last-child(2),
+   #slide10:checked ~ .controls label:nth-last-child(3),
+   #slide11:checked ~ .controls label:nth-last-child(4),
+   #slide12:checked ~ .controls label:nth-last-child(1) {
+      margin: 0;
+   }
+
+   #slide13:checked ~ .controls label:nth-child(2),
+   #slide14:checked ~ .controls label:nth-child(3),
+   #slide15:checked ~ .controls label:nth-child(4),
+   #slide16:checked ~ .controls label:nth-child(1),
+   #slide13:checked ~ .controls label:nth-last-child(2),
+   #slide14:checked ~ .controls label:nth-last-child(3),
+   #slide15:checked ~ .controls label:nth-last-child(4),
+   #slide16:checked ~ .controls label:nth-last-child(1) {
+      margin: 0;
+   }
+
+.slides .slide {
+   display: flex;
+   height: 300px;
+}
+}
+
+.gall-container {
+  max-width: 100%;
+  margin: 0 40px 30px 10px;
+  float: left;
+  padding: 10px 0 0 30px;
+
+}
+
+.stacked {
+  display: grid;
+}
+
+.stacked > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.product-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 23.3%));
+}
+
+
+.product-grid-2x2 {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 48%));
+}
+
+.card {
+  border: 0;
+}
+
+.card__img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+@media only screen and (max-width:639px) {
+
+
+.gall-container {
+  max-width: 100%;
+  padding: 20px 35px;
+  margin: 0 0px 0px 0px;
+}
+
+
+.product-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, max(48%));
+}
+
+.product-grid-2x2 {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, max(100%));
+}
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+.pdfview {
+   width: 100%;
+   height: 400px;
+   padding-top: 30px;
+   padding-bottom: 30px;
+}
+
+.container {
+   width: 100%;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align: left;
+   text-align: left;
+}
+
+p1 {
+   line-height: 12px;
+   font-size: 14px;
+}
+
+p2 {
+   line-height: 12px;
+   font-size: 14px;
+   text-decoration: underline;
+}
+
+h4 {
+  display: block;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.rhs-nav-title {
+   margin-top: 20px;
+   margin-right: 10px;
+   margin-bottom: 20px;
+   text-align:right;
+   font-size: 4vw;
+}
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+   width: 100%;
+   height: 300px;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+.quote {
+  padding: 50px 10px 10px 10px;
+}
+
+
+}
+
+@media only screen and (min-width:640px) {
+
+.pdfview {
+   width:92%;
+   height: 800px;
+   padding-left: 40px;
+   padding-top: 60px;
+}
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   color: black;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+   border-color: #d0c054;
+   border-top: 0px;
+   border-left: 0px;
+   border-right: 0px;
+}
+
+section {
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+}
+
+.rhs-nav-title {
+   position: absolute;
+   top: 5%;
+   left: 80%;
+   text-align:right;
+   font-size: 2vw;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+  <script src="js/slideshow.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="website-homepage.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a class="active" href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/rad-rac-cover1.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <h3>the radical raccommodeuse</h3>
+      <p1 style="font-style:italic">The Royal Danish Academy</p1>
+      <br>
+      <p1>2020</p1>
+      <br>
+      <br>
+      <p1>
+This project reimagines Calais as a confederation of ‘Repairgrounds,’ buildings that potentialize social change, and possible system
+ change. This new community is styled after the Raccommodeuses, the repair-women of the city’s once prosperous lace industry. Repair
+ is an imperative to act, together, to rebuild empathy and solidarity, and empower the people in the politics of their city in crisis.
+ Repair-work seeks to open up discourse on alternative political realities: instead of dreading the inevitable, the process 
+of intervening into decay is one of imagining other futures. 
+       <br>
+       <br>
+	The first half of this design project was a research titled <a href="project-page-anarchyoldlace.html">Anarchy and Old Lace</a>. 
+You can also view the work on the Royal Danish Academy
+      <a href="https://royaldanishacademy.com/project/radical-raccommodeuse">website</a>.
+      </p1>
+   </div>
+</div>
+</div>
+
+
+<div class="section-container">
+<div class="columns content">
+      <div class="content-container">
+         <p1>
+Recent humanitarian crises in Calais coincide with the final stages of decline of its lace industry. In response to various 
+anti-solidarity laws, this project subverts the current trajectory 
+of the Calaisien community, instead imagining a network of people with a common project and a city that can become instrumental
+ in refusing the oppressive border regime. This part of the project focuses on creating 
+changes in the urban environment, while theorising about resultant social change, and possible system change.
+<br><br>
+The community moves towards an autonomy and bargaining power that can <i>refuse</i> the current border regime, including 
+the treatment of refugees and the restriction of aid. This momentum is powered by the <i>re-fusing</i> of relations within 
+Calaisien civil society via a collaborative repair of their decaying lace architectures. This is a culture that resists the 
+corporate enclosure of the afterlife of products as well as its global geographies of waste and exploitation.
+<br><br>
+Five sites are chosen in Saint-Pierre, each consisting of an empty lace-era house and factory in close proximity and symbiosis. 
+The factory is reimagined as a Repair-ground consisting of workshops and classrooms for investigation and speculation, while the
+ house is reimagined under the name the Wardrobe as site of review and outwards communication. Here, repair pursuits that would 
+usually be outsourced by manufacturers, or attempted in a gendered private sphere, are shared and exchanged within the community,
+ where their value creation can be properly recognised.  
+         </p1>
+      </div>
+   </div>
+
+   <div class="columns image" style="background-image: url('img/rad-rac-15.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+<div class="section-container" style="clear:both; padding-top: 30px">
+
+<div class="columns image">
+<div id="bslider">
+   <input type="radio" name="bslider" id="slide5" checked>
+   <input type="radio" name="bslider" id="slide6">
+   <input type="radio" name="bslider" id="slide7">
+   <input type="radio" name="bslider" id="slide8">
+   <div class="slides">
+      <div class="overflow">
+         <div class="inner">
+            <div class="slide" style="background-image: url('img/rad-rac-6.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-3.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-4.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-2.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="controls">
+      <label for="slide5" onclick="resetSlider()"></label>
+      <label for="slide6" onclick="resetSlider()"></label>
+      <label for="slide7" onclick="resetSlider()"></label>
+      <label for="slide8" onclick="resetSlider()"></label>
+   </div>
+   <div class="bullets">
+      <label for="slide5" onclick="resetSlider()"></label>
+      <label for="slide6" onclick="resetSlider()"></label>
+      <label for="slide7" onclick="resetSlider()"></label>
+      <label for="slide8" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote">
+      <h4>
+         For a while the old lace factories were used as shelter by displaced people and solidarity squatters before being violently outmanoeuvred by the municipality. For a while, these interiors provided a common project of repair-work for the squatters and displaced persons. 
+      </h4>
+      </div>
+   </div>
+</div>
+</div>
+
+
+
+<div class="section-container">
+<div class="columns content">
+      <div class="content-container">
+         <p1>
+A bit like the trade union congresses, the confederation of Repairgrounds are autonomous in their domain 
+of repair but in close alliance with each other. We imagine monthly reviews at each specific
+ the Repairground (here Electronics), quarterly showcases in the Wardrobe, and regular assemblies and referendums to
+ progress issues raised during these performances.
+<br><br>
+The focus site consists of two buildings from the early 20th century, this, a collective workers’ house, designed by Bourse
+ du Travail architect Roger Poyé, and the Repairground, once a lace atelier and factory. The old communal house was known as La Chapelle
+ in the neighbourhood, probably after the arched entrance, and because it was known as a lively place to gather. 
+<br><br>
+The shared repair practice potentializes a repair praxis through which concerns in the community and the wider city can 
+be addressed. It tests the city as a possible scale at which to generate progressive, post-nationalist politics. So, we 
+take the neutral concept of the municipal and attempt to transform it into a radical unit for developing social solidarity, 
+the commons and mechanisms of direct democracy, and explore opportunities for autonomy. 
+         </p1>
+      </div>
+   </div>
+
+   <div class="columns image" style="background-image: url('img/rad-rac-12.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/rad-rac-8.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+Before the Jungle, a migrant solidarity squatting movement
+successfully used Calais’ vacant factories as shelter
+and support to many displaced people. For several years, these ruins 
+provided relatively stable living environments as well as a common project of maintenance 
+and repair, requiring intimate knowledge of the interior nooks that proved useful in attempted eviction. 
+Now outmanoeuvred
+by targeted legislative changes, these buildings have been
+bulldozed, or their skins stapled over with sheet metal,
+blocked up with breeze blocks, awaiting death or renewed
+strategy.  Gradually, behind the gutted perimeter, apartment complexes have been contrived. When these ruins 
+are renovated by developers their social memory is commodified, externalised, for their new middle class protagonists. 
+<br><br>
+I take the semi-domestic spaces of Calais’ first workers cafes as one interruption of urban externalisation. 
+In his paintings, labour unionist Ralph Fasanella uses the cut to open the city like ‘eviscerated animal,’ where 
+nothing is interiority, all is exteriorised – the worker’s struggle is exposed and therefore shared. A key tenet 
+of anarchist thought is the rejection of the state as protector of private property, and anarchism resists by occupying,
+ taking up space and breaching the private. But public life in Calais has stagnated. Currently, both Calaisiens and the
+ transient population are motivated towards isolationism, the displaced in order to avoid the authorities, and the 
+locals affected by the securitisation of their city and the loss of their shared industry. 
+      </p1>
+   </div>
+</div>
+</div>
+
+
+<div class="section-container" style="margin-bottom: 5px">
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote">
+      <h4>
+Democracy can be a protean process which resists the archic logics of sovereignty and capitalism. This kind of democracy 
+defuses possible hostilities by transforming antagonism into agonism, in which confrontation ceases to be a competition 
+between elites or enemies, but rather a dialogue between equal adversaries.
+      </h4>
+      </div>
+   </div>
+</div>
+
+<div class="columns image">
+<div id="slider">
+   <input type="radio" name="slider" id="slide1" checked>
+   <input type="radio" name="slider" id="slide2">
+   <input type="radio" name="slider" id="slide3">
+   <input type="radio" name="slider" id="slide4">
+   <div class="slides">
+      <div class="overflow">
+         <div class="inner">
+            <div class="slide" style="background-image: url('img/rad-rac-24.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-0.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-10.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-11.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="controls">
+      <label for="slide1" onclick="resetSlider()"></label>
+      <label for="slide2" onclick="resetSlider()"></label>
+      <label for="slide3" onclick="resetSlider()"></label>
+      <label for="slide4" onclick="resetSlider()"></label>
+   </div>
+   <div class="bullets">
+      <label for="slide1" onclick="resetSlider()"></label>
+      <label for="slide2" onclick="resetSlider()"></label>
+      <label for="slide3" onclick="resetSlider()"></label>
+      <label for="slide4" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+
+</div>
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/rad-rac-28.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+Fin de siècle cabarets were vessels for fierce social and political satire, 
+visited by patrons across the social strata. To enter the cabaret was to subject oneself to critique, as well as
+ participate in the critique of others. A cabaret conduct engenders a more organic terrain of brains engaged in processes of confusion, critique, 
+clarification, contestation. In the cabaret, dissensus was expressed through dialogue between audience and performer. The response 
+of those watching was the other half of the conversation, co-constitutive, so the show should never be didactic.  The ‘10 
+Commandments of Cabaret Life’ illustrate the performance of the audience member, “no. 6. Time your noisy interjections so 
+they erupt precisely where they don't fit. This contributes enormously to enlivening the program.”
+<br><br>
+The original disposition of cabaret was constructed through an appropriation of marginal or abandoned space, embellished with a
+ bricolage of church candelabra, old clubhouse paintings and medieval weapons, thematic and scenographic in all of its zones,
+ from the stage to the lavatory. There were already images attached to the idea of repair: from wastefulness, cracked screens, 
+the mutated landscapes of the Anthropocene, the user-friendliness of consumption, a static freefall into undesirable future, 
+but also patching-up, making-do, a kind of steam-punk, post-apocalyptic bricolage. Developing an aesthetic to activate caring
+ for and repairing is useful if it remains somewhat fluid, evocative rather than reductive, or prescriptive.
+      </p1>
+   </div>
+</div>
+</div>
+
+
+
+<div class="section-container" style="clear:both; padding-top: 0px">
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote">
+      <h4>
+In this enacting of interiority and exteriority, the donning of different roles, we understand the community 
+as an unscripted production, of innumerable nested narratives where notes and cues are inscribed in space. 
+      </h4>
+      </div>
+   </div>
+</div>
+
+<div class="columns image">
+<div id="dslider">
+   <input type="radio" name="dslider" id="slide13" checked>
+   <input type="radio" name="dslider" id="slide14">
+   <input type="radio" name="dslider" id="slide15">
+   <input type="radio" name="dslider" id="slide16">
+   <div class="slides">
+      <div class="overflow">
+         <div class="inner">
+            <div class="slide" style="background-image: url('img/rad-rac-14.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-17.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-18.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-20.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="controls">
+      <label for="slide13" onclick="resetSlider()"></label>
+      <label for="slide14" onclick="resetSlider()"></label>
+      <label for="slide15" onclick="resetSlider()"></label>
+      <label for="slide16" onclick="resetSlider()"></label>
+   </div>
+   <div class="bullets">
+      <label for="slide13" onclick="resetSlider()"></label>
+      <label for="slide14" onclick="resetSlider()"></label>
+      <label for="slide15" onclick="resetSlider()"></label>
+      <label for="slide16" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+
+</div>
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/rad-rac-16.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+Tectonically lace-like, the existing fabric of the building (mesh tulle) is adorned with new motifs. I experiment with the role of ornament, interrupting its permanence by
+ letting it unroll, move or fold away, exposing it to wear or breakage and inciting attentiveness and guardianship. 
+Throughout these rooms there are hoists, screens, curtains, interactive elements for probing the environment, for mediating 
+degrees of exposure to the community. These intermissions between seen and unseen, vast and miniature, emulate the way 
+lace-making precision work could liberate the creative interior of the individual through its peculiar temporality. In this 
+enacting of interiority and exteriority, the donning of different roles, we understand the community as an unscripted production,
+ of innumerable nested narratives where notes and cues are inscribed in space. 
+<br><br>
+The repair architecture attempts to demonstrate its transitionary character. It is dispositional
+ in that it contains information which is shared with the user in order to gain feedback. Performativity is integral to the 
+cabaret conduct, yet along with moments of reveal, it is possible to conceal, to veil, drape, to rest and regroup backstage. 
+This gesturing is an articulation of peculiarities, of a community, an inscribing act whose 
+ultimate meaning is infinitely deferred. The refusal of the definite demonstrates the political urgency of a community in 
+momentum, and its need for continuous description of the peculiarities of that moment[um].
+      </p1>
+   </div>
+</div>
+</div>
+
+
+<div class="section-container">
+<div class="columns content">
+      <div class="content-container">
+         <p1>
+Electronics and computers become the focus of this particular Repairground. Victim to automation, the Calais lace community now addresses the computers that have become redundant. This extends to broader geo-solidarities, addressing injustices within the tech global supply chain e.g. mining and waste processing. Activities include research, advocacy and direct action, alongside learning the practical skills of mending broken devices. 
+<br><br>
+Repairground: two internal streets for repair material and people / loom-like repair decks / oval performance space/ backstage trim /
+  cafeteria / basement server room / studio towers / large scale workshop at the back / anteroom for tele-repair transmissions - 
+repair support call centre.
+<br><br>
+The new structures re-use material from this building and other deconstructed factories. The blue rails and screen indicate 
+movements when the stage is in and out of session. The longitudinal rails transport problematic repair material from the repair 
+decks to the platform at the front of the building, between which they are analysed on-stage and backstage. The cross-rail is a 
+sliding wall that opens the performance to the repair decks, while closing off the inwards passage of material. When there is 
+no performance, it re-opens the passage and closes the portal to the repair decks.
+         </p1>
+      </div>
+   </div>
+
+   <div class="columns image" style="background-image: url('img/rad-rac-19.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+<div class="section-container" style="clear:both; padding-top: 0px; padding-bottom: 0px">
+
+<div class="columns image">
+<div id="cslider">
+   <input type="radio" name="cslider" id="slide9" checked>
+   <input type="radio" name="cslider" id="slide10">
+   <input type="radio" name="cslider" id="slide11">
+   <input type="radio" name="cslider" id="slide12">
+   <div class="slides">
+      <div class="overflow">
+         <div class="inner">
+            <div class="slide" style="background-image: url('img/rad-rac-27.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-22.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-23.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+            <div class="slide" style="background-image: url('img/rad-rac-21.jpg'); background-size: cover; background-repeat: no-repeat">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="controls">
+      <label for="slide9" onclick="resetSlider()"></label>
+      <label for="slide10" onclick="resetSlider()"></label>
+      <label for="slide11" onclick="resetSlider()"></label>
+      <label for="slide12" onclick="resetSlider()"></label>
+   </div>
+   <div class="bullets">
+      <label for="slide9" onclick="resetSlider()"></label>
+      <label for="slide10" onclick="resetSlider()"></label>
+      <label for="slide11" onclick="resetSlider()"></label>
+      <label for="slide12" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+         <p1>
+ The Wardrobe is where outwards communication happens, housing a printworks at the front, a performance space in the West wing, 
+with the architect’s studio backstage, and exhibition, library and archive spaces in the east wing.
+The exhibition grove and the performance arena can be opened up to the street. There are embedded mechanisms of feedback and 
+adaption: audience-controlled lighting, chimneys are passageways for people and written comments, a floor that become a 
+roundtable, a stage flips to be a pinup, then returns this feedback to be the ceiling of the architect studio who undertake 
+their city repair designs in reference to this feedback. 
+<br><br>
+When iconography is freed from permanence, it can become active; visual signification is placed at locations of high maintenance, 
+for example the frescoes we paint on our stages are repeatedly trodden, worn out and re-imagined.  Ornament is rarely out of reach, 
+and existing at an interface with the body means inciting care from the user, and care between its co-users. It is integrated into a 
+mobile and practical architecture, where it builds a disposition, mediates faces and orientations, or nooks and exchanges at the 
+junction of surface and structure.  This attempts an economy oblique to the ruling one. This is of course challenging, but represents 
+a general ambition. Ambition demonstrates both grandiosity and vulnerability, the cultivation of a complex, often chaotic, 
+multi-scalar aesthetic, is purposeful, it is like a dare, where the rigidity of community becomes receptive again. 
+         </p1>
+   </div>
+</div>
+</div>
+
+
+</section>
+<div class="gall-container">
+   <div class="product-grid-2x2">
+
+<div class="card stacked">
+    <a href="img/rad-rac-26.gif">
+          <img src="img/rad-rac-26.gif" alt="animation showing wardrobe building existing versus intervention" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/rad-rac-25.gif">
+          <img src="img/rad-rac-25.gif" alt="animation showing repairground building existing versus intervention" class="card__img">
+    </a>
+</div>
+
+   </div>
+</div>
+<section>
+
+
+
+</section>
+<div class="gall-container" style="padding-top: 30px;">
+   <div class="product-grid">
+
+<div class="card stacked">
+    <a href="img/rad-rac-31.jpg">
+          <img src="img/rad-rac-31.jpg" alt="section model close-up with blue and white card" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/rad-rac-30.jpg">
+          <img src="img/rad-rac-30.jpg" alt="sketch plan of repairground" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/rad-rac-29.jpg">
+          <img src="img/rad-rac-29.jpg" alt="section model birds-eye with blue and white card" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/rad-rac-32.jpg">
+          <img src="img/rad-rac-32.jpg" alt="birds eye view of card models of both buildings" class="card__img">
+    </a>
+</div>
+</div>
+</div>
+
+
+<div class="section-container" style="clear:both;">
+  <div class="pdfview">
+<object data="img/rad-rac-programme.pdf?#zoom=70&scrollbar=1" type="application/pdf" trusted="yes" width="100%" height="100%">
+   <p>Unable to display PDF file. <a href="img/rad-rac-programme.pdf">Download</a> instead.</p>
+</object>
+   </div>
+</div>
+
+
+<div class="section-container" style="clear:both;">
+  <div class="pdfview">
+<object data="img/rad-rac-repairground-script.pdf?#zoom=70&scrollbar=1" type="application/pdf" trusted="yes" width="100%" height="100%">
+   <p>Unable to display PDF file. <a href="img/rad-rac-repairground-script.pdf">Download</a> instead.</p>
+</object>
+   </div>
+</div>
+
+
+    <div style="margin:40px 0 40px 40px">
+      <p3>
+      Archival photographs from 'Bulletin historique et artistique du Calaisis' and 'Lacemakers of Calais' online.
+<br>
+      Including images of: Ralph Fasanella's 1972 painting 'Dress Shop,' and a photo of a squat in Rue Massena courtesy Calais Migrant Solidarity.
+      </p3>
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist, blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: white;
+}
+
+
+body {
+   background-color: #181318;
+   font-family: Euripides;
+   color: white;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+   color: #d0c054;
+}
+
+p1 a:hover {
+   color: #181318;
+   background-color: #d0c054;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+.container {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background: white;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+
+post-heading {
+    padding-bottom: 30px;
+}
+
+post-meta {
+   vertical-align: baseline;
+}
+
+foot-note {
+}
+
+
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: -30px;
+   float: right;
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 60%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 30%;
+}
+
+.columns.content {
+   padding-bottom: 30px;
+   margin-right: 40px;
+   display: inline-block;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+p {
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid black;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align:left;
+   text-align: left;
+}
+
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+
+}
+
+@media only screen and (min-width:640px) {
+
+p {
+   line-height: 18px;
+   font-size: 18px;
+   font-family: Rasa-Regular;
+}
+
+.hamburger {
+   display: none;
+}
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+  border-bottom: 2px solid black;
+  border-color: #d0c054;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+section {
+
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+
+}
+
+h3 {
+   line-height: 0.8vw;
+   font-weight: 900;
+   font-size: 1.2em;
+}
+
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <script src="js/accordion.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="website-homepage.html"><img src="img/ila-colley-logo-white.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a class="active" href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+
+
+<div class="post-heading">
+   <h2>Act</h2>
+      <div class="post-meta">
+         <p1>April 2022, originally for <a href="https://www.fromlocaltoglobal.co.uk/ila-colley">Scarborough Museums</a></p1>
+      </div>
+</div>
+
+<div class="section-container">
+   <div class="columns content">
+<p>* Trigger warning: reference to violence, including that of a sexual nature * 
+<br><br>
+/ enclosing<br>
+After work I walk to the back fields where I used to go as a teenager and the route has been fenced in along the wall, radiant fresh pine stakes and steel links suspending the landscape of my earliest resolutions. I’ve been thinking about the idea of enclosure for a while now, especially in relation to land access and knowledge. Movements resisting enclosure advocate for, among other goals: the accountability of state and corporate entities, the equitable sharing of common goods, availability of resources towards self-sufficiency, as well as access to all kinds of knowledge to enable learning independent of financialised institutions. In my own life: my grandmother, over tea, explaining the significance of the Kinder Scout mass trespass in defence of our right to roam (Barnett); on my desk the patented hardware stripped from various failing technologies that have been staunch adversaries to my young, productivity-conditioned attitude.
+<br><br>
+Even access to clean water, a UN human right, is not free in most of the developed (imperial) world, and in many such places is not even clean. In fact, recent discourse around something as basic as clean water has drawn attention to cartographies of infrastructural racism and the continued alienation of communities from their environments and its resources by powerful profiteers. In England, as Guy Standing explains in his book The Plunder of the Commons (2019), the 1217 Charter of the Forest instituted the shared use and stewardship of natural means of subsistence and materials to every free person. Along with the Magna Carta, this document was the bedrock of common law of the land for hundreds of years until it was superseded by the Wild Creatures and Forest Laws Act of 1971 under Edward Heath’s Conservative government, which formally revoked the public freedoms of the charter through controlled protection and commodification of nature. Standing outlines the forces that have depleted our commons over the course of this history: neglect, encroachment, privitisation, colonisation. In this project I’m thinking about these dynamics under the broader notion of enclosure.
+<br><br>
+Working with the Harrison collection, I began to compile dynamics that could be read as enclosure, that is, divisions forced into an existing ecology of things. This compilation became expansive: enclosure of common resources and means, enclosure of movement by state borders imposed by colonisers, of wealth by financial entities and plutocratic policy-making, of wildlife by militarised parks, of culture by appropriation, of land by appropriation, of people by categorisation and enslavement, materials by taxonomy, of language by morality. In these, enclosure is divorce and containment. Similarly, the objects in the museum store are divorced from their context and, as I examined them, I sensed myself complicit in their containment. I became hyper-aware of the latex gloves that mediated my handling, their cardboard cases, the drone of the climate control, the locks and seals that insulated the basement store from the rest of the building.
+<br><br>
+During the partition of Africa, Western European powers rushed to divide and invade the continent in order to exploit its resources using the pretence of guardianship and development. The Congo Free State, as it was named during Harrison’s visits, was “designed as an extraction area and never as a political space” (Kabamba in Dowling 2020, 7). I sense that enclosure cannot be estranged from violence, but also that this relation is not straightforward. Enclosure denotes a making of unfreedom and of stasis, a task of capitalisation. On the flipside it does this protecting thing too; I can see the action of enclosure as it could attempt to defend something progressive, for example a practice of freedom or nurture. But this scenario is precisely how exploitative enclosure has been falsely justified. Sitting among the silent bones and hides, even with a disgust regarding the perpetrators of this history, I felt mainly sad, I felt that all of us in that room, animate and inanimate, were sad and lonely. Displaced, disconnected, unable to communicate. That however skilfully the craftsperson had tried to reinsert a ferocious glory into these taxidermies, they had simply managed to exaggerate a pitiful superficiality of killing for glory, that if the trophies were testament to anything now it was this. And that, in an attempt to enclose life permanently as keepsake, what is now most palpable is its erasure.
+<br><br>
+/ controlling<br>
+Regarding the treatment of wildlife in the region, much has changed since Harrison’s visits, though a familiar mode of violent control is enacted through the DRC’s national parks, created in the name of combatting biodiversity loss. The highly militarised boundary enforcement and extreme anti-poaching measures lead to the expulsion of indigenous groups and in some cases, the creation of de facto warzones. And though hunting is prohibited within park boundaries, human shoot-on-sight policies are authorised and used by park rangers as per their training under Belgian former paratroopers (Jones 2020, 34). Enclosure of these parks can be seen as a means of accumulation by securitisation, lucrative to state elites and private landholders, and supported by donations and tourism of misled consumers. Tracing the physical enclosure of the park, these practices exemplify a moral boundary drawing in which established racial otherhoods, for example the conceptualisation of poachers as terrorist groups, are exercised to enable the policy agendas of white conservationists. This continues to perpetuate the colonial falsehood that local actors are unfit for self-governance.
+<br><br>
+In Scarborough, I push the big down button and steel cables begin their controlled unwind; a gentle few seconds later, the lift doors open among the cellars turned offices and artist studios that preside over the hillside. I return to my station and read that mineshafts in the DRC’s huge mineral extraction industry are often excavated by hand and are “some of the most dangerous in the world”(Sovacool in Dowling 2020). Despite this, young children routinely work sorting ore, or down in the tunnels. Following the logic of primitive accumulation the surplus labour of these children continues to create value for owners. Marxist scholar David Harvey describes this process as “taking land, say, enclosing it, and expelling a resident population to create a landless proletariat, and then releasing the land into the privatised mainstream of capital accumulation” (2003). He theorises a contemporary version of this as accumulation by dispossession, a concept that helps explain the disparity between the incredible resource wealth of the DRC’s land, apparently US$24 trillion rich in gold, copper, diamonds, oil, uranium, zinc, cobalt and coltan, and the extreme poverty that the vast majority of its population live under.
+<br><br>
+/ monstrous intimacy<br>
+The Inclosure Acts of England and Wales were a catalyst for the proletarianisation of commoners; the systems of enclosure regarding African peoples and their land follow similar patterns but are far more extreme and explicit. For instance, the European popularity of the automobile with its inflatable tire increased demand for Congo rubber, leading to quotas that Belgians industrialists enforced through torture, rape, and massacre. In her book A Billion Black Anthropocenes or None, Kathryn Yusoff relates the extraction and circulation of gold to the buying and selling of enslaved Africans, writing, “The rendering of nonbeings in colonial extractive practices through the designation of inhuman or geologic life, its exchange and circulation, demonstrates what Christina Sharp calls the “monstrous intimacy” of the subjective powers of geology, where gold shows up as bodies and bodies are the surplus of mineralogical extraction” (2018). The severe material, corporeal and psychological equivalences of enclosure were not repercussions, but rather the core economy and modus operandi of the colonial project.
+<br><br>
+I’m swivelling nervously in my office chair as Jim clicks through the photos on his monitor. Among the hoards of Harrison’s trophy photos is an angular silhouette of what looks like headgear at a pit edge. Later I am equipped with the entire hard drive and spend hours dragging jpegs into thematic groups; one is titled ‘extractive industries’. The era of digitalisation has altered discourse around decolonising museums, with the possibility to create whole collections of simulacra seeming to offer a neutral parallel to their plundered originals; history, evidence, but not on a plinth, less appealing to venerate when rendered in pixels. But enclosures of hierarchy and exclusion continue to to be strategically employed in digital realms. And the devices with which I zoom, scroll, and form my perspective are made up precisely of the stuff that DRC mine workers labour to extract, and no amount of critical reflection can expunge me of this contradiction. I don’t find any more photos of the mine. The brutal realities of the burgeoning extraction industry was of little concern to Harrison, as the plight of labouring bodies often are to wealthy white men. Only recently are the victims of such supply chains able to fight for some genuine comeuppance; a 2019 lawsuit launched by International Rights Advocates on behalf of 14 families from the DRC saw Apple, Google, Dell, and Tesla held to account for knowingly sourcing lithium-ion batteries originating from mines where children had been injured and killed (Dowling 2020).We soon come across several photographs Harrison took of a Bambuti person, staged with his umbrella to illustrate their size, and later formalised in another sequence at different angles in which the person’s body is marked with lines on the elbows, hands and head for more accurate measurements. The quantitative treatment of an individual’s body on a basis of otherhood was common to the scientific racism that intellectualised dominion of peoples. This form of enclosure, through data and categorisation, manufactured an objective inferiority that was propagated performatively via human zoos or world fairs. I begin to question my own relationship to quantification of information, remembering how I was surprised at the diminished size of the collection. Because I don’t want to get this wrong, misunderstand or be ignorant, I become obsessed with a building a density of data, obsessively researching, feel I need to have back-up. This has gone too far, the information has overtaken the intention. But something motivates this knowledge, it isn’t just strata piling up. Some critical whispers within it are the slippery translucent nematodes decomposing what is wasted therein: the knowledge whose premise was enclosure.
+<br><br>
+/ concealing<br>
+I start sketching in the margins of my scribbles. They start literal: an Okapi head, a tusk, photo album folds. I draw the umbrella, dissect it, turn it into a carousel, a basin, a trunk. Quickly, they begin to replicate the shapes of ideas I’ve been reading and I copy out quotes in red all caps across the dotted grid. The imperative becomes the translation of perspective from this new framework of ideas into art. But I soon go back to my reading and my reading tells me that cognitive capitalism aims to turn all forms of knowledge, artistic, philosophical, scientific, into a commodity, and that this commodification is encroaching on my own selfhood. And in the public-ness of my learning, I should be cautious that practices of research aren’t just defensive ‘veils’ to protect my own thoughts and mistakes, my selfhood, whereas in Harrison’s photos his subjects are left with no defence to the theft of theirs. I don’t want to reproduce these photos as part of my commission in case they are received within the old way of seeing (Berger in Tolia-Kelly 2020), but on the flip-side I hope they won’t be absent from the discussion, hidden away somewhere in a redundant services void. I was really taken by the story of the rotten trophy heads that had been hidden away in the Woodend building (Andrew Clay in Burrows 2021) because it spoke also of the energy of concealment, the effort invested in sealing them in, and how it was undone in this theatrical spillage down the hillside. This doorway was a literal enclosure that evokes a post-colonial guilty conscience, and the way that archives can both preserve and hide from view what is no longer deemed palatable; how this is diminished representation (Raymond in Tolia-Kelly 2020) as well as avoiding accountability.  
+ <br><br>
+/ deviating<br>
+Moving from knowledge translation I begin sketching art that could be part of an act – or actions – of critically and collectively re-making the record. I imagine a device to redraw the collection using layering and interference, and forming a record that would be bulky and continuous, needing to be unrolled and reappraised by a large group. But focussing on a remade end product evokes a kind of static up-to-date perspective. I collect up my sketches, shapes and objects, doorway, umbrella, blocks and instead consider the land, excavated, patrolled. In 2018 the International Trade Union Congress ranked the UK alongside Russia and the Congo as a country where there are “regular violations of workers’ rights”. I’m thinking now about momentarily suspending chronology, and using the association of enclosure to bring experiences of labour, commodity, and relation to land between the DRC and the UK into the same field of view. Perhaps allowing protagonists agency from a strict historical schema and can encourage points of access between time and geography to be revealed?
+<br><br>
+This is a kind of indiscipline, and we know that indiscipline can begin to disrupt the reproduction of imperial hierarchies (Kaufmann 2011). But can my work really be disruptive if it is tendered by the museum? It’s clear that a decolonising art practice should resist suppressive permissions, editing and censorship and deal in subverting formally outlined expectations; that the expense of this is meaningful. Re-focusing away from obedient and knowledge-dense creativity is not erasure, it is saturated instead with potentiality. I attempt to be resident in a realm of decomposition and deviation. With the words “[knowledge is] something that holds you back, that inscribes you within tradition, within certain parameters of the possible” (Sheikh in Kaufmann 2011), I am moving past the conundrum of this text, into the work with intuition. I am working in states of frustration, fury and confusion, but I am taking action to rejoice in the things that refuse enclosure, something like spirit, especially spirit through music. And as I edit this, leaves are perking their ears in the afternoon sun, sending speckled shadows over the window ledge, across the grooved surface of Revolutionary and Evolutionary Sounds From The Two Congos. The syncopated, upbeat Latin sounds in Congolese music describe a powerful solidarity between the Cuban Revolution and African liberation struggles, emphatic in this particular region as a sonic recipe returned with ingredients added to the original rumba pulse brought there by the enslaved people of Wene wa Kongo who were displaced via Cuba (Sohonie 2021; Mafuta 2019).
+<br><br>
+I start working with my hands and my mind drifts among the kaleidoscopic culture of the Congo, a vast and diverse intersection of ethnicities, languages, histories, rhythm and song (Mafuta 2019). Though I am heeding as Sohonie writes on the scarcity of Congolese owned record labels and how “the nature of ownership follows a similar structure to the extraction of its mineral wealth” (2021), I am also changing disks away from broad-stroke concept enclosures, liberated amid the detailed, frenetic landscapes of KOKOKO! Their creative engineering is of the close-to-hand, cans, cables, typewriters, honouring a direct, reciprocal musicality akin to the Bambuti’s molimo trumpet as it wakes the forest to call on its guardianship. Dropping the next needle I dispel perspective, instead feeling the funky Black Ark bassline as it chases the drawl of bad food, no good with the brass and Lingala chant across the platter; the Congo drums returned to the Caribbean this time with the reggae beat of the pan-African movement. Without analysis, letting the sound affect; resilience; resistance; reverence; recreation.
+<br><br><strong>Bibliography<br></strong>Barnett, Marcus. 2018. ‘The Kinder Scout Mass Trespass’ Jacobin online, 21st April 2018. Accessed 29th July 2022. <a href="https://jacobin.com/2018/04/kinder-scout-anniversary-worker-rambling-private-property">https://jacobin.com/2018/04/kinder-scout-anniversary-worker-rambling-private-property</a>.</p><p class="" style="white-space:pre-wrap;">Burrows, Gifty. 2021. ‘History of the Harrison Collection.’ From Local to Global website. 14th December 2021. Accessed 11th March 2022. <a href="https://www.fromlocaltoglobal.co.uk/history-of-the-harrison-collection">https://www.fromlocaltoglobal.co.uk/history-of-the-harrison-collection</a></p><p class="" style="white-space:pre-wrap;">Dowling, Owen. 2020. ‘The Political Economy of Super-Exploitation in Congolese Mineral Mining.’ Peter Peckard Memorial Prize 2020., University of Cambridge.</p><p class="" style="white-space:pre-wrap;">Faloyin, Dipo. 2021. ‘Wow, Belgium Is Returning 2,000 Artefacts Looted From Congo – Just 118,000 Left’. <em>Vice</em> (blog). 9 July 2021. Accessed 20th April 2022. <a href="https://www.vice.com/en/article/m7ep84/wow-belgium-is-returning-2000-artefacts-looted-from-congo-just-118000-left">https://www.vice.com/en/article/m7ep84/wow-belgium-is-returning-2000-artefacts-looted-from-congo-just-118000-left</a>.</p><p class="" style="white-space:pre-wrap;">Harvey, David. 2003. <em>The New Imperialism</em>. Oxford: Oxford University Press.</p><p class="" style="white-space:pre-wrap;">Jones, Emily. 2021. ‘Capital and Control: Neocolonialism Through the Militarization of African Wildlife Conservation.’ <em>Flux: International Relations Review</em> 11 (2): 28-37. <a href="https://doi.org/10.26443/firr.v11i2.73">https://doi.org/10.26443/firr.v11i2.73</a></p><p class="" style="white-space:pre-wrap;">Kaufmann, Therese. 2011. ‘Art and Knowledge: Towards a Decolonial Perspective’. Translated by Aileen Derieg. <em>art/knowledge: overlaps and neighboring zones</em> on Transversal Texts web. Accessed 18 April 2022. <a href="https://transversal.at/transversal/0311/kaufmann/en">https://transversal.at/transversal/0311/kaufmann/en</a>.</p><p class="" style="white-space:pre-wrap;">Landlord, The. 2019. ‘Word of the week: molimo.’ <em>Song-Bar </em>website. 24th July 2019. Accessed 30th April 2022. https://www.song-bar.com/lyric-word-of-the-week/word-of-the-week-molimo-mbuti-pygmy-music</p><p class="" style="white-space:pre-wrap;">Mafuta, Mwana. 2019. Liner notes
+ for <em>Congo Revolution - Revolutionary and Evolutionary Sounds From The Two Congos 1955 – 62</em>, Soul Jazz Records, SJR LP437, 2 x Vinyl LP.</p><p class="" style="white-space:pre-wrap;">Ndimwiza Murhony, Emmanuel. Transl. Roxane Valier-Brasier. 2020. ‘The Mobilisation and Repression of Citizens Movements Continues in the DRC’. <em>Progressive International online,</em> 24th July 2020. Accessed 29 April 2022. <a href="https://progressive.international/wire/2020-07-24-la-mobilisation-et-la-rpression-des-mouvements-citoyens-continuent-en-rdc/en">https://progressive.international/wire/2020-07-24-la-mobilisation-et-la-rpression-des-mouvements-citoyens-continuent-en-rdc/en</a>.</p><p class="" style="white-space:pre-wrap;">Ramsay, Adam. 2018. ‘Trying to Milk a Vulture: If We Want Economic Justice We Need a Democratic Revolution’. 2018. <em>New Thinking for the British Economy</em> (blog). 22nd October 2018. Accessed 8th April 2022. <a href="https://neweconomics.opendemocracy.net/trying-milk-vulture-want-economic-justice-need-democratic-revolution/">https://neweconomics.opendemocracy.net/trying-milk-vulture-want-economic-justice-need-democratic-revolution/</a>.</p><p class="" style="white-space:pre-wrap;">Sohonie, Vik. 2021. ‘Musically, Congo Is the Mothership’. Africa is a Country online, 11th October 2021. Accessed 20th March 2022. <a href="https://africasacountry.com/2021/11/musically-congo-is-the-mothership">https://africasacountry.com/2021/11/musically-congo-is-the-mothership</a>.</p><p class="" style="white-space:pre-wrap;">Standing, Guy. 2019. <em>Plunder of the Commons: A Manifesto for Sharing Public Wealth</em>. Penguin UK.</p><p class="" style="white-space:pre-wrap;">Tolia‐Kelly, Divya P., and Rosanna Raymond. 2020. ‘Decolonising Museum Cultures: An Artist and a Geographer in Collaboration’. <em>Transactions of the Institute of British Geographers</em> 45 (1): 2–17. <a href="https://doi.org/10.1111/tran.12339">https://doi.org/10.1111/tran.12339</a>.</p><p class="" style="white-space:pre-wrap;">Wembi, Steve, and Stephen Sanchez. 2021. ‘La Belgique a Déboulonné Des Statues de Léopold II. Et Maintenant ?’ <em>Vice</em> (blog). 1st June 2021. Accessed 19th April 2022. <a href="https://www.vice.com/fr/article/dyv3px/la-belgique-a-deboulonne-les-statues-de-leopold-ii-et-maintenant">https://www.vice.com/fr/article/dyv3px/la-belgique-a-deboulonne-les-statues-de-leopold-ii-et-maintenant</a>.</p><p class="" style="white-space:pre-wrap;">Yusoff, Kathryn. 2018. <em>A billion black Anthropocenes or none</em>. Minneapolis: University of Minnesota Press.
+</p>
+<br><br>
+   </div>
+</div>
+
+
+
+
+<div class="post-heading">
+   <h2>Anchor</h2>
+      <div class="post-meta">
+         <p1>April 2022, originally for <a href="https://www.fromlocaltoglobal.co.uk/ila-colley">Scarborough Museums</a></p1>
+      </div>
+</div>
+
+<div class="section-container">
+   <div class="columns content">
+<p>Maybe it was just my vertigo, but Scarborough was all about elevation. We used to visit when I was a kid and somewhere between the Dales and the Moors, mum would haul our shabby Citroën up the perilous plunge that sheared normal reality from the sands of the East. The engine would sob its way to the top of the incline while I’d clench my eyes and fingers shut and mum would desperately muster some principles of physics for me. While in town, we’d stay with mum’s friends and their foster kids in a strangely tall and narrow house, bedrooms stacked to the sky, and pose for photos scrambling up those stairs, or across the side of castle ridge, or peering down from the railings on the esplanade.
+<br><br>
+Scarborough sits on a bed of stony clay till, interrupted frequently by outcrops of harder rocks, calcareous sandstone, mudstone and limestones, making for a town of slopes and ledges, with a striking headland that divides the two beaches and is itself skewed by a surface fault line. The Jurassic coast reveals a crop of fossils, rich for the geological investigations of William ‘Strata’ Smith, aka the ‘Father of English Geology’ at the turn of the 19th century. Designed under his direction, the Rotunda Museum is one of the three buildings now managed by Scarborough Museums and Galleries. It was constructed in Hackness stone from a local estate where Smith had been appointed land steward; the mining operation, its product, and the strata revealed in the process were all ingredients of Smith’s operation.
+<br><br>
+From here I can see as the building spreads its wings into the hillside and examines the sea. This time in Scarborough, returning alone and grown up, I have a handle on my vertigo, and more of an interest in the spaces between things than the spectacle of distance. I am less dubious of the quaint herculean task of the cliff tramway. Had it still been there, I would’ve been less spooked by the blue spiralling water-slides of Atlantis unfurling from the hillside like tentacles. Instead I feel uneasily detached navigating the town’s topography, tarmac scripted and wary of the vastness between flows of people. In search of an overview I follow the A165 as the road flies over the valley, up a way onto the shoulder, past the hotel parking, up to where the lights of the arcades on South Beach  seem far-off and frivolous.
+<br><br>
+Like the geologist who examines and exploits the compounded bounty of millennia past, or the hunter in their camouflaged stand, it feels natural to have distance between myself and the thing I’m observing. Safe and secure, even, or maybe especially, if that distance is hierarchical, if I am towering over, and satisfied that my subject cannot reach me. It feels this way even though I desire the opposite dynamic: to be immersed and vulnerable. The intention of the art commissions within this decolonising project is “to help us learn how this collection can be viewed from multiple perspectives” (SMT 2021). Taking the footbridge and sinking back into the town, I remind myself that an up-close perspective, being proximate, active in the matter, and it in me, is good, surely good, and something to grow into. Such was my mindset embarking on research, crawling around in the crease of paths below the bridge, and the no less imperial sandstone chapters of The Crescent that would anchor my mind for the next few days.
+<br><br>
+I was there to explore the so-called Harrison collection first-hand, as well as meet some of the project team at the Trust. The brief focused on Harrison’s travels in what is now the DRC, then in the process of transitioning from being the private enterprise of King Leopold II to Belgian colonial rule. I didn’t have a high resolution understanding of the history of this region, recalling something about the rubber boom, Heart of Darkness, atrocities under Leopold II. What I did know was about the individual after whom the collection of objects was named. I knew that Harrison had been a wealthy and well-connected militia man who used these liberties to travel the world in search of large and rare animals to kill, photograph and preserve for display in his Yorkshire mansion. I knew that when he died the collection of animal heads, bones, weapons and photographs he had taken from these places were displayed in various different Scarborough locations before ending up in the Woodend basement.
+<br><br>
+I wondered why these objects were deemed significant at all, representative of culture to the degree that the calculated killing of living beings for sport and individual clout is deemed a significant cultural activity. If we dismiss the context in which they were procured (which we should not), I could recognise the educational value of the taxidermies during a time before technology made objects visually accessible to people anywhere, but this is no longer the case. Another argument I was aware of was that colonial era collections were valuable as evidence of the violent plunder of indigenous cultures, so long as they were given this critical framing. But against the weight of the harm that their existence spoke of, the importance of this hobby collection seemed small and slippery, unavoidably memorialising an era in which this particular genre of exploitative and destructive tourism was acceptable, applauded, and of public interest.
+<br><br>
+What did intrigue me was how the decolonising objective could speak to people in Scarborough, a Northern town with less than 3% of its population identifying as Black, Asian and Minority Ethnic (NYCC 2016), known for its historic spa and seaside resort, pioneering theatres, and its relative high ranking on crime and deprivation indexes. While I am there, the locals are excited about Shrove Tuesday; at 12 the pancake bell is rung to remind housewives to start frying. The local kids are released early from class and spend the afternoon skipping on the beach, an activity originally inspired by rope retired from fishing boats. Like many towns who have struggled to restructure their economy in the last fifty years, Scarborough seems to have a complicated relationship with its past; a nationally celebrated gem in its heyday, then somewhat sidelined by the rise of global tourism. With its sea-faring and manufacturing industries as well as a long history of high army enlistment, a masculine working culture of toughness and close-knit camaraderie may still be recognisable in the area, an aspect at odds with the pleasure beach image except to those familiar with the reality of towns like this.
+<br><br>
+In comparison, the Congo constitutes an enormous area of central Africa throughout which European colonisers employed their military power to systematically drain the region of its human and natural resources in what we now recognise as a capitalist project of super-exploitation (Dowling 2020). The impacts of this operation are grim: the people of the DRC are some of the poorest on earth, with the majority living below the poverty line without access to clean water, electricity or education, and are subject to ongoing ethnic conflicts, political turmoil and health crises.
+<br><br>
+The DRC demanded and secured independence in 1960 led by the visionary intellectual and revolutionary Patrice Lumumba, under whose guidance a democratic and equitable collectivist nation may have risen had it not been for the chaotic divisions and corruption instituted and later sponsored by colonial powers. While I write this an item in my feed appears, reporting a US traffic stop gone wrong in which a police officer threatened 26 year old Congolese refugee Patrick Lyoya before disabling his body cam and shooting the unarmed man in the back of the head; news items like this are tragic but they are not so rare. Systemic racism at all levels of governance mean so-called ‘developed’ states like the US and UK fail to promise safe refuge to post-colonial subjects fleeing conflicts derived or fuelled by influence of said states, let alone consider imperatives like reparation and restitution that are integral to truly decolonising movements. Operating instead within the cultural sector we are to have higher ambitions, because the remit is smaller and tends to deal with people via concepts and objects rather than material improvements to livelihood, and because as a class of people who have the resources and desire to access culture, we are liberal, generous, understanding; the ‘good guys.’
+<br><br>
+All this sounds definitive, but this is not the knowledge. It’s an attempt. Every spot where I steady my gaze reveals another resolution of the fractal. I have to abandon the overview, and the more I do, the less the layers of separation appear as strata. They enter a different forcefield, where sound or mass bunches up and exerts pressure on my thinking. There are stories that lose their eventfulness and take on the weight of scale. The sheer size of the Ituri Forest, arboraceous and dense over an area equal to the North of England, could become puzzling. The transience of the BaMbuti and their camps, their poison-hit monkeys dropping from trees 100m from the arrow-strike, the objective, calloused manner in which their bodies were treated by Harrison as he displaced them from their home to his, the way these ‘friends’ of his were often referred to in his diaries and printed correspondence as ugly, old or fat rather than by their names.
+I learned about these people through newspaper clippings and photographs of their “quaint performances,” knowing that their consent had been violated, and I felt, turning over the pages, that I was violating it again. Whatever I might create from a knowledge of them would be built on the foundation of this violation. I saw myself and I was the geologist who peels back layers of separation to retrieve what was made way back then, and allows it to be put to work in the present. The responsibility of why this energy burns was apparently mine. “Decolonising,” write Tolia-Kelly and Raymond “ideally is praxis including and embracing indigenous knowledges” (2020). But for me to attempt to extract indigenous knowledges from their subjectification in these records is not what these authors meant.
+<br><br>
+Across town, grappling with the strata of a vegan cheese sandwich, there are conversations about knowledge and value. I am surprised by the lack of provenance for the remaining artefacts, that there are few records of their previous housings. The appraisal is the museum testing its decolonising motions, starting with language, a key location of hegemonic imperial ‘neutrality’ within exhibitions. There is agreement to boycott a certain word denoting the BaMbuti people’s endemic short stature to avoid allusions to scientific racism and derogative usage, though I wonder at the extent of further modification if interpretation were subject to thorough consultation with people closer to these communities. I wonder also how the topic of hunting relates to local attitudes towards outsiders; during their stay in Yorkshire, the otherhood of the BaMbuti people was redeemed by their archery prowess, able to shoot the rabbits so popular in the stew and pies of the farming community here. Conversely, the game Harrison brought home with him were likely regarded as novelties, of uncivilised origins and from a land of plenty. We now widely recognise biodiversity loss as an accelerating concern, though we hear little of how conservation laws can be used to justify violent neocolonial displacements and protracted conflicts. Defining neocolonialism, Jones quotes “developed countries are seen to exercise subtle forms of domination, exploitation, and control over former colonies” (Mkono 2019, 697). Communities like those Harrison encountered in the Ituri Forest are habitually harassed, threatened and forced from their settlements.
+<br><br>
+I don’t find any direct connection between Scarborough and the business of slavery, but its wealth was invested in the town secondarily through the disposable income of many Britons who visited the resort. I wondered if there was something to explore in the dynamic of tourism and its geographies of performance and back-stage, pronounced in and out groups, host and other. But compared to the extremely exploitative treatment of Harrison’s black porters who were made to carry both the contents of his elaborate camp as well as the white men’s own bodies, the comparison seems petty and counterproductive. What can be said is that the position of the visitor is often abound with wilful ignorance in the pursuit of superficial interaction with other cultures; it’s what I sense in myself outside McDonalds watching kids dodge the cops, at the chippy while they compare notes on chronic pain medication from behind the fryer, it’s there when Angela shows me the Rowntree mural at the back of the library, the old cork panelling, the scissor gate lift where the books circulate, it’s the worry with which I shape these words.
+<br><br>
+Instead, I become determined that there is something in the collection’s past curation, that the spacing of encasements, their elaborate pruning and mounting, would reveal an aesthetics of artificiality related to the artifice of orientalism and imperialistic indoctrination. I am also keen to associate the art intimately with the physical space of the museum so that this decolonising influence might persist. For a while the collection was housed above the library, in a space now fitted out as a theatre and meeting room, but I could glean few details after that. There is apprehension where records are lost, I feel frustrated not to be granted the full narrative, taking a while to reconsider whether mysteries, simply because they are mysteries, don’t constitute a kind of knowledge in themselves. I tell John at the front desk that I’m interested in architecture and he has lots to point out as we spin up and down the back stair at Crescent House. Between the gallery rooms and marble slabs, an infrastructure of domestic service, bell systems and wine cellars, cast iron oven latches. But as we walk, we are endlessly discovering what we cannot discover, what we cannot touch with the tools we can afford. He is speaking of hidden rooms, supports, details. Despite all this not-knowing there is a desire to let people inhabit the space again, imagine, collectively, the destination for this anchor. And with this I’m reminded of the importance in taking pause from the endless pursuit of knowledge and accountability, and instead spend time nurturing equity with what there is currently to hand.
+<br><br>
+But are my foundations stable enough yet for creative response? I retreat to my hotel room, study photographs of Harrison’s home: the fine joinery, pleated upholstery, twisted stems of dark wooden pedestals. My own room here is Arthurian themed, crimson fabric stapled, spread regnant across the walls. Moving carefully around each beaded corner, I make my way to the chaise long, open the sash and rest my head, hoping the black of the night would spill in and fill these lordly gildings with a little doubt. At the end of the evening, I minimise the transcript of Harrison’s diaries. My eyes are closing over the severe edges of the blade held white knightly in a pin-up at the end of the bed, slicing my sleep into one thin parchment, into one rewarding story, into one master document, scrolling only in one direction.
+<br><br>
+But I am not a museum, expected and able to sermonise its spin with such gravity. Can’t even, because I do not feel myself forming a bedrock of perspective, but rather coming across fault line after fault line of questioning – just what and how many layers of separation are there? And how could I begin to know them without digging into them, or disturbing their opacity? Could these artefacts collected under the hegemony of colonialism “tell a fair story”? How could myself – and the museum – fulfil the need for behavioural introspection and critique without making this process self-involved? (Minott 2019, 3). How do address the paradox that recognising and undoing the ‘othering’ process relies on drawing attention to the othering processes documented in the collection? Was this intention at all feasible as a precarious practitioner other to the museum? And could I really diminish the false neutrality of my whiteness if my art dared to take a political position? How can I be firm without alienating those to whom these ideas are new? And how will this speculation share beyond the plane of the present, which it is sticky on? “How much of this is window-dressing, and how much is meaningful?” Pablo Larios demands of the decolonising museum. “How much of this will last?” (2020).
+<br><br>
+The more I read, the more I feel a desire to become something that isn’t a self, some entity that can just do the necessary work and not answer up to any aspect of identity. It’s clear that my perspective is part of the problem, which calls into question the different mediums I use and their internal logics: the authorial voice of the writer, the singular and personal perspective of the artist, the productive heroics of the architect. To me the strengths of these mediums is in their personhood, and their potential for pathos, some relational rubbing-off. What is the value of my work without this evocative equipment? Perhaps some of these tools can be useful if they aren’t just invested where I stand, in one set of coordinates, but used to keep them moving. Positioning is important not only to admit biases and privileges, but to contextualise access, approach, the resources and voices compiled to constitute the artist’s outlook where it meets subject.
+<br><br>
+Given this, I should state my relationship to post-colonial and racial struggles. I’m of mixed South Asian and white British heritage, though this bears little on my lived experience as a white-passing young cis woman growing up in a predominantly white geography in the North of England. I recognise the privileges this has afforded me, and continues to afford me. If we take that To try to decolonise our thought and our practice ... is to challenge white supremacy, heteronormativity and patriarchy  (Minott 2019) then having grown up in a low-income household with my mother as sole parent is the background information that demonstrates better my positioning in the decolonising movement. The vector of my struggles relate to issues of class, care, mental health and misogyny, and may be most relevant to cognisance of systems of oppression, being a survivor of bullying. This information isn’t intended to validate my participation, and is possibly quite boring, but I would like to make it available for those to whom it is significant.
+<br><br>
+I’ll admit my apprehension at the start of this work, despite my eagerness to explore the role of white people in sharing the labour of decolonisation. Knowing that people of colour are (almost) equally represented across the art commissions helped my willingness to take up some space. Still, I feel uncomfortable addressing painful events that, ultimately, people like me continue to benefit from. The way I move forward with the work is to use this discomfort as a point of scrutiny, and an energy that compels me to act, attempt, and try to be open about the mistakes I will make in the process. As Stuart Hall wrote in Cultural Identity and Diaspora, “Cultural identities are the points of identification, the unstable points of identification or suture, which are made, within the discourses of history and culture. Not an essence but a positioning. Hence, there is always a politics of identity, a politics of position, which has no absolute guarantee in an unproblematic, transcendental 'law of origin'” (1989 226). After being anchored awhile in the faults between strata, I am being propelling into the now, the now where courage germinates.
+<br><br>
+<strong>Bibliography</strong></p><p class="" style="white-space:pre-wrap;">Dowling, Owen. ‘The Political Economy of Super-Exploitation in Congolese Mineral Mining.’ Peter Peckard Memorial Prize 2020., University of Cambridge.</p><p class="" style="white-space:pre-wrap;">Hall, Stuart. 1989. ‘Cultural identity and diaspora.’ <em>Framework: the Journal of Cinema and Media</em>. 36: 222-237.</p><p class="" style="white-space:pre-wrap;">Jones, Emily. 2021. ‘Capital and Control: Neocolonialism Through the Militarization of African Wildlife Conservation.’ <em>Flux: International Relations Review</em> 11 (2): 28-37.<a href="https://doi.org/10.26443/firr.v11i2.73"> <span style="text-decoration:underline">https://doi.org/10.26443/firr.v11i2.73</span></a></p><p class="" style="white-space:pre-wrap;">Larios, Pablo. 2020. ‘Yvette Mutumba on Why Decolonizing Institutions “Has to Hurt”’. Frieze (blog). 6 July 2020.<a href="https://www.frieze.com/article/yvette-mutumba-why-decolonizing-institutions-has-hurt"> <span style="text-decoration:underline">https://www.frieze.com/article/yvette-mutumba-why-decolonizing-institutions-has-hurt</span></a>.</p><p class="" style="white-space:pre-wrap;">Lee, Shimrit. 2021. ‘Shimrit Lee on Decolonize Museums.’ e-flux podcast.<a href="https://www.e-flux.com/podcasts/419766/shimrit-lee-on-decolonize-museums"> <span style="text-decoration:underline">https://www.e-flux.com/podcasts/419766/shimrit-lee-on-decolonize-museums</span></a></p><p class="" style="white-space:pre-wrap;">Minott, Rachael. 2019. ‘The Past Is Now: Confronting Museums’ Complicity in Imperial Celebration’. <em>Third Text</em> 33 (4–5): 559–74.<a href="https://doi.org/10.1080/09528822.2019.1654206"> <span style="text-decoration:underline">https://doi.org/10.1080/09528822.2019.1654206</span></a>.</p><p class="" style="white-space:pre-wrap;">North Yorkshire County Council, Corporate Information Systems Team. 2016. ‘Population Information for North Yorkshire’. Accessed 2nd May 2022.<a href="https://hub.datanorthyorkshire.org/dataset/north-yorkshire-population-summary"> <span style="text-decoration:underline">https://hub.datanorthyorkshire.org/dataset/north-yorkshire-population-summary</span></a></p><p class="" style="white-space:pre-wrap;">Scarborough Museums Trust. 2021. From Local to Global Artist Micro-commissions Open Call</p><p class="" style="white-space:pre-wrap;">Tolia‐Kelly, Divya P., and Rosanna Raymond. 2020. ‘Decolonising Museum Cultures: An Artist and a Geographer in Collaboration’. <em>Transactions of the Institute of British Geographers</em> 45 (1): 2–17.<a href="https://doi.org/10.1111/tran.12339"> https://doi.org/10.1111/tran.12339</a>.
+</p>
+<br><br>
+   </div>
+</div>
+
+
+
+
+  </section>
+</div>
+
+</body>
+</html>

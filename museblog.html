@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist, muse, learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+* {
+   font-family: Euripides;
+   color: black;
+}
+
+body {
+   background-color: #d0c054;
+   font-family: Euripides;
+   color: black;
+   margin:0;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+.container {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background-color: black;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+@media only screen and (max-width:639px) { 
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #e9dedb;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over,
+.over-active {
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align:left;
+   text-align: left;
+}
+
+p {
+   line-height: 3vw;
+}
+
+.rhs-nav-title {
+   margin-top: 20px;
+   margin-right: 10px;
+   margin-bottom: 20px;
+   text-align:right;
+   font-size: 4vw;
+}
+
+/*
+img {
+   float: left;
+   margin-right: 0px;
+   margin-left: 0px;
+   margin-top: 60px;
+   padding-bottom: 20px;
+   width: 100%;
+
+}
+*/
+
+}
+
+@media only screen and (min-width:640px) {
+
+.hamburger {
+   display: none;
+}
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+.over-active {
+  border-bottom: 2px solid white;
+  border-color: #e9dedb;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   color: black;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: #e9dedb;
+   transition: 0.3s;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+   border-color: #d0c054;
+   border-top: 0px;
+   border-left: 0px;
+   border-right: 0px;
+}
+
+section {
+
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+
+}
+
+h3 {
+   line-height: 0.8vw;
+   font-weight: 900;
+   font-size: 1.2em;
+}
+
+p1 {
+   line-height: 0.6vw;
+   font-size: medium;
+}
+
+.rhs-nav-title {
+   position: absolute;
+   top: 5%;
+   left: 80%;
+   text-align:right;
+   font-size: 2vw;
+}
+
+/*   img {
+   margin-top: 0px;
+   margin-right: 60px;
+   float: left;
+   width: 40%;
+}
+*/
+
+}
+
+</style>
+</head>
+
+<body>
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="website-homepage.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over-active">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+<div>
+   <p><i>in-progress
+<br> / <br> in-tune <br> / <br> 
+   </i></p>
+</div>
+<img src="img/museblog-infill.png" style="width: 100%; height: 100%; padding-top: 40px">
+  </section>
+</div>
+
+
+</body>
+</html>

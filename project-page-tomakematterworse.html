@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist, sculpture, museum, decolonising">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   color: black;
+}
+
+body {
+   background-color: white;
+   font-family: Euripides;
+   color: black;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+   text-decoration: none;
+}
+
+p1 a:hover {
+   color: white;
+   background-color: black;
+}
+
+p3 {
+   font-weight: 200;
+   font-stretch: 100;
+   margin: 0px 0px 0px 0px;
+   font-size: 14px;
+   line-height: 16px;
+   font-family: Rasa-Regular;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+h3 {
+  display: block;
+  font-size: 40px;
+  margin: 0px 0px 20px 0px;
+  text-transform: uppercase;
+  display: block;
+}
+
+h4 {
+  display: block;
+  font-size: 1.5vw;
+  line-height: 1.6vw;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background-color: black;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 30px;
+
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 47%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 47%;
+}
+.columns.image {
+   height:400px;
+   margin-right: 40px;
+}
+.columns.content {
+   padding-bottom: 30px;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+.quote {
+  padding: 90px 15px 90px 15px;
+}
+
+
+
+#slider {
+   margin: 0 auto;
+}
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+#slides {
+
+   position: relative;
+   z-index: 1;
+}
+#overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ #slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+   margin-left: -300%;
+}
+#slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 300px;
+}
+#slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 400px;
+   color: #fff;
+}
+#slides .slide_1 {
+   background: #00171F;
+}
+#slides .slide_2 {
+   background: #003459;
+}
+#slides .slide_3 {
+   background: #007EA7;
+}
+#slides .slide_4 {
+   background: #00A8E8;
+}
+#controls {
+   margin: -75px 0 0 0;
+   width: 100%;
+   height: 50px;
+   z-index: 3;
+   position: relative;
+}
+#controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   opacity: .4;
+}
+#controls label:hover {
+   opacity: 1;
+}
+
+#bullets {
+   margin: 0 10px 0;
+   position: absolute;
+   z-index: 2;
+   text-align: center;
+}
+#bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 5px;
+}
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+   background: #444;
+}
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ #controls label:nth-child(2),
+   #slide2:checked ~ #controls label:nth-child(3),
+   #slide3:checked ~ #controls label:nth-child(4),
+   #slide4:checked ~ #controls label:nth-child(1),
+   #slide1:checked ~ #controls label:nth-last-child(2),
+   #slide2:checked ~ #controls label:nth-last-child(3),
+   #slide3:checked ~ #controls label:nth-last-child(4),
+   #slide4:checked ~ #controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   #slides {
+      max-width: calc(100%);
+      margin: 0 auto;
+   }
+#slides .slide {
+   display: flex;
+   height: 300px;
+}
+}
+
+
+
+
+
+.gall-container {
+  max-width: 100%;
+  margin: 0 40px 30px 10px;
+  float: left;
+  padding: 10px 0 0 30px;
+}
+
+.stacked {
+  display: grid;
+}
+
+.stacked > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.product-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 23.3%));
+}
+
+.card {
+
+  border: 0;
+}
+
+.card__img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+@media only screen and (max-width:639px) {
+
+
+.gall-container {
+  max-width: 100%;
+  padding: 20px 35px;
+  margin: 0 0px 0px 0px;
+}
+
+
+.product-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, max(48%));
+}
+
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+
+.container {
+   width: 100%;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align: left;
+   text-align: left;
+}
+
+p1 {
+   line-height: 12px;
+   font-size: 14px;
+}
+
+p2 {
+   line-height: 12px;
+   font-size: 14px;
+   text-decoration: underline;
+}
+
+h4 {
+  display: block;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.rhs-nav-title {
+   margin-top: 20px;
+   margin-right: 10px;
+   margin-bottom: 20px;
+   text-align:right;
+   font-size: 4vw;
+}
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+   width: 100%;
+   height: 300px;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+.quote {
+  padding: 50px 10px 10px 10px;
+}
+
+
+}
+
+@media only screen and (min-width:640px) {
+
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   color: black;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+   border-color: #d0c054;
+   border-top: 0px;
+   border-left: 0px;
+   border-right: 0px;
+}
+
+section {
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+}
+
+.rhs-nav-title {
+   position: absolute;
+   top: 5%;
+   left: 80%;
+   text-align:right;
+   font-size: 2vw;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+  <script src="js/slideshow.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="website-homepage.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a class="active" href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/smt-cover.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <h3>to make matter worse</h3>
+      <p1 style="font-style:italic">Scarborough Museums Trust</p1>
+      <br>
+      <p1>2022</p1>
+      <br>
+      <br>
+      <p1>
+Sculptures produced as part of a decolonising appraisal process that included feedback from a public exhibition. 
+The sculptures activate audience introspection by interrogating their position as consumers and benefactors of neocolonial processes
+relating to the lands where the collection was originally extracted.
+Specifically, the work concerns the ongoing super-exploitation of the Congo region 
+and its peoples, holding the building fabric to account through deconstructed concrete blocks.
+      <br><br>
+The three ‘enclosure’ sculptures evoke human, geological and transactional situations. They examine parallel colonising processes of 
+extraction (of resources, information, labour) and exploitation (the personal impacts on identity, dignity, experiences such as love 
+or pain), particularly as they relate to behaviours we might recognise in ourselves.
+      <br><br>
+Three written responses, <i>ANCHOR, ACT and ALTER</i>, were published on the project <a href="https://www.fromlocaltoglobal.co.uk/ila-colley">website</a>.
+      </p1>
+   </div>
+</div>
+</div>
+
+
+<div class="section-container" style="clear:both; padding-top: 0px">
+
+<div class="columns content">
+   <div class="content-container">
+         <p1><i>
+enclosure a: the patron<br>
+enclosure b: the vanishing<br>
+enclosure c: pressures metal</i>
+<br><br>
+<i>enclosure a: the patron</i> recalls a plastic roll-a-coin donation box you might find on the seafront. 
+After the coin is rolled it is obscured from view, evoking links between commercial and conservation 
+processes in the Congo region, and questioning the repercussions of our own acts of giving.
+<br><br>
+<i>"Elizabeth Lunstrum coined the term ‘green militarization’ to encompass “the use of military and paramilitary 
+personnel, training, technologies, and partnerships in the pursuit of conservation effort” ... Rather than 
+misleading consumers into buying a fairly harmless product, customers are misled into funnelling money to 
+military corporations through avenues such as donation campaigns, documentaries, and ecotourism."</i>
+<br><br> - Emily Jones, from Capital and Control: Neocolonialism Through the Militarization of African Wildlife Conservation, 2021
+         </p1>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/smt-12.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+<div class="section-container">
+
+<div class="columns image">
+<div id="slider">
+   <input type="radio" name="slider" id="slide1" checked>
+   <input type="radio" name="slider" id="slide2">
+   <input type="radio" name="slider" id="slide3">
+   <input type="radio" name="slider" id="slide4">
+   <div id="slides">
+      <div id="overflow">
+         <div class="inner">
+            <div class="slide slide_1" style="background-image: url('img/smt-1.jpg'); background-size: cover; background-repeat: no-repeat">
+               <div class="slide-content">
+                  <h2></h2>
+                  <p></p>
+               </div>
+            </div>
+            <div class="slide slide_2" style="background-image: url('img/smt-11.jpg'); background-size: cover; background-repeat: no-repeat">
+               <div class="slide-content">
+                  <h2></h2>
+                  <p></p>
+               </div>
+            </div>
+            <div class="slide slide_3" style="background-image: url('img/smt-2.jpg'); background-size: cover; background-repeat: no-repeat">
+               <div class="slide-content">
+                  <h2></h2>
+                  <p></p>
+               </div>
+            </div>
+            <div class="slide slide_4" style="background-image: url('img/smt-3.jpg'); background-size: cover; background-repeat: no-repeat">
+               <div class="slide-content">
+                  <h2></h2>
+                  <p></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="controls">
+      <label for="slide1" onclick="resetSlider()"></label>
+      <label for="slide2" onclick="resetSlider()"></label>
+      <label for="slide3" onclick="resetSlider()"></label>
+      <label for="slide4" onclick="resetSlider()"></label>
+   </div>
+   <div id="bullets">
+      <label for="slide1" onclick="resetSlider()"></label>
+      <label for="slide2" onclick="resetSlider()"></label>
+      <label for="slide3" onclick="resetSlider()"></label>
+      <label for="slide4" onclick="resetSlider()"></label>
+   </div>
+</div>
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+         <p1>
+Within the sculptures are parts of an umbrella. A number of Harrison’s photographs include a white umbrella. 
+Seemingly innocuous, this object can be read as a prop to elevate the white man, protecting him from the elements, 
+a tool to measure objects (or people), a pointing implement or even a weapon, separating and othering the people of 
+the Congo from Harrison himself. In these works, the trophy-making process is turned on the umbrella, skinned, de-boned, 
+turned into an artefact that memorialises violence and entrapment.
+<br><br>
+Fifteen concrete bricks that represent a blocked-up doorway in Woodend which enclosed a number of forgotten taxidermied 
+heads from the Harrison collection. The doorway represents the potential for museums to conceal as well as display. 
+Erasure is understood here as a form of enclosure, the result of plundering and hoarding objects away in colonial 
+collections. Erasure is also used by the powerful to stifle knowledge and resistance. This opens up questions about 
+Harrison, how casually he discarded life, as well as a need to scrutinise the not-so post-colonial museum, accountability 
+and issues of repatriation. 
+         </p1>
+   </div>
+</div>
+
+</div>
+
+
+
+
+<div class="section-container" style="clear:both; padding-top: 0px">
+   <div class="columns content">
+      <div class="content-container">
+         <p1>
+<i>enclosure a: the vanishing</i> is a plinth for Patrice Lumumba’s tooth. The Belgian backed murder of Patrice Lumumba, 
+father of Congolese independence, was immediately followed by the destruction of his body, save for one tooth which was kept 
+as a trophy by a Belgian policeman, and only decreed to be returned to his family some sixty years later in 2020.
+<br><br>
+<i>Long live independence and African unity!<br>
+Long live the independent and sovereign Congo!</i><br>
+- Patrice Lumumba, speech at the Ceremony of the Proclamation of the Congo’s Independence (transcribed and translated 
+from French), 1960, 201 days before his murder.
+<br><br>
+<i>enclosure c: pressures metal</i> evokes coinage, jewellery and toil. In the bling, familiar genre of self-decoration prompts comparisons 
+to Harrison’s own conquest exhibitionism. The spatial tectonics 
+of mining attempts to place the collection in the historical context of the scramble for Africa and its resources, particularly 
+the design of the Congo as, primarily, an extraction area.
+<br><br>
+<i>“monstrous intimacy” [is] the subjective power[s] of geology, where gold shows up as bodies and bodies are the surplus 
+of mineralogical extraction.</i><br>
+- Kathryn Yussoff, A Billion Black Anthropocenes or None, 2019
+         </p1>
+      </div>
+   </div>
+   <div class="columns image" style="background-image: url('img/smt-13.jpg')">
+      &nbsp;
+   </div>
+</div>
+
+
+
+
+
+
+
+</section>
+
+<div class="gall-container">
+   <div class="product-grid">
+
+
+<div class="card stacked">
+    <a href="img/smt-7.png">
+          <img src="img/smt-7.png" alt="concrete and plaster sculpture corners" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/smt-5.png">
+          <img src="img/smt-5.png" alt="sketch of three sculptures" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/smt-6.jpg">
+          <img src="img/smt-6.jpg" alt="top view of concrete sculpture with gold chain" class="card__img">
+    </a>
+</div>
+<div class="card stacked">
+    <a href="img/smt-9.jpg">
+          <img src="img/smt-9.jpg" alt="concrete sculpture with red umbrella trap" class="card__img">
+    </a>
+</div>
+
+
+   </div>
+</div>
+
+
+
+    <div style="margin:0 0 40px 40px">
+      <p3>
+      Including photographs by Jules Lister.
+      <br>
+      Archival photographs courtesy Scarborough Museums.
+      </p3>
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>

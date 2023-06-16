@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist, poetry, terrestrial, unearthing">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+@font-face {
+   font-family: Rasa-Regular;
+   src: url(font/Rasa-Regular.ttf); format("ttf");
+   font-style: normal;
+}
+
+* {
+   font-family: Euripides;
+   color: black;
+}
+
+body {
+   background-color: white;
+   font-family: Euripides;
+   color: black;
+   margin:0;
+}
+
+p1 a {
+   font-family: Rasa-Regular;
+   font-weight: 800;
+}
+
+p1 a:hover {
+   color: white;
+   background-color: black;
+}
+
+p3 {
+   font-weight: 200;
+   font-stretch: 100;
+   margin: 0px 0px 0px 0px;
+   font-size: 14px;
+   line-height: 16px;
+   font-family: Rasa-Regular;
+}
+
+h1 {
+   font-weight: 700;
+   font-stretch: 200;
+   margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+}
+
+h3 {
+  display: block;
+  font-size: 40px;
+  margin: 0px 0px 20px 0px;
+  text-transform: uppercase;
+  display: block;
+}
+
+h4 {
+  display: block;
+  font-size: 1.5vw;
+  line-height: 1.6vw;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.containernav {
+   width: 94%;
+   margin: 0 auto;
+}
+
+.hamburger {
+   display: none;
+   height: fit-content;
+   margin-left: -20px;
+   width: 25px;
+   cursor: pointer;
+   padding: 2px;
+   transition: 0.2s;
+   z-index: 1000;
+   position: fixed;
+}
+
+.hamburger:hover {
+   background:black;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 2px;
+   margin: 6px 0px;
+   background-color: black;
+}
+
+.hidden-check {
+appearance: none;
+position: absolute;
+margin-left: -300px;
+}
+
+.section-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 30px;
+
+}
+
+.section-container .columns {
+   flex:0 0 auto;
+
+}
+.section-container .columns.content {
+   width: 47%;
+}
+
+.section-container .columns.image {
+   background-position:center;
+   background-repeat:no-repeat;
+   background-size: cover;
+   width: 47%;
+}
+.columns.image {
+   height:400px;
+   margin-right: 40px;
+}
+.columns.content {
+   padding-bottom: 30px;
+}
+.section-container .columns.content .content-container {
+   padding: 0 40px 0 0;
+}
+
+.section-container .columns.content .content-container p1 {
+   font-weight:400;
+   margin-bottom: 15px;
+   text-align: justify;
+   line-height: 16px;
+   font-size: 16px;
+   font-family: Rasa-Regular;
+}
+.quote {
+  padding: 90px 15px 90px 15px;
+}
+
+
+
+#slider {
+   margin: 0 auto;
+}
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+#slides {
+
+   position: relative;
+   z-index: 1;
+}
+#overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ #slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+   margin-left: -300%;
+}
+#slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 300px;
+}
+#slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 400px;
+   color: #fff;
+}
+#slides .slide_1 {
+   background: #00171F;
+}
+#slides .slide_2 {
+   background: #003459;
+}
+#slides .slide_3 {
+   background: #007EA7;
+}
+#slides .slide_4 {
+   background: #00A8E8;
+}
+#controls {
+   margin: -75px 0 0 0;
+   width: 100%;
+   height: 50px;
+   z-index: 3;
+   position: relative;
+}
+#controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   opacity: .4;
+}
+#controls label:hover {
+   opacity: 1;
+}
+
+#bullets {
+   margin: 0 10px 0;
+   position: absolute;
+   z-index: 2;
+   text-align: center;
+}
+#bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 5px;
+}
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+   background: #444;
+}
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ #controls label:nth-child(2),
+   #slide2:checked ~ #controls label:nth-child(3),
+   #slide3:checked ~ #controls label:nth-child(4),
+   #slide4:checked ~ #controls label:nth-child(1),
+   #slide1:checked ~ #controls label:nth-last-child(2),
+   #slide2:checked ~ #controls label:nth-last-child(3),
+   #slide3:checked ~ #controls label:nth-last-child(4),
+   #slide4:checked ~ #controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   #slides {
+      max-width: calc(100%);
+      margin: 0 auto;
+   }
+#slides .slide {
+   display: flex;
+   height: 300px;
+}
+}
+
+
+
+
+
+.gall-container {
+  max-width: 100%;
+  margin: 0 40px 30px 10px;
+  float: left;
+  padding: 10px 0 0 30px;
+}
+
+.stacked {
+  display: grid;
+}
+
+.stacked > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.product-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 23.3%));
+}
+
+.card {
+
+  border: 0;
+}
+
+.card__img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+@media only screen and (max-width:639px) {
+
+
+.gall-container {
+  max-width: 100%;
+  padding: 20px 35px;
+  margin: 0 0px 0px 0px;
+}
+
+
+.product-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, max(48%));
+}
+
+}
+
+
+
+@media only screen and (max-width:639px) { 
+
+
+.container {
+   width: 100%;
+}
+
+header {
+   width: 90%;
+   padding: 0 20px;
+}
+
+nav {
+   position: absolute;
+   left: -300px;
+   top: 0;
+   overflow: auto;
+   font-size: 4vw;
+   z-index: 999;
+   width: 180px;
+   height: 100vh;
+   background-color: #d0c054;
+   transition: 0.2s;
+}
+
+#nav_check:checked ~ nav {
+   left: 0px;
+}
+
+nav .logo {
+   display: block;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   margin-left: 30px;
+}
+
+nav ul {
+   display: block;
+   padding: 0 20px;
+   margin-top: 70px;
+   list-style: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+.logo img {
+   position: absolute;
+   left: 43%;
+   float: right;
+   max-width: 242px;
+   max-height: 24px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+}
+
+nav li {
+padding-top: 0px;
+margin-bottom: 40px;
+line-height: 48 px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+}
+
+section {
+   float: left;
+   margin-left: 0px;
+   margin-top: 60px;
+   text-align: left;
+   text-align: left;
+}
+
+p1 {
+   line-height: 12px;
+   font-size: 14px;
+}
+
+p2 {
+   line-height: 12px;
+   font-size: 14px;
+   text-decoration: underline;
+}
+
+h4 {
+  display: block;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0px 0px 20px 0px;
+  font-weight: normal;
+}
+
+.rhs-nav-title {
+   margin-top: 20px;
+   margin-right: 10px;
+   margin-bottom: 20px;
+   text-align:right;
+   font-size: 4vw;
+}
+
+.section-container {
+   flex-flow: row wrap;
+   margin-bottom: -30px;
+}
+.section-container .columns.image{
+   display: block;
+   order: 1;
+   width: 100%;
+   height: 300px;
+}
+
+.section-container .columns.content{
+   display: block;
+   order: 2;
+   width: 100%;
+   margin-left:0px;
+}
+.section-container .columns.content .content-container {
+   padding: 20px 35px;
+}
+.section-container .columns.content .content-container h3 {
+   margin-bottom: 10px;
+   font-size: 32px;
+   line-height: 36px;
+}
+.quote {
+  padding: 50px 10px 10px 10px;
+}
+
+
+}
+
+@media only screen and (min-width:640px) {
+
+
+header {
+   background: none;
+}
+
+header::after {
+   content: '';
+   display: table;
+   clear:both;
+}
+
+.logo img {
+   position: absolute;
+   float: left;
+   max-width: 484px;
+   max-height: 48px;
+   margin-top: 0px;
+   margin-left: 0px;
+   display: block; 
+   text-indent: 0px;
+   width: 40%;
+}
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.1vw;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 40px;
+padding-top: 0px;
+line-height: 48px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   color: black;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: #d0c054;
+   transition: 0.3s;
+}
+
+nav a.active {
+   border-bottom: 2px solid white;
+   border-color: #d0c054;
+   border-top: 0px;
+   border-left: 0px;
+   border-right: 0px;
+}
+
+section {
+   margin: 100px 0px 0px 0px;
+   text-align: left;
+   padding-left: 40px;
+}
+
+.rhs-nav-title {
+   position: absolute;
+   top: 5%;
+   left: 80%;
+   text-align:right;
+   font-size: 2vw;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+  <script src="js/slideshow.js"></script>
+
+  <header>
+   <div class="containernav">
+<div class="logo"><a href="website-homepage.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<input type="checkbox" id="nav_check" class="hidden-check">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a class="active" href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+      <label for="nav_check" class="hamburger">
+       <div></div>
+       <div></div>
+       <div></div>
+    </label>
+   </div>
+</header>
+
+<div class="container">
+  <section>
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/down-earth-cover.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <h3>down to earth</h3>
+      <p1 style="font-style:italic">The Poetry Business, Sheffield</p1>
+      <br>
+      <p1>2021</p1>
+      <br>
+      <br>
+      <p1>
+        A month-long digital residency in partnership with The Writing Squad. This public writing project investigated the (possibly) opposing themes of ‘down-to-earth’ and ‘out-of-this-world’ in poetry, 
+       with brief forays into film, TV and video games. This thinking took the form of blog posts and instagram takeover, as well as some terrestrial poetics. Some excerpts are found on this page; for the full blog posts <a href="https://poetrybusiness.co.uk/2021/05/04/may-digital-poet-in-residence-ila-colley/" style="text-decoration: none">see here.</a>
+      </p1>
+      <br>
+      <br>
+      <br>
+   </div>
+</div>
+</div>
+
+
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <div class="quote"  style="padding-bottom: 40px">
+      <h4>
+         “We shall have to come down to earth; we shall have to land somewhere. 
+... To do this we need something like a map of the positions imposed by the new landscape 
+within which not only the affects of public life but also its stakes are being redefined.” 
+	</h4>
+	<p1 style="font-family: rasa-regular; font-size: 18px;">- Bruno Latour, Down to Earth (2018)
+      </p1>
+      </div>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/down-earth-1.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/down-earth-2.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1 style="font-style:italic">
+	Hey you, 
+	I’ve been reading that book again. I wrote out some quotes for you. I’ve been meaning to ask, where are you
+	 coming down to land? Are you riding the drift or do you have a map? Are you travelling light or did you pack a map? 
+	Did somebody else pack a map for you? Did somebody else draw it?
+   <br>
+   <br></p1><p1>
+Are you rooted comfortably? It’s Spring again, that hell again.
+I’ve been re-reading Bruno Latour’s essay Down to Earth, written in response to Trump pulling the US 
+out of the Paris Accord back in 2018.
+      </p1>
+   </div>
+</div>
+</div>
+
+
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+To reduce Latour’s premise to a simple image: we are looking sceptically forwards to the Global attractor, 
+which once promised liberation and limitless scientific, economic and moral expansion, then we turn our 
+hesitant gaze back to the Local with its old certainties, but find we are unable to move in either direction. 
+He writes, It is as if the expression modern world had become an oxymoron. Either it is modern, but has no world 
+under its feet or else it is a true world, but will not be modernizable.
+   <br>
+   <br>
+Then he introduces two new attractors to this mapping, pulling our attention towards either the ‘out-of-this-world’ 
+appeal of Trumpism, of rejecting the constraints of a real shared world, or to the opposing attractor of the Terrestrial, 
+a concept of political action whose reactivity emerges from the sharing of territory. He critiques the neutral disposition 
+of the sciences and its influence on popular understandings of our world, likening this to a view of Earth from Sirius, 
+uninvolved and far-off. To counter this is the idea of being terrestrial as a practice, a kind of rooted and interconnectedness.
+      </p1>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/down-earth-3.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/down-earth-4.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1 style="font-size: 14px; font-family: euripides;">
+         Hey you,<br> 
+where have you been walking? What have you been prodding? <br><br>
+I unearthed a dark armpit on the riverbank and it gave me a nosebleed. 
+As I dripped all over them, the crustaceans replied in the threatening voices of my inner demons 
+and told me to stop projecting. I tapped my foot on the mud nearby but no creature found this charming. 
+They went nowhere, just white and wiggly, awaiting understanding or forgetfulness. <br><br>
+I asked them about the word molt, have you molted yet, are you molting, would you put a louse leg 
+under your pillow and wait for a reward? A one-in-a-million. 
+<br><br>
+The water was molten sky with ducks traversing, it was molting a commotion of coke cans and common coots 
+through the conquest of kids covered in cubs badges, the bus was molting something bio and admirable, 
+and the city, growing taller each day, had invented a very specific schedule for molting which might 
+later serve as evidence of the unforgivable. 
+      </p1>
+   </div>
+</div>
+</div>
+
+
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+The dominion of production that humans impose on other terrestrials isn’t just a feeling, but I feel it in Blake’s 
+The Garden of Love.  Blake describes the intrusion of organised religion, its strict moral codes, its artificial 
+iconography making lines, forms, shadows, obscuring curiosity.
+   <br>
+   <br></p1><p1 style="font-style: italic">
+I went to the Garden of Love, / 
+And saw what I never had seen: / 
+A Chapel was built in the midst, / 
+Where I used to play on the green.
+   <br>
+   <br></p1><p1>
+Unfreedom is rarely as obvious as Blake’s symbolism, especially when it is the by-product of something deemed necessary. 
+The fish survive all that radiation, whatever is a go-pass beyond poison, Cynthia Arrieu-King writes in the first line 
+of her poem Something Beyond Interpretation. She considers the fatigue of a scientist who spends long days telling 
+fifth graders about the ‘new normal’ climate and the events that lead to the inhospitality of the Earth:
+   <br>
+   <br></p1><p1 style="font-style: italic">
+He had given the tour and wanted something beyond interpretation. / 
+What would it mean to imagine just the grass,  / 
+the mountains, and the scrolling jellyfish? / 
+O my hatred of the organized.
+      </p1>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/down-earth-5.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/down-earth-6.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1 style="font-size: 14px; font-family: euripides;">
+         Hey you,<br>
+would you know how to turn a lathe if you came across one, out in the desert?
+<br><br>
+If your life depended on it? 
+Would you know how to make a bobbin or a spindle that you could wind all the creases of the desert around? 
+Then you could prick yourself and sleep for a hundred years. 
+<br><br> 
+Do you know what it would mean to the desert 
+to know where all its shadow goes? To be rid of excess - for all your excess to be saved up, sequestered, 
+to provoke love, a loving community from the bonds of scarcity? To live under perpetual moonlessness?
+<br><br>
+Your lover is talking about index funds and you are not listening. I remember when you said he said 
+“Don’t look for the needle in the haystack. Just buy the haystack!” You are not listening but I am. 
+Latour wrote Polanyi wrote, the secular religion of the market is not of this world. There are ways 
+we can get outta here, and I’m taking notes.
+      </p1>
+   </div>
+</div>
+</div>
+
+
+
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+         The mutation doesn’t follow the hierarchy of human power structures, but gets into the very reproductive 
+logic of terrestrial matter. An uncanny that’s expressed in films like Stalker and Annihilation, through the 
+supernatural agency of Tarkovsky’s zone or as an invading alien life-code. Both can read as metaphors for the
+ plunder and corruption of the natural world, and something more, our own guilt and alienation. During their
+ mission through the Shimmer in Annihilation, the team discover the remains of soldiers from previous expeditions, 
+their exploding torsos, extended skulls bursting with strange patterns of petals. I got thinking about corporeal 
+transfiguration in the surreal poetry of Mina Loy:
+</p1><p1 style="font-style: italic">
+   <br>
+   <br>
+But for the abominable shadows / 
+I would have lived / 
+Among their fearful furniture / 
+To teach them to tell me their secrets / 
+Before I guessed / 
+-- Sweeping the brood clean out</p1><p1>
+   <br>
+   <br>
+But to anticipate is to exploit, to practice prevention and contingency in a plan of our own. 
+Essentially, to remove the work of negotiation, a knee-jerk reaction 
+to the parameters of a strange new world. Where poetry often attempts to reveal truth or essence, Surrealism 
+treats the imaginary with an objectivity that pushes the reader to release presuppositions and open up 
+to unknown terrain, tender or threatening. Latour uses ‘out-of-this-world’ to describe relinquishing responsibility 
+and reactivity, but in fiction the other-worldly can be to critically compare the existing with new, potential reactions.
+      </p1>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/down-earth-7.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+
+<div class="section-container">
+   <div class="columns image" style="background-image: url('img/down-earth-8.jpg')">
+      &nbsp;
+</div>
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+         I spent the depths of winter in the magical realist world of Disco Elysium, a role-playing video game 
+about a murder investigation led by a self-loathing amnesiac detective, and set in a post-industrial geography 
+of political fragmentation, fatalism and nostalgia. Inter-personal expressions of delusion, deception, alienation 
+and even dissociation between the characters of Disco Elysium cast doubt over the magical of the game’s bitter realism. 
+A meeting with a multi-billionaire, somebody unfathomably more wealthy than our protagonist, is experienced like an 
+acid trip; these opposing worlds cannot cohabit without glitching. 
+   <br>
+   <br>
+Lisowski writes in Girl Work: </p1><p1 style="font-style: italic">
+
+I pay my rent and go to the rent store / 
+I buy a new shiny rent / 
+I buy a tight fitting outfit to tell myself I am rent / 
+The weather shiny / 
+The sun flecked with little bits of wealth / 
+Hello I am looking for feedback and also rent</p1><p1>
+   <br>
+   <br>
+Between 4 walls, sqm valuation determines arable land. This world’s self-critic is economic. In Girl Rent 
+the landlord is antagonist and absentee; this poem’s thinking has gotten world-big and has no use for smalltime villains. 
+Also the reverse, the world-big rent has shrunk to fit into our sense of self. This is the view from the window.
+ We read risk in all our terrestrial investments.      
+</p1>
+   </div>
+</div>
+</div>
+
+
+
+
+<div class="section-container">
+
+<div class="columns content">
+   <div class="content-container">
+      <p1>
+What I want to remember, then, is that each terrestrial has their own cartography of diverse concerns. 
+Each terrestrial does not stand for, or need one single thing. No single use terrestrials. That those who 
+were a faithful ally in some pursuits might prove a troublesome antagonists in others.  And now I’m thinking 
+about words from Taylor Johnson again, this time from their poem Menace to, which expresses an amongness 
+that isn’t homogenous, and how being among and standing for something at the same time might include 
+contradiction and compromise.</p1>
+   <br>
+   <br>
+<p1 style="font-style: italic">... My enemy everywhere
+and in my home as wifi is
+   <br>
+a money for me to reach my comrades
+and kills my house plants. My enemy
+   <br>
+is distance growing dark, distance growing
+politely in my pocket as connection.
+   <br>
+... when I buy something
+such as a new computer with which to sing against my enemies,
+there is my enemy, silent and personal.</p1> 
+   <br>
+   <br>      
+<p1>Hey you, let’s talk things through. And while we do, let’s keep in mind that we may need to be individually 
+vulnerable in order to be courageously among, as dg nanouk okpik writes:</p1>
+   <br>
+   <br> 
+<p1 style="font-style: italic">To learn you must be open, diligent, and willing to be an individual.
+11,000 murres with webbed feet land also without any fear of predators.</p1>
+   </div>
+</div>
+   <div class="columns image" style="background-image: url('img/down-earth-9.jpg')">
+      &nbsp;
+   </div>  
+</div>
+
+
+</section>
+
+
+
+
+    <div style="margin:0 0 40px 40px">
+      <p3>
+      Screenshots from Disco Elysium game.
+      </p3>
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
