@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="author" content="Ila">
+  <meta name="keywords" content="Ila, Colley, artist">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ila-co.place</title>
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  background-image: url("img/vhr-threads-nature.jpg");
+
+  height: 100%; 
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Will need to edit this for mobile - collapses to list? */
+.centered-nav {
+   position: absolute;
+   top: 90%;
+   left: 50%;
+   transform: translate(-40%, -50%);
+   text-align:center;
+   font-weight: 300;
+   font-stretch: 100;
+}
+
+@font-face {
+   font-family: Euripides;
+   src: url(font/Euripides-SemiBold_web.woff2); format("woff2");
+   font-style: normal;
+}
+
+* {
+   font-family: Euripides;
+   color: white;
+}
+
+
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+@media only screen and (max-width:639px) { 
+
+.centered-title {
+   position: absolute;
+   top: 15%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align:center;
+   font-size: 8vw;
+   font-weight: 700;
+   font-stretch: 200;
+   white-space:nowrap;
+}
+
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 3.5vw;
+   line-height: 12 px;
+   white-space:nowrap;
+   margin-right: 15px;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-right: 15px;
+padding-top: 0px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: #292981;
+   transition: 0.3s;
+}
+}
+
+
+@media only screen and (min-width:640px) {
+
+.centered-title {
+   position: absolute;
+   top: 15%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align:center;
+   font-size: 5vw;
+   font-weight: 700;
+   font-stretch: 200;
+}
+
+
+nav {
+   float: right;
+   overflow: auto;
+   font-size: 1.5vw;
+   line-height: 48px;
+   white-space:nowrap;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-right: 40px;
+padding-top: 0px;
+position: relative;
+}
+
+.overunder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+.over {
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+.under {
+  text-align: center;
+}
+
+nav a {
+   colour: white;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: #292981;
+   transition: 0.3s;
+}
+}
+
+</style>
+</head>
+
+<title>ila-co.place</title>
+
+<body>
+
+<div class="centered-title"
+   <h1>I L A__C O L L E Y</h1>
+</div>
+
+<div class="centered-nav"
+<header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+        <a class="overunder" href="museblog.html">
+        <div class="over">
+        muse
+        </div>
+        <div class="under">
+        detour
+         </div>
+        </a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="about.html">[about]</a></li>
+        <li><a href="projectsindex.html">projects</a></li>
+        <li><a class="overunder" href="unrealisedprojects.html">
+        <div class="over">
+        maladaptive
+         </div>
+        <div class="under">
+        daydreams
+         </div>
+        </a></li>
+      </ul>
+    </nav>
+   </div>
+
+</header>
+</div>
+
+<div class="bg"></div>
+
+</body>
+</html>
