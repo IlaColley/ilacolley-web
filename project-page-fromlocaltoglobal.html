@@ -287,7 +287,10 @@ margin-left: -300px;
    }
 #slides .slide {
    display: flex;
-   height: 300px;
+   height: 240px;
+}
+.bullets {
+   margin: -60px 10px 0;
 }
 }
 
@@ -367,8 +370,7 @@ nav {
    overflow: auto;
    font-size: 4vw;
    z-index: 999;
-   width: 180px;
-   height: 100vh;
+   height: 100%;
    background-color: #d0c054;
    transition: 0.2s;
 }
@@ -398,14 +400,16 @@ nav ul {
 
 .logo img {
    position: absolute;
-   left: 43%;
+   top: 0px;
+   right: 0px;
    float: right;
-   max-width: 242px;
+   max-width: 230px;
    max-height: 24px;
    margin-top: 0px;
    margin-left: 0px;
    display: block; 
    text-indent: 0px;
+   z-index: 1000;
 }
 
 nav li {
@@ -611,12 +615,12 @@ section {
 
   <header>
    <div class="containernav">
-<div class="logo"><a href="index.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<div class="logo"><a href="./"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
 <input type="checkbox" id="nav_check" class="hidden-check">
     <nav>
       <ul>
         <li>
-        <a class="overunder" href="museblog.html">
+        <a class="overunder" href="./museblog">
         <div class="over">
         muse
         </div>
@@ -624,10 +628,10 @@ section {
         detour
          </div>
         </a></li>
-        <li><a href="blog.html">blog</a></li>
-        <li><a href="about.html">[about]</a></li>
-        <li><a class="active" href="projectsindex.html">projects</a></li>
-        <li><a class="overunder" href="unrealisedprojects.html">
+        <li><a href="./blog">blog</a></li>
+        <li><a href="./about">[about]</a></li>
+        <li><a class="active" href="./projectsindex">projects</a></li>
+        <li><a class="overunder" href="./unrealisedprojects">
         <div class="over">
         maladaptive
          </div>
@@ -665,7 +669,7 @@ section {
          A research and reflection phase of a commission to respond to a collection as part of an ongoing decolonising appraisal project. 
 Looking at the Harrison collection and the broader colonial context of the Democratic Republic of Congo, a compilation of enclosure dynamics 
 occurs describing multitudinous modes of carving up existing ecologies.
-Three sculptures were produced as adjacent thought processes, see this part of the project <a href="project-page-tomakematterworse.html"> here</a>.
+Three sculptures were produced as adjacent thought processes, see this part of the project <a href="./project-page-tomakematterworse"> here</a>.
 <br><br>
 Three written responses, <i>ANCHOR, ACT and ALTER</i>, were published on the project <a href="https://www.fromlocaltoglobal.co.uk/ila-colley">website</a>.
       </p1>

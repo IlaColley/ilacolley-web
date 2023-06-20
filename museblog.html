@@ -101,8 +101,7 @@ nav {
    overflow: auto;
    font-size: 4vw;
    z-index: 999;
-   width: 180px;
-   height: 100vh;
+   height: 100%;
    background-color: #e9dedb;
    transition: 0.2s;
 }
@@ -132,14 +131,16 @@ nav ul {
 
 .logo img {
    position: absolute;
-   left: 36%;
+   top: 0px;
+   right: 0px;
    float: right;
-   max-width: 242px;
+   max-width: 230px;
    max-height: 24px;
    margin-top: 0px;
    margin-left: 0px;
    display: block; 
    text-indent: 0px;
+   z-index: 1000;
 }
 
 nav li {
@@ -338,23 +339,23 @@ p1 {
 <body>
   <header>
    <div class="containernav">
-<div class="logo"><a href="index.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<div class="logo"><a href="./"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
 <input type="checkbox" id="nav_check" class="hidden-check">
     <nav>
       <ul>
         <li>
-        <a class="overunder" href="museblog.html">
-        <div class="over-active">
+        <a class="overunder" href="./museblog">
+        <div class="over">
         muse
         </div>
         <div class="under">
         detour
          </div>
         </a></li>
-        <li><a href="blog.html">blog</a></li>
-        <li><a href="about.html">[about]</a></li>
-        <li><a href="projectsindex.html">projects</a></li>
-        <li><a class="overunder" href="unrealisedprojects.html">
+        <li><a href="./blog">blog</a></li>
+        <li><a href="./about">[about]</a></li>
+        <li><a class="active" href="./projectsindex">projects</a></li>
+        <li><a class="overunder" href="./unrealisedprojects">
         <div class="over">
         maladaptive
          </div>
@@ -371,6 +372,7 @@ p1 {
     </label>
    </div>
 </header>
+
 
 <div class="container">
   <section>

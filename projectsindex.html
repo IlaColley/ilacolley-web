@@ -173,8 +173,7 @@ nav {
    overflow: auto;
    font-size: 4vw;
    z-index: 999;
-   width: 180px;
-   height: 100vh;
+   height: 100%;
    background-color: #d0c054;
    transition: 0.2s;
 }
@@ -204,14 +203,16 @@ nav ul {
 
 .logo img {
    position: absolute;
-   left: 43%;
+   top: 0px;
+   right: 0px;
    float: right;
-   max-width: 242px;
+   max-width: 230px;
    max-height: 24px;
    margin-top: 0px;
    margin-left: 0px;
    display: block; 
    text-indent: 0px;
+   z-index: 1000;
 }
 
 nav li {
@@ -448,12 +449,12 @@ p2 {
 <body>
   <header>
    <div class="containernav">
-<div class="logo"><a href="index.html"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
+<div class="logo"><a href="./"><img src="img/ila-colley-logo-black.png" alt="logo"></a></div>
 <input type="checkbox" id="nav_check" class="hidden-check">
     <nav>
       <ul>
         <li>
-        <a class="overunder" href="museblog.html">
+        <a class="overunder" href="./museblog">
         <div class="over">
         muse
         </div>
@@ -461,10 +462,10 @@ p2 {
         detour
          </div>
         </a></li>
-        <li><a href="blog.html">blog</a></li>
-        <li><a href="about.html">[about]</a></li>
-        <li><a class="active" href="projectsindex.html">projects</a></li>
-        <li><a class="overunder" href="unrealisedprojects.html">
+        <li><a href="./blog">blog</a></li>
+        <li><a href="./about">[about]</a></li>
+        <li><a class="active" href="./projectsindex">projects</a></li>
+        <li><a class="overunder" href="./unrealisedprojects">
         <div class="over">
         maladaptive
          </div>
@@ -494,7 +495,7 @@ p2 {
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-cornershop-hasselt.html" style="text-decoration: none">
+      <a href="./project-page-cornershop-hasselt" style="text-decoration: none">
          <h3>cornershop of daydreams&nbsp;&nbsp;>></h3>
      </div>
       <p1>
@@ -519,7 +520,7 @@ It is a contextual vehicle to explore how daydreaming can disrupt the reproducti
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-16bar.html" style="text-decoration: none">
+      <a href="./project-page-16bar" style="text-decoration: none">
           <h3>16-bar mythical city&nbsp;&nbsp;>></h3>
      </div>
       <p1>
@@ -544,7 +545,7 @@ from teenage bedrooms, the places where you might first dare to dream.
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-tomakematterworse.html" style="text-decoration: none">
+      <a href="./project-page-tomakematterworse" style="text-decoration: none">
          <h3>to make matter worse&nbsp;&nbsp;>></h3>
      </div>
       <p1>
@@ -569,7 +570,7 @@ relating to the lands where the collection was originally extracted.
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-pipedreams.html" style="text-decoration: none">
+      <a href="./project-page-pipedreams" style="text-decoration: none">
           <h3>pipe dreams&nbsp;&nbsp;>></h3>
      </div>
       <p1>
@@ -594,7 +595,7 @@ dreams through scenography, lighting design, as well as live and recorded sound.
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-radicalraccommodeuse.html" style="text-decoration: none">
+      <a href="./project-page-radicalraccommodeuse" style="text-decoration: none">
          <h3>the radical raccommodeuse&nbsp;&nbsp;>></h3>
      </div>
       <p1>
@@ -618,7 +619,7 @@ prosperous lace industry. Here, repairwork addresses democracy, empathy, and sol
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-fromlocaltoglobal.html" style="text-decoration: none">
+      <a href="./project-page-fromlocaltoglobal" style="text-decoration: none">
          <h3>from local to global&nbsp;&nbsp;>></h3>
      </div>
       <p1>
@@ -643,7 +644,7 @@ of enclosure dynamics occurs, describing multitudinous modes of carving up exist
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-ecopoetics.html" style="text-decoration: none">
+      <a href="./project-page-ecopoetics" style="text-decoration: none">
          <h3>ecopoetics&nbsp;&nbsp;>></h3>
      </div>
       <p1>
@@ -669,7 +670,7 @@ intended to equip curious passers-by with foundations for eco-action, be it know
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-anarchyoldlace.html" style="text-decoration: none">
+      <a href="./project-page-anarchyoldlace" style="text-decoration: none">
          <h3>anarchy and old lace&nbsp;&nbsp;>></h3>
      </div>
       <p1>
@@ -694,7 +695,7 @@ port city of Calais, a strained checkpoint in the enclosure of Fortress Europe a
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-harnessedhouse.html" style="text-decoration: none">
+      <a href="./project-page-harnessedhouse" style="text-decoration: none">
          <h3>harnessed house&nbsp;>></h3>
      </div>
       <p1>
@@ -719,7 +720,7 @@ historic fabric through a series of harnessed interventions.
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-downtoearth.html" style="text-decoration: none">
+      <a href="./project-page-downtoearth" style="text-decoration: none">
          <h3>down to earth&nbsp;>></h3>
      </div>
       <p1>
@@ -744,7 +745,7 @@ historic fabric through a series of harnessed interventions.
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-entangled.html" style="text-decoration: none">
+      <a href="./project-page-entangled" style="text-decoration: none">
          <h3>entangled&nbsp;>></h3>
      </div>
       <p1>
@@ -767,7 +768,7 @@ historic fabric through a series of harnessed interventions.
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-fluidcity.html" style="text-decoration: none">
+      <a href="./project-page-fluidcity" style="text-decoration: none">
          <h3>fluid[c]ity&nbsp;>></h3>
      </div>
       <p1>
@@ -792,7 +793,7 @@ historic fabric through a series of harnessed interventions.
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-cabinets.html" style="text-decoration: none">
+      <a href="./project-page-cabinets" style="text-decoration: none">
          <h3>cabinets, crumbs across the tablecloth&nbsp;>></h3>
      </div>
       <p1>
@@ -815,7 +816,7 @@ historic fabric through a series of harnessed interventions.
 <div class="columns content">
    <div class="content-container">
      <div class="titlelink">
-      <a href="project-page-retuningthewarp.html" style="text-decoration: none">
+      <a href="./project-page-retuningthewarp" style="text-decoration: none">
          <h3>retuning the warp&nbsp;>></h3>
      </div>
       <p1>
